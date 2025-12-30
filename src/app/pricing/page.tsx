@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Navbar, Footer } from "@/components/layout";
 
 export const metadata = {
-  title: "Partnership | WiBUZ — We Built It, So You Don't Have To",
+  title: "Partnership | Open Infrastructure Alliance — We Built It, So You Don't Have To",
   description:
-    "8 years of R&D. 100+ telco integrations. Elite engineering on retainer. WiBUZ gives you the ability to say YES to every deal.",
+    "8 years of R&D. 100+ telco integrations. Elite engineering on retainer. The OIA gives you the ability to say YES to every deal.",
 };
 
 const weBuiltIt = [
@@ -126,7 +126,7 @@ const faqs = [
   {
     question: "What's the 30-day Trial-to-Profit?",
     answer:
-      "Full platform access. Real hardware integration. Production-ready deployment. You'll know within 30 days whether WiBUZ helps you win. No credit card. No contracts. Ruckus MSPs: 15-minute setup.",
+      "Full platform access. Real hardware integration. Production-ready deployment. You'll know within 30 days whether the OIA helps you win. No credit card. No contracts. Ruckus MSPs: 15-minute setup.",
   },
 ];
 
@@ -534,7 +534,7 @@ export default function PricingPage() {
             </h2>
             <p className="text-dark-400 mb-8 max-w-xl mx-auto">
               We&apos;ll scope your specific needs, understand your growth
-              goals, and show you exactly how WiBUZ helps you win every deal
+              goals, and show you exactly how the OIA helps you win every deal
               you deserve.
             </p>
 

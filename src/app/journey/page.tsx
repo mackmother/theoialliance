@@ -40,12 +40,11 @@ export default function JourneyPage() {
               />
               <span className="text-dark-600">+</span>
               <Image
-                src="https://framerusercontent.com/images/HXqaHEddra3gpKSB3iGCA8Bu90w.png"
-                alt="WiBUZ"
+                src="/images/logos/wibipOS - White.svg"
+                alt="wibipOS"
                 width={60}
                 height={24}
                 className="h-5 w-auto object-contain"
-                unoptimized
               />
             </div>
 
