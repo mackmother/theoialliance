@@ -12,6 +12,7 @@
        ============================================== */
     --primary: #56FAF9;
     --primary-rgb: 86, 250, 249;
+    --primary-hover: #3B82F6;
 
     /* Background layers (creates depth) */
     --bg-base: #09090b;

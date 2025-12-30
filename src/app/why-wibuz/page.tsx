@@ -137,7 +137,7 @@ export default function WhyWiBUZPage() {
 
               {/* Wrap-up line — explains WHY these solutions exist */}
               <p className="text-dark-400 text-center mt-10 max-w-xl mx-auto">
-                wibipOS sits on top of any controller and solves what controllers can&apos;t.
+                wibipOS is the business layer that breaks the lock-in between your controllers and your customers—so you can unlock your full revenue potential.
               </p>
             </div>
           </Container>
