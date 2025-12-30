@@ -170,7 +170,7 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/journey"
-                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20"
+                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-primary/20"
               >
                 Start Trial-to-Profit
               </Link>
@@ -443,7 +443,7 @@ export default function PricingPage() {
                     href="/demo#schedule"
                     className={`block w-full text-center py-3 px-6 rounded-lg transition-colors ${
                       outcome.highlighted
-                        ? "bg-primary text-dark-950 font-semibold hover:bg-brand-300 shadow-lg shadow-primary/20"
+                        ? "bg-primary text-dark-950 font-semibold hover:bg-[var(--primary-hover)] shadow-lg shadow-primary/20"
                         : "border border-white/[0.1] text-dark-50 hover:bg-white/[0.05]"
                     }`}
                   >
@@ -541,7 +541,7 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/journey"
-                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20"
+                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-primary/20"
               >
                 Start Trial-to-Profit
               </Link>

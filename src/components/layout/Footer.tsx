@@ -56,16 +56,15 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block">
               <Image
-                src="https://framerusercontent.com/images/HXqaHEddra3gpKSB3iGCA8Bu90w.png"
-                alt="WiBUZ"
-                width={100}
-                height={32}
-                className="h-7 w-auto"
-                unoptimized
+                src="/images/logos/OAI_Logo2.png"
+                alt="Open Infrastructure Alliance"
+                width={180}
+                height={40}
+                className="h-10 w-auto"
               />
             </Link>
             <p className="mt-4 text-sm text-dark-500 leading-relaxed">
-              The enterprise wrapper for OpenWiFi. Production-ready multi-vendor
+              The enterprise wrapper for OpenWiFi. Enterprise-ready multi-vendor
               Wi-Fi management.
             </p>
             {/* Social links */}
@@ -176,7 +175,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-dark-800">
           <p className="text-sm text-dark-500 text-center">
-            &copy; {new Date().getFullYear()} WiBUZ. All rights reserved.
+            &copy; {new Date().getFullYear()} Open Infrastructure Alliance. All rights reserved.
           </p>
         </div>
       </Container>

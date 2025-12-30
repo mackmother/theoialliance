@@ -75,7 +75,7 @@ export function HomePricing() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/journey"
-                className="inline-flex items-center justify-center py-2.5 px-6 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20 text-sm"
+                className="inline-flex items-center justify-center py-2.5 px-6 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-primary/20 text-sm"
               >
                 See the 30-Day Journey
               </Link>
@@ -88,7 +88,7 @@ export function HomePricing() {
             </div>
 
             <p className="text-dark-300 text-xs mt-4">
-              Same flexibility in pricing as in engineering. That&apos;s the WiBUZ way.
+              Same flexibility in pricing as in engineering. That&apos;s the OIA way.
             </p>
           </div>
         </div>

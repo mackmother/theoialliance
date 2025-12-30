@@ -186,7 +186,7 @@ export default function BlogPage() {
 
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20"
+              className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-primary/20"
             >
               Start Your 30-Day Sandbox
             </Link>
