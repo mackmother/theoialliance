@@ -3,9 +3,9 @@ import { Navbar, Footer } from "@/components/layout";
 import { Button, Container } from "@/components/ui";
 
 export const metadata = {
-  title: "Why WiBUZ | Turn Your OpenWiFi PoC Into Revenue",
+  title: "Why OIA | Enterprise-Ready OpenLAN with Universal Business Layer",
   description:
-    "You've proven OpenWiFi works. Now you need the business layer to bill customers. WiBUZ is how MSPs go from pilot to profit.",
+    "Edgecore and NetExperience bring enterprise-ready OpenLAN. wibipOS brings the universal single pane of glass—manage OpenLAN alongside legacy gear, with the business layer to bill it all.",
 };
 
 export default function WhyWiBUZPage() {
@@ -56,8 +56,8 @@ export default function WhyWiBUZPage() {
 
               {/* One-sentence answer */}
               <p className="text-lg md:text-xl text-dark-300 max-w-2xl mx-auto mb-8">
-                That&apos;s a missing business layer—not a missing feature.{" "}
-                <span className="text-dark-100 font-medium">wibipOS turns working networks into paying customers.</span>
+                Edgecore and NetExperience bring enterprise-ready OpenLAN. wibipOS brings the universal single pane of glass—
+                <span className="text-dark-100 font-medium">manage OpenLAN alongside Ruckus, Aruba, and Cisco, with the business layer to bill it all.</span>
               </p>
 
               {/* Single CTA - "Sell the vacation, not the flight" */}
