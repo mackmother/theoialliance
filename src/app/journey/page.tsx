@@ -16,7 +16,7 @@ export default function JourneyPage() {
       <main className="pt-16">
         {/* Hero - Continues the Homepage Promise */}
         <section className="relative pt-12 pb-8 bg-dark-950 overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-400/5 rounded-full blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[120px]" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
             {/* Continuity from homepage - the alliance context */}
@@ -52,12 +52,12 @@ export default function JourneyPage() {
             {/* The headline - connects "OpenLAN is Here" to "Here's your path" */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-50 mb-4" style={{ letterSpacing: "-0.02em" }}>
               Unbox. Deploy.{" "}
-              <span className="text-brand-400">Bill.</span>
+              <span className="text-primary">Bill.</span>
             </h1>
 
             <p className="text-base md:text-lg text-dark-300 max-w-2xl mx-auto">
               The Open Infrastructure Alliance mapped your exact path from trial kit to first revenue.
-              <span className="text-brand-400 font-medium">Five phases. 30 days.</span> You&apos;ll never feel stuck.
+              <span className="text-primary font-medium">Five phases. 30 days.</span> You&apos;ll never feel stuck.
             </p>
           </div>
         </section>

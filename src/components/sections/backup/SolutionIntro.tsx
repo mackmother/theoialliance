@@ -14,7 +14,7 @@ export function SolutionIntro() {
           title={
             <>
               See It In Action:{" "}
-              <span className="text-brand-400">2 Minutes</span>
+              <span className="text-primary">2 Minutes</span>
             </>
           }
           subtitle="Watch how MSPs manage Ruckus, Edgecore, and OpenWiFi from one interface—with their own branding."
@@ -47,7 +47,7 @@ export function SolutionIntro() {
               key={index}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs md:text-sm text-dark-400 border border-white/[0.06] rounded-full bg-dark-900/50"
             >
-              <span className="w-1 h-1 rounded-full bg-brand-400" />
+              <span className="w-1 h-1 rounded-full bg-primary" />
               {pill.text}
             </span>
           ))}

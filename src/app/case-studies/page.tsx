@@ -110,12 +110,12 @@ export default function CaseStudiesPage() {
         {/* Hero */}
         <section className="relative pt-24 pb-16 bg-dark-950">
           {/* Background glow */}
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-400/10 rounded-full blur-[100px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
             {/* Label */}
             <div className="mb-6">
-              <span className="text-sm font-medium text-brand-400 uppercase tracking-wider">
+              <span className="text-sm font-medium text-primary uppercase tracking-wider">
                 Case Studies
               </span>
             </div>
@@ -123,7 +123,7 @@ export default function CaseStudiesPage() {
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-6 leading-[1.1]" style={{ letterSpacing: '-0.02em' }}>
               Real Deployments.{" "}
-              <span className="text-brand-400">Real Results.</span>
+              <span className="text-primary">Real Results.</span>
             </h1>
 
             {/* Subhead */}
@@ -139,7 +139,7 @@ export default function CaseStudiesPage() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               {/* Label */}
               <div className="mb-8 flex items-center gap-3">
-                <span className="text-sm font-medium text-brand-400 uppercase tracking-wider">
+                <span className="text-sm font-medium text-primary uppercase tracking-wider">
                   Featured
                 </span>
                 <span className="px-3 py-1 text-xs font-medium text-dark-400 bg-dark-800 border border-white/[0.06] rounded-full">
@@ -196,7 +196,7 @@ export default function CaseStudiesPage() {
                     <div className="grid grid-cols-3 gap-4 py-6 border-y border-white/[0.06] mb-6">
                       {featuredStudy.stats.map((stat) => (
                         <div key={stat.label} className="text-center">
-                          <div className="text-2xl md:text-3xl font-bold text-brand-400">
+                          <div className="text-2xl md:text-3xl font-bold text-primary">
                             {stat.value}
                           </div>
                           <div className="text-xs text-dark-500 mt-1">
@@ -224,7 +224,7 @@ export default function CaseStudiesPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             {/* Label */}
             <div className="mb-8">
-              <span className="text-sm font-medium text-brand-400 uppercase tracking-wider">
+              <span className="text-sm font-medium text-primary uppercase tracking-wider">
                 More Case Studies
               </span>
             </div>
@@ -270,7 +270,7 @@ export default function CaseStudiesPage() {
                         <span>{study.category}</span>
                       </div>
 
-                      <h3 className="text-lg font-semibold text-dark-50 mb-3 group-hover:text-brand-400 transition-colors">
+                      <h3 className="text-lg font-semibold text-dark-50 mb-3 group-hover:text-primary transition-colors">
                         {study.headline}
                       </h3>
 
@@ -278,7 +278,7 @@ export default function CaseStudiesPage() {
                       <div className="grid grid-cols-3 gap-2 py-4 border-t border-white/[0.06]">
                         {study.stats.map((stat) => (
                           <div key={stat.label} className="text-center">
-                            <div className="text-lg font-bold text-brand-400">
+                            <div className="text-lg font-bold text-primary">
                               {stat.value}
                             </div>
                             <div className="text-xs text-dark-500">{stat.label}</div>
@@ -286,7 +286,7 @@ export default function CaseStudiesPage() {
                         ))}
                       </div>
 
-                      <div className="mt-4 inline-flex items-center text-sm font-medium text-brand-400 group-hover:translate-x-1 transition-transform">
+                      <div className="mt-4 inline-flex items-center text-sm font-medium text-primary group-hover:translate-x-1 transition-transform">
                         Read Case Study
                         <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -305,7 +305,7 @@ export default function CaseStudiesPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             {/* Label */}
             <div className="mb-8">
-              <span className="text-sm font-medium text-brand-400 uppercase tracking-wider">
+              <span className="text-sm font-medium text-primary uppercase tracking-wider">
                 What Our Partners Say
               </span>
             </div>

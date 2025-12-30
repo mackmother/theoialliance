@@ -16,7 +16,7 @@ export default function OptimumCaseStudyPage() {
       <main id="main-content" className="pt-16">
         {/* Hero */}
         <section className="relative pt-24 pb-16 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-400/10 rounded-full blur-[100px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
             <Link
@@ -44,7 +44,7 @@ export default function OptimumCaseStudyPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-6 leading-[1.1]" style={{ letterSpacing: '-0.02em' }}>
               100 SMB Installs Monthly.{" "}
               <br className="hidden md:block" />
-              <span className="text-brand-400">15 Minutes Each.</span>
+              <span className="text-primary">15 Minutes Each.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-dark-300 max-w-2xl mb-12">
@@ -85,7 +85,7 @@ export default function OptimumCaseStudyPage() {
               </p>
 
               {/* Pull quote - inline, no card */}
-              <blockquote className="border-l-4 border-brand-400 pl-6 my-12">
+              <blockquote className="border-l-4 border-primary pl-6 my-12">
                 <p className="text-xl md:text-2xl text-dark-200 leading-relaxed mb-4">
                   &ldquo;By integrating our end-to-end solutions with wibipOS&apos;s white-label digital experience, we unlocked the flexibility, control, adaptability, and branding our Service Providers needed.&rdquo;
                 </p>

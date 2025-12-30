@@ -9,13 +9,13 @@ export function AllianceHero() {
       <div className="absolute inset-0 bg-grid opacity-20" />
 
       {/* Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-400/10 rounded-full blur-[100px]" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
 
       <Container className="relative z-10 py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Alliance Announcement Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-400/10 border border-brand-400/20 mb-6">
-            <span className="text-brand-400 text-sm font-medium">INTRODUCING</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+            <span className="text-primary text-sm font-medium">INTRODUCING</span>
             <span className="text-dark-200 text-sm">
               The Open Infrastructure Alliance
             </span>
@@ -65,15 +65,14 @@ export function AllianceHero() {
 
               <span className="text-dark-400 text-xl">+</span>
 
-              {/* WiBUZ */}
+              {/* wibipOS */}
               <div className="flex flex-col items-center gap-1">
                 <Image
-                  src="https://framerusercontent.com/images/HXqaHEddra3gpKSB3iGCA8Bu90w.png"
-                  alt="WiBUZ"
+                  src="/images/logos/wibipOS - White.svg"
+                  alt="wibipOS"
                   width={80}
                   height={30}
                   className="h-6 md:h-8 w-auto object-contain"
-                  unoptimized
                 />
                 <span className="text-xs text-dark-300">Orchestration</span>
               </div>
@@ -83,18 +82,18 @@ export function AllianceHero() {
           {/* Journey flow */}
           <div className="flex items-center justify-center gap-2 text-sm text-dark-400 mb-8">
             <span className="text-dark-200 font-medium">Unbox</span>
-            <svg className="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
             <span>Connect</span>
-            <svg className="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
             <span>Deploy</span>
-            <svg className="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="text-brand-400 font-medium">Bill Your Customer</span>
+            <span className="text-primary font-medium">Bill Your Customer</span>
           </div>
 
           {/* CTA */}

@@ -21,7 +21,7 @@ export default function WhyWiBUZPage() {
         <section className="relative py-16 md:py-20 overflow-hidden">
           <div className="absolute inset-0 bg-hero-gradient" />
           <div className="absolute inset-0 bg-grid opacity-20" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-400/8 rounded-full blur-[120px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/8 rounded-full blur-[120px]" />
 
           <Container className="relative z-10">
             <div className="max-w-4xl mx-auto text-center">
@@ -124,9 +124,9 @@ export default function WhyWiBUZPage() {
                     </div>
 
                     {/* Solution - Right */}
-                    <div className="p-5 rounded-xl bg-brand-400/5 border border-brand-400/10 flex items-center">
+                    <div className="p-5 rounded-xl bg-primary/5 border border-primary/10 flex items-center">
                       <div>
-                        <span className="text-brand-400 text-xs font-medium uppercase tracking-wider">Unlocked</span>
+                        <span className="text-primary text-xs font-medium uppercase tracking-wider">Unlocked</span>
                         <p className="text-dark-100 mt-1">{item.solution}</p>
                         <p className="text-dark-500 text-xs mt-2">→ {item.proof}</p>
                       </div>
@@ -228,7 +228,7 @@ export default function WhyWiBUZPage() {
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0 bg-hero-gradient" />
           <div className="absolute inset-0 bg-grid opacity-10" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-brand-400/10 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
 
           <Container className="relative z-10">
             <div className="max-w-3xl mx-auto text-center">

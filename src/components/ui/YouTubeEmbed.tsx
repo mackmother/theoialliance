@@ -38,7 +38,7 @@ export function YouTubeEmbed({
 
         {/* Play button */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-20 h-20 rounded-full bg-brand-400 flex items-center justify-center transition-transform group-hover:scale-110 shadow-lg shadow-brand-400/40">
+          <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center transition-transform group-hover:scale-110 shadow-lg shadow-primary/40">
             <svg
               className="w-8 h-8 text-dark-950 ml-1"
               fill="currentColor"

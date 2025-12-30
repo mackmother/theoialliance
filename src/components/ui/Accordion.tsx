@@ -14,12 +14,12 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
     <div className="border border-white/[0.06] rounded-xl overflow-hidden bg-dark-900/60 transition-all duration-200 hover:border-white/[0.1]">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-5 text-left focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-inset"
+        className="w-full flex items-center justify-between p-5 text-left focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
         aria-expanded={isOpen}
       >
         <span className="text-dark-100 font-medium pr-4">{question}</span>
         <svg
-          className={`w-5 h-5 text-brand-400 flex-shrink-0 transition-transform duration-200 ${
+          className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"

@@ -97,7 +97,7 @@ function parseContent(content: string): React.ReactNode[] {
           key={elements.length}
           className="text-dark-300 leading-relaxed ml-4 mb-2 flex items-start gap-2"
         >
-          <span className="text-brand-400 mt-1.5">•</span>
+          <span className="text-primary mt-1.5">•</span>
           <span>{trimmedLine.slice(2)}</span>
         </li>
       );
@@ -113,7 +113,7 @@ function parseContent(content: string): React.ReactNode[] {
           key={elements.length}
           className="text-dark-300 leading-relaxed ml-4 mb-2 flex items-start gap-3"
         >
-          <span className="text-brand-400 font-medium">{numberedMatch[1]}.</span>
+          <span className="text-primary font-medium">{numberedMatch[1]}.</span>
           <span>{numberedMatch[2]}</span>
         </li>
       );
@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <main id="main-content" className="pt-16">
         {/* Hero */}
         <section className="relative pt-24 pb-12 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-400/5 rounded-full blur-[100px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
             {/* Back link */}
@@ -205,7 +205,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   post.category === "Article"
                     ? "bg-blue-500/10 text-blue-400"
                     : post.category === "Newsletter"
-                    ? "bg-brand-400/10 text-brand-400"
+                    ? "bg-primary/10 text-primary"
                     : "bg-green-500/10 text-green-400"
                 }`}
               >
@@ -283,13 +283,13 @@ export default async function BlogPostPage({ params }: PageProps) {
                         relatedPost.category === "Article"
                           ? "bg-blue-500/10 text-blue-400"
                           : relatedPost.category === "Newsletter"
-                          ? "bg-brand-400/10 text-brand-400"
+                          ? "bg-primary/10 text-primary"
                           : "bg-green-500/10 text-green-400"
                       }`}
                     >
                       {relatedPost.category}
                     </span>
-                    <h3 className="font-semibold text-dark-100 group-hover:text-brand-400 transition-colors mb-2">
+                    <h3 className="font-semibold text-dark-100 group-hover:text-primary transition-colors mb-2">
                       {relatedPost.title}
                     </h3>
                     <p className="text-dark-500 text-sm line-clamp-2">
@@ -319,7 +319,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/demo"
-                className="inline-flex items-center justify-center py-3 px-8 bg-brand-400 text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-brand-400/20"
+                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20"
               >
                 Start Your Sandbox
               </Link>

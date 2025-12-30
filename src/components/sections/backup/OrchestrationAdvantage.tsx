@@ -8,7 +8,7 @@ export function OrchestrationAdvantage() {
         <SectionHeading
           title={
             <>
-              Your Gear. <span className="text-brand-400">Our Platform.</span>
+              Your Gear. <span className="text-primary">Our Platform.</span>
             </>
           }
           subtitle="Already have Ruckus, Fortinet, or Cisco? Keep it. Add OpenWiFi when you're ready. One dashboard manages everything."
@@ -32,8 +32,8 @@ export function OrchestrationAdvantage() {
               <p className="text-[10px] md:text-xs text-dark-500 uppercase tracking-wider mb-1">Your Legacy</p>
               <p className="text-sm md:text-base font-medium text-dark-200">Ruckus, Fortinet, Cisco...</p>
             </div>
-            <div className="p-4 rounded-xl bg-brand-400/10 border border-brand-400/30 shadow-lg shadow-brand-400/5">
-              <p className="text-[10px] md:text-xs text-brand-400 uppercase tracking-wider mb-1">wibipOS</p>
+            <div className="p-4 rounded-xl bg-primary/10 border border-primary/30 shadow-lg shadow-primary/5">
+              <p className="text-[10px] md:text-xs text-primary uppercase tracking-wider mb-1">wibipOS</p>
               <p className="text-sm md:text-base font-semibold text-dark-100">Single control plane</p>
             </div>
             <div className="p-4 rounded-xl bg-dark-800/40 border border-white/[0.04]">

@@ -4,6 +4,15 @@
 
 @layer base {
   :root {
+    /* ==============================================
+       PRIMARY COLOR - CHANGE THIS TO SWITCH THEMES
+       Options:
+       - Gold:  #FFC333
+       - Cyan:  #56FAF9
+       ============================================== */
+    --primary: #56FAF9;
+    --primary-rgb: 86, 250, 249;
+
     /* Background layers (creates depth) */
     --bg-base: #09090b;
     --bg-raised: #18181b;
@@ -17,7 +26,7 @@
     --border: #191720;
     --card: #0E0C12;
     --card-hover: #191720;
-    --accent: #FFC333;
+    --accent: var(--primary);
 
     /* Border opacity system */
     --border-subtle: rgba(255, 255, 255, 0.06);
@@ -25,7 +34,7 @@
     --border-strong: rgba(255, 255, 255, 0.15);
 
     /* Accent glow */
-    --accent-glow: rgba(255, 195, 51, 0.15);
+    --accent-glow: rgba(var(--primary-rgb), 0.15);
 
     /* Gradient for cards */
     --gradient-subtle: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
@@ -67,9 +76,16 @@
   /* Button styles */
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-dark-900
-           bg-brand-400 rounded-lg transition-all duration-200
-           hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2
+           rounded-lg transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2
            focus:ring-offset-dark-950 disabled:opacity-50 disabled:cursor-not-allowed;
+    background-color: var(--primary);
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-primary:focus {
+    --tw-ring-color: var(--primary);
   }
 
   .btn-secondary {
@@ -105,7 +121,8 @@
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-300 via-brand-400 to-brand-500;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--primary), var(--primary), var(--primary));
   }
 
   /* Section divider - subtle gradient line between sections */
@@ -116,13 +133,15 @@
   .section-divider::before {
     content: '';
     @apply absolute top-0 left-1/2 -translate-x-1/2 w-1/2 max-w-md h-px;
-    background: linear-gradient(90deg, transparent, rgba(255, 195, 51, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(var(--primary-rgb), 0.3), transparent);
   }
 
   /* Badge styles */
   .badge {
-    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
-           bg-brand-500/10 text-brand-400 border border-brand-500/20;
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
   }
 
   /* Stat card */

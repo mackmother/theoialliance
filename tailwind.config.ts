@@ -10,6 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Primary color - uses CSS variable for easy switching
+        primary: {
+          DEFAULT: "var(--primary)",
+          50: "rgba(var(--primary-rgb), 0.05)",
+          100: "rgba(var(--primary-rgb), 0.1)",
+          200: "rgba(var(--primary-rgb), 0.2)",
+          300: "rgba(var(--primary-rgb), 0.3)",
+          400: "var(--primary)",
+          500: "var(--primary)",
+          600: "rgba(var(--primary-rgb), 0.8)",
+        },
         // Brand colors - Gold/Amber from wibuz.com
         brand: {
           50: "#FFF9E6",
@@ -22,6 +33,19 @@ const config: Config = {
           700: "#B38724",
           800: "#99731F",
           900: "#805F1A",
+        },
+        // Accent colors - Cyan/Teal for testing
+        accent: {
+          50: "#EEFCFD",
+          100: "#D5F7FA",
+          200: "#ABF0F5",
+          300: "#81E8F0",
+          400: "#56FAF9",
+          500: "#3DD8D8",
+          600: "#2FB5B5",
+          700: "#239292",
+          800: "#186F6F",
+          900: "#0D4C4C",
         },
         // Dark theme colors - from wibuz.com
         dark: {
@@ -46,9 +70,9 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "hero-gradient":
-          "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 195, 51, 0.12), transparent)",
+          "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(var(--primary-rgb), 0.12), transparent)",
         "section-gradient":
-          "linear-gradient(to bottom, transparent, rgba(255, 195, 51, 0.03), transparent)",
+          "linear-gradient(to bottom, transparent, rgba(var(--primary-rgb), 0.03), transparent)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",

@@ -4,7 +4,7 @@ export function FinalCTA() {
   return (
     <section className="relative py-16 md:py-20 overflow-hidden">
       {/* Section divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 max-w-lg h-px bg-gradient-to-r from-transparent via-brand-400/30 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 max-w-lg h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       {/* Subtle glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-500/8 rounded-full blur-[80px]" />
@@ -16,7 +16,7 @@ export function FinalCTA() {
             {/* The killer headline */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark-50 tracking-tight mb-4 leading-tight">
               Order Today. Trial Next Week.{" "}
-              <span className="text-brand-400">Deploy This Month.</span>{" "}
+              <span className="text-primary">Deploy This Month.</span>{" "}
               Profit This Quarter.
             </h2>
 
@@ -27,15 +27,15 @@ export function FinalCTA() {
             {/* Turn-Key Kit Trifecta */}
             <div className="grid grid-cols-3 gap-3 mb-6 max-w-lg mx-auto">
               <div className="p-3 rounded-lg bg-dark-800/50 border border-white/[0.04]">
-                <div className="text-brand-400 text-xs font-semibold mb-1">Hardware</div>
+                <div className="text-primary text-xs font-semibold mb-1">Hardware</div>
                 <div className="text-xs text-dark-300">OpenLAN AP + Switch</div>
               </div>
               <div className="p-3 rounded-lg bg-dark-800/50 border border-white/[0.04]">
-                <div className="text-brand-400 text-xs font-semibold mb-1">Controller</div>
+                <div className="text-primary text-xs font-semibold mb-1">Controller</div>
                 <div className="text-xs text-dark-300">Cloud. Zero on-prem.</div>
               </div>
               <div className="p-3 rounded-lg bg-dark-800/50 border border-white/[0.04]">
-                <div className="text-brand-400 text-xs font-semibold mb-1">Your Portal</div>
+                <div className="text-primary text-xs font-semibold mb-1">Your Portal</div>
                 <div className="text-xs text-dark-300">Your brand. Your logo.</div>
               </div>
             </div>

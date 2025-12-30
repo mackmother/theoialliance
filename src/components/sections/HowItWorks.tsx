@@ -8,7 +8,7 @@ export function HowItWorks() {
           title={
             <>
               See It In Action:{" "}
-              <span className="text-brand-400">2 Minutes</span>
+              <span className="text-primary">2 Minutes</span>
             </>
           }
           subtitle="Watch how MSPs manage Ruckus, Edgecore, and OpenWiFi from one interface—with their own branding."
@@ -47,7 +47,7 @@ export function HowItWorks() {
             </div>
             <a
               href="/resources/orchestration-architecture"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-brand-400 border border-brand-400/30 rounded-lg bg-brand-400/5 hover:bg-brand-400/10 hover:border-brand-400/50 transition-all whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-primary border border-primary/30 rounded-lg bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all whitespace-nowrap"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

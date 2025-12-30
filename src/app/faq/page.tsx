@@ -121,10 +121,10 @@ export default function FAQPage() {
       <main id="main-content" className="pt-16">
         {/* Hero */}
         <section className="relative pt-24 pb-16 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-400/8 rounded-full blur-[100px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <span className="text-sm font-medium text-brand-400 uppercase tracking-wider">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
               FAQ
             </span>
 
@@ -197,7 +197,7 @@ export default function FAQPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/demo"
-                className="inline-flex items-center justify-center py-3 px-8 bg-brand-400 text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-brand-400/20"
+                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20"
               >
                 Schedule a Call
               </Link>

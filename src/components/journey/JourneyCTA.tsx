@@ -11,7 +11,7 @@ export function JourneyCTA() {
     <>
       <section className="relative py-16 md:py-20 overflow-hidden">
         {/* Section divider */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 max-w-lg h-px bg-gradient-to-r from-transparent via-brand-400/30 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 max-w-lg h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
         {/* Subtle glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-brand-500/8 rounded-full blur-[80px]" />
@@ -31,7 +31,7 @@ export function JourneyCTA() {
               <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-dark-50 tracking-tight leading-tight drop-shadow-lg">
                 Order Today. Trial Next Week.
                 <br />
-                <span className="text-brand-400">Deploy This Month.</span>
+                <span className="text-primary">Deploy This Month.</span>
                 <br />
                 Profit This Quarter.
               </h2>
@@ -42,7 +42,7 @@ export function JourneyCTA() {
               {/* Turn-Key Kit Trifecta */}
               <div className="grid grid-cols-3 gap-2 md:gap-3 mb-4 max-w-lg mx-auto">
                 <div className="p-2 md:p-3 rounded-lg bg-dark-800/70 border border-white/[0.06]">
-                  <div className="text-brand-400 text-[10px] md:text-xs font-semibold mb-0.5">
+                  <div className="text-primary text-[10px] md:text-xs font-semibold mb-0.5">
                     HARDWARE:
                   </div>
                   <div className="text-[10px] md:text-xs text-dark-300">
@@ -50,7 +50,7 @@ export function JourneyCTA() {
                   </div>
                 </div>
                 <div className="p-2 md:p-3 rounded-lg bg-dark-800/70 border border-white/[0.06]">
-                  <div className="text-brand-400 text-[10px] md:text-xs font-semibold mb-0.5">
+                  <div className="text-primary text-[10px] md:text-xs font-semibold mb-0.5">
                     CONTROLLER:
                   </div>
                   <div className="text-[10px] md:text-xs text-dark-300">
@@ -58,7 +58,7 @@ export function JourneyCTA() {
                   </div>
                 </div>
                 <div className="p-2 md:p-3 rounded-lg bg-dark-800/70 border border-white/[0.06]">
-                  <div className="text-brand-400 text-[10px] md:text-xs font-semibold mb-0.5">
+                  <div className="text-primary text-[10px] md:text-xs font-semibold mb-0.5">
                     YOUR PORTAL:
                   </div>
                   <div className="text-[10px] md:text-xs text-dark-300">

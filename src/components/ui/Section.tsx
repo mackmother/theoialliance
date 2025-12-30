@@ -39,7 +39,7 @@ export function Section({
       className={`relative ${spacingStyles[spacing]} ${backgroundStyles[background]} ${className}`}
     >
       {divider && (
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 max-w-lg h-px bg-gradient-to-r from-transparent via-brand-400/30 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 max-w-lg h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       )}
       <Container className={containerClassName}>{children}</Container>
     </section>

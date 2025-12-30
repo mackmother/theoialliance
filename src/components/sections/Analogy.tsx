@@ -30,7 +30,7 @@ export function Analogy() {
       <SectionHeading
         title={
           <>
-            <span className="text-brand-400">Why Build</span> What Already Exists?
+            <span className="text-primary">Why Build</span> What Already Exists?
           </>
         }
       />
@@ -85,7 +85,7 @@ export function Analogy() {
             <div className="p-4 text-sm font-medium text-dark-500 text-center border-l border-dark-700">
               Build It Yourself
             </div>
-            <div className="p-4 text-sm font-semibold text-brand-400 text-center border-l border-dark-700 bg-brand-500/10">
+            <div className="p-4 text-sm font-semibold text-primary text-center border-l border-dark-700 bg-brand-500/10">
               Use wibipOS ✓
             </div>
           </div>
@@ -107,7 +107,7 @@ export function Analogy() {
                 {row.buildYourself}
               </div>
               <div className="p-4 text-sm text-dark-50 text-center border-l border-dark-800 bg-brand-500/5 font-medium flex items-center justify-center gap-2">
-                <svg className="w-4 h-4 text-brand-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span>{row.wibipOS}</span>

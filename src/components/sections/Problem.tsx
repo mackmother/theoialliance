@@ -41,7 +41,7 @@ export function Problem() {
           title={
             <>
               Break Free from{" "}
-              <span className="text-brand-400">Vendor Lock-In</span>
+              <span className="text-primary">Vendor Lock-In</span>
             </>
           }
         />
@@ -51,9 +51,9 @@ export function Problem() {
           {painPoints.map((point, index) => (
             <div
               key={index}
-              className="relative p-5 md:p-6 rounded-xl bg-dark-900/60 border border-white/[0.06] hover:border-brand-400/20 transition-all duration-300 group specular-border"
+              className="relative p-5 md:p-6 rounded-xl bg-dark-900/60 border border-white/[0.06] hover:border-primary/20 transition-all duration-300 group specular-border"
             >
-              <div className="flex items-center gap-2 mb-3 text-brand-400/70 group-hover:text-brand-400 transition-colors">
+              <div className="flex items-center gap-2 mb-3 text-primary/70 group-hover:text-primary transition-colors">
                 {point.icon}
               </div>
               <div className="text-3xl md:text-4xl font-bold text-dark-50 mb-1 tabular-nums tracking-tight">
@@ -61,7 +61,7 @@ export function Problem() {
               </div>
               <p className="text-sm text-dark-500 mb-4">{point.label}</p>
               <div className="pt-4 border-t border-white/[0.06]">
-                <p className="text-sm text-brand-400 font-medium leading-snug">
+                <p className="text-sm text-primary font-medium leading-snug">
                   → {point.solution}
                 </p>
               </div>

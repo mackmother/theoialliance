@@ -25,7 +25,7 @@ export default function JamaicaCaseStudyPage() {
       <main id="main-content" className="pt-16">
         {/* Hero */}
         <section className="relative pt-24 pb-16 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-400/10 rounded-full blur-[100px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
             <Link
@@ -48,13 +48,13 @@ export default function JamaicaCaseStudyPage() {
                 unoptimized
               />
               <span className="text-2xl">🇯🇲</span>
-              <span className="text-xs px-2 py-1 bg-brand-400/10 border border-brand-400/20 rounded-full text-brand-400">
+              <span className="text-xs px-2 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary">
                 🏆 Technology Partner of the Year
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-6 leading-[1.1]" style={{ letterSpacing: '-0.02em' }}>
-              <span className="text-brand-400">364 Schools.</span> 6 Vendors.{" "}
+              <span className="text-primary">364 Schools.</span> 6 Vendors.{" "}
               <br className="hidden md:block" />
               90 Days.
             </h1>
@@ -101,7 +101,7 @@ export default function JamaicaCaseStudyPage() {
               </p>
 
               {/* Pull quote - inline, no card */}
-              <blockquote className="border-l-4 border-brand-400 pl-6 my-12">
+              <blockquote className="border-l-4 border-primary pl-6 my-12">
                 <p className="text-xl md:text-2xl text-dark-200 leading-relaxed mb-4">
                   &ldquo;We chose different vendors for different environments—Ruckus for high-density urban schools, Edgecore for rural locations. wibipOS let us manage them all the same way.&rdquo;
                 </p>

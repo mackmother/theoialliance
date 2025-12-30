@@ -56,7 +56,7 @@ function BlogCard({ post, featured = false }: { post: BlogPost; featured?: boole
                 post.category === "Article"
                   ? "bg-blue-500/10 text-blue-400"
                   : post.category === "Newsletter"
-                  ? "bg-brand-400/10 text-brand-400"
+                  ? "bg-primary/10 text-primary"
                   : "bg-green-500/10 text-green-400"
               }`}
             >
@@ -69,7 +69,7 @@ function BlogCard({ post, featured = false }: { post: BlogPost; featured?: boole
 
           {/* Title */}
           <h2
-            className={`font-bold text-dark-100 group-hover:text-brand-400 transition-colors mb-3 ${
+            className={`font-bold text-dark-100 group-hover:text-primary transition-colors mb-3 ${
               featured ? "text-xl md:text-2xl" : "text-lg"
             }`}
           >
@@ -82,7 +82,7 @@ function BlogCard({ post, featured = false }: { post: BlogPost; featured?: boole
           </p>
 
           {/* Read more */}
-          <div className="mt-4 flex items-center text-brand-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
+          <div className="mt-4 flex items-center text-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
             Read article
             <svg
               className="ml-1.5 w-4 h-4"
@@ -115,10 +115,10 @@ export default function BlogPage() {
       <main id="main-content" className="pt-16">
         {/* Hero */}
         <section className="relative pt-24 pb-16 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-400/8 rounded-full blur-[100px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <span className="text-sm font-medium text-brand-400 uppercase tracking-wider">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
               Blog
             </span>
 
@@ -186,7 +186,7 @@ export default function BlogPage() {
 
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center py-3 px-8 bg-brand-400 text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-brand-400/20"
+              className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20"
             >
               Start Your 30-Day Sandbox
             </Link>

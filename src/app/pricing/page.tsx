@@ -137,7 +137,7 @@ export default function PricingPage() {
       <main id="main-content" className="pt-16">
         {/* Hero: We Built It */}
         <section className="relative pt-24 pb-16 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-400/10 rounded-full blur-[100px]" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
             {/* Dog whistle: Call out their exact frustration */}
@@ -146,7 +146,7 @@ export default function PricingPage() {
               competitors win deals you could have had?
             </p>
 
-            <span className="text-sm font-medium text-brand-400 uppercase tracking-wider">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
               Partnership, Not Licensing
             </span>
 
@@ -156,7 +156,7 @@ export default function PricingPage() {
             >
               We Built It.
               <br />
-              <span className="bg-gradient-to-r from-brand-400 via-brand-300 to-accent-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-brand-300 to-accent-400 bg-clip-text text-transparent">
                 So You Don&apos;t Have To.
               </span>
             </h1>
@@ -170,7 +170,7 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/journey"
-                className="inline-flex items-center justify-center py-3 px-8 bg-brand-400 text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-brand-400/20"
+                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20"
               >
                 Start Trial-to-Profit
               </Link>
@@ -185,12 +185,12 @@ export default function PricingPage() {
         </section>
 
         {/* Stats: What 8 Years Means */}
-        <section className="py-12 bg-dark-900 border-y border-brand-400/20">
+        <section className="py-12 bg-dark-900 border-y border-primary/20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <div className="grid md:grid-cols-3 gap-8">
               {weBuiltIt.map((item, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-brand-400 mb-1">
+                  <div className="text-4xl md:text-5xl font-bold text-primary mb-1">
                     {item.stat}
                   </div>
                   <div className="text-dark-100 font-medium mb-2">
@@ -250,50 +250,50 @@ export default function PricingPage() {
               </div>
 
               {/* Partnership */}
-              <div className="p-8 bg-dark-800 border border-brand-400/30 rounded-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-400/5 to-transparent" />
+              <div className="p-8 bg-dark-800 border border-primary/30 rounded-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
 
                 <div className="relative z-10">
-                  <div className="text-brand-400 text-sm uppercase tracking-wider mb-6">
+                  <div className="text-primary text-sm uppercase tracking-wider mb-6">
                     The Partnership Path
                   </div>
                   <ul className="space-y-4 text-dark-200">
                     <li className="flex items-start gap-3">
-                      <span className="text-brand-400 mt-1">✓</span>
+                      <span className="text-primary mt-1">✓</span>
                       <span>
                         Production-ready in <strong>30 days</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-brand-400 mt-1">✓</span>
+                      <span className="text-primary mt-1">✓</span>
                       <span>
                         LIVE SDK Engineers handle your integrations
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-brand-400 mt-1">✓</span>
+                      <span className="text-primary mt-1">✓</span>
                       <span>
                         8 years of battle-tested infrastructure
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-brand-400 mt-1">✓</span>
+                      <span className="text-primary mt-1">✓</span>
                       <span>
                         True multi-vendor from day one
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-brand-400 mt-1">✓</span>
+                      <span className="text-primary mt-1">✓</span>
                       <span>
                         Win the next RFP <strong>this quarter</strong>
                       </span>
                     </li>
                   </ul>
-                  <div className="mt-8 pt-6 border-t border-brand-400/20">
+                  <div className="mt-8 pt-6 border-t border-primary/20">
                     <div className="text-dark-400 text-sm mb-1">The math</div>
                     <div className="text-lg text-dark-50">
                       One 500-site deal ={" "}
-                      <span className="text-brand-400 font-bold">
+                      <span className="text-primary font-bold">
                         $250K+ revenue
                       </span>
                     </div>
@@ -328,10 +328,10 @@ export default function PricingPage() {
                   key={index}
                   className="p-6 bg-dark-950 border border-white/[0.06] rounded-xl"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-brand-400/10 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                     {diff.icon === "engineers" && (
                       <svg
-                        className="w-6 h-6 text-brand-400"
+                        className="w-6 h-6 text-primary"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -346,7 +346,7 @@ export default function PricingPage() {
                     )}
                     {diff.icon === "stack" && (
                       <svg
-                        className="w-6 h-6 text-brand-400"
+                        className="w-6 h-6 text-primary"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -361,7 +361,7 @@ export default function PricingPage() {
                     )}
                     {diff.icon === "roadmap" && (
                       <svg
-                        className="w-6 h-6 text-brand-400"
+                        className="w-6 h-6 text-primary"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -378,7 +378,7 @@ export default function PricingPage() {
                   <h3 className="text-xl font-bold text-dark-50 mb-1">
                     {diff.title}
                   </h3>
-                  <p className="text-brand-400 text-sm mb-3">{diff.subtitle}</p>
+                  <p className="text-primary text-sm mb-3">{diff.subtitle}</p>
                   <p className="text-dark-400 text-sm">{diff.description}</p>
                 </div>
               ))}
@@ -408,12 +408,12 @@ export default function PricingPage() {
                   key={index}
                   className={`p-8 rounded-2xl relative ${
                     outcome.highlighted
-                      ? "bg-dark-800 border-2 border-brand-400/50"
+                      ? "bg-dark-800 border-2 border-primary/50"
                       : "bg-dark-900 border border-white/[0.06]"
                   }`}
                 >
                   {outcome.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-400 text-dark-950 text-xs font-bold uppercase rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-dark-950 text-xs font-bold uppercase rounded-full">
                       Most Common
                     </div>
                   )}
@@ -431,7 +431,7 @@ export default function PricingPage() {
                         key={idx}
                         className="flex items-start gap-2 text-dark-300 text-sm"
                       >
-                        <span className="text-brand-400">✓</span>
+                        <span className="text-primary">✓</span>
                         {unlock}
                       </li>
                     ))}
@@ -443,7 +443,7 @@ export default function PricingPage() {
                     href="/demo#schedule"
                     className={`block w-full text-center py-3 px-6 rounded-lg transition-colors ${
                       outcome.highlighted
-                        ? "bg-brand-400 text-dark-950 font-semibold hover:bg-brand-300 shadow-lg shadow-brand-400/20"
+                        ? "bg-primary text-dark-950 font-semibold hover:bg-brand-300 shadow-lg shadow-primary/20"
                         : "border border-white/[0.1] text-dark-50 hover:bg-white/[0.05]"
                     }`}
                   >
@@ -466,15 +466,15 @@ export default function PricingPage() {
                 <span className="text-dark-500">•</span>
                 <span>&ldquo;Needs a big team.&rdquo;</span>
               </div>
-              <p className="text-brand-400 font-medium mb-6">Think again.</p>
+              <p className="text-primary font-medium mb-6">Think again.</p>
 
               <blockquote className="text-lg md:text-xl text-dark-200 mb-6">
                 5-person team. Zero managed WiFi experience. Now managing{" "}
-                <span className="text-brand-400 font-semibold">
+                <span className="text-primary font-semibold">
                   1,000 schools
                 </span>{" "}
                 and{" "}
-                <span className="text-brand-400 font-semibold">
+                <span className="text-primary font-semibold">
                   10,000 network elements
                 </span>{" "}
                 nationwide.
@@ -499,7 +499,7 @@ export default function PricingPage() {
 
               <Link
                 href="/case-studies/jamaica"
-                className="inline-flex items-center gap-2 text-brand-400 text-sm mt-6 hover:underline"
+                className="inline-flex items-center gap-2 text-primary text-sm mt-6 hover:underline"
               >
                 Read the full case study
                 <svg
@@ -541,7 +541,7 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/journey"
-                className="inline-flex items-center justify-center py-3 px-8 bg-brand-400 text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-brand-400/20"
+                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20"
               >
                 Start Trial-to-Profit
               </Link>

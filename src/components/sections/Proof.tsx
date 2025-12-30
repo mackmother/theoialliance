@@ -24,7 +24,7 @@ export function Proof() {
         <SectionHeading
           title={
             <>
-              <span className="text-brand-400">Battle-Tested</span> at Carrier Scale
+              <span className="text-primary">Battle-Tested</span> at Carrier Scale
             </>
           }
         />
@@ -61,7 +61,7 @@ export function Proof() {
                   <span className="text-dark-600 text-xs">Jamaica</span>
                 </div>
 
-                <blockquote className="text-base md:text-lg text-dark-300 leading-relaxed mb-3 border-l-2 border-brand-400/30 pl-4">
+                <blockquote className="text-base md:text-lg text-dark-300 leading-relaxed mb-3 border-l-2 border-primary/30 pl-4">
                   &ldquo;wibipOS is truly the &lsquo;Red Hat&rsquo; of our network infrastructure.&rdquo;
                 </blockquote>
                 <p className="text-sm text-dark-400 mb-3">
@@ -80,7 +80,7 @@ export function Proof() {
                     { val: "6", label: "Vendors" },
                   ].map((s) => (
                     <div key={s.label} className="text-center px-4 py-2.5 bg-dark-800/40 rounded-lg border border-white/[0.04]">
-                      <div className="text-xl font-semibold text-brand-400">{s.val}</div>
+                      <div className="text-xl font-semibold text-primary">{s.val}</div>
                       <div className="text-[10px] text-dark-500 uppercase tracking-wide">{s.label}</div>
                     </div>
                   ))}

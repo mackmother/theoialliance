@@ -131,7 +131,7 @@ export function JourneyTabs() {
 
           {/* Phase info badge */}
           <div className="absolute top-6 left-6 px-4 py-2 rounded-full bg-dark-800/80 border border-white/10 text-sm font-medium text-dark-100">
-            <span className="text-brand-400">Phase {activeTab + 1}:</span>
+            <span className="text-primary">Phase {activeTab + 1}:</span>
             <span className="ml-2">{activePhase.phase}</span>
           </div>
 
@@ -186,7 +186,7 @@ export function JourneyTabs() {
                 }}
                 className={`w-2 h-2 rounded-full transition-all ${
                   activeTab === index
-                    ? "bg-brand-400 w-6"
+                    ? "bg-primary w-6"
                     : "bg-dark-600 hover:bg-dark-500"
                 }`}
                 aria-label={`View ${phase.phase} phase`}
@@ -205,7 +205,7 @@ export function JourneyTabs() {
               onClick={() => setActiveTab(index)}
               className={`relative flex-1 min-w-[120px] px-4 md:px-6 py-3 text-sm font-medium transition-all duration-300 rounded-lg whitespace-nowrap
                 ${activeTab === index
-                  ? "text-dark-900 bg-brand-400 shadow-lg shadow-brand-400/25"
+                  ? "text-dark-900 bg-primary shadow-lg shadow-primary/25"
                   : "text-dark-400 hover:text-dark-200 hover:bg-dark-800/50"
                 }`}
             >
@@ -222,7 +222,7 @@ export function JourneyTabs() {
           {/* Left - Text Content */}
           <div className="order-2 lg:order-1 lg:sticky lg:top-24">
             <div className="flex items-center gap-3 mb-4">
-              <span className="px-3 py-1.5 text-xs font-semibold rounded-full bg-brand-500/15 text-brand-400 border border-brand-500/25">
+              <span className="px-3 py-1.5 text-xs font-semibold rounded-full bg-brand-500/15 text-primary border border-brand-500/25">
                 {activePhase.days}
               </span>
               <span className="text-xs text-dark-500 uppercase tracking-wider font-medium">
@@ -247,8 +247,8 @@ export function JourneyTabs() {
               <h4 className="text-xs font-semibold text-dark-500 uppercase tracking-wider">Key Milestones</h4>
               {activePhase.milestones.map((milestone, i) => (
                 <div key={i} className="flex items-start gap-3 group">
-                  <div className="w-6 h-6 rounded-full bg-brand-400/15 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-brand-400/25 transition-colors">
-                    <svg className="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/25 transition-colors">
+                    <svg className="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -258,15 +258,15 @@ export function JourneyTabs() {
             </div>
 
             {/* Success Metric */}
-            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-brand-500/10 to-brand-400/5 border border-brand-500/20">
-              <div className="w-8 h-8 rounded-lg bg-brand-400/15 flex items-center justify-center">
-                <svg className="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-brand-500/10 to-primary/5 border border-brand-500/20">
+              <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
+                <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
               <div>
                 <span className="block text-[10px] text-dark-500 uppercase tracking-wider font-medium">Success Metric</span>
-                <span className="text-sm font-semibold text-brand-400">{activePhase.successMetric}</span>
+                <span className="text-sm font-semibold text-primary">{activePhase.successMetric}</span>
               </div>
             </div>
           </div>
@@ -275,7 +275,7 @@ export function JourneyTabs() {
           <div className="order-1 lg:order-2 flex items-center justify-center">
             <div className="relative group w-full max-w-md mx-auto">
               {/* Glow effect behind image */}
-              <div className="absolute -inset-4 bg-brand-400/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Image container */}
               <div
@@ -283,7 +283,7 @@ export function JourneyTabs() {
                 onClick={() => setLightboxOpen(true)}
               >
                 {/* Top bar decoration */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-400/40 to-transparent z-10" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent z-10" />
 
                 <div className="relative aspect-square">
                   <Image
@@ -296,12 +296,12 @@ export function JourneyTabs() {
 
                   {/* Overlay gradients for depth */}
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-950/20 via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-400/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* Phase indicator badge on image */}
                 <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-dark-950/80 backdrop-blur-sm border border-white/10 text-xs font-medium text-dark-100 z-10">
-                  <span className="text-brand-400">0{activeTab + 1}</span>
+                  <span className="text-primary">0{activeTab + 1}</span>
                   <span className="mx-1.5 text-dark-600">/</span>
                   <span>05</span>
                 </div>
@@ -339,7 +339,7 @@ export function JourneyTabs() {
             aria-label={`Go to ${phase.phase} phase`}
             className={`h-1.5 rounded-full transition-all duration-300 ${
               activeTab === index
-                ? "bg-brand-400 w-8"
+                ? "bg-primary w-8"
                 : "bg-dark-700 hover:bg-dark-600 w-1.5"
             }`}
           />

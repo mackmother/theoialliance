@@ -11,12 +11,12 @@ export function FinalCTA() {
           {/* CTA Card */}
           <div className="relative rounded-2xl border border-white/[0.06] bg-gradient-to-b from-dark-900/80 to-dark-950 p-8 md:p-12 overflow-hidden text-center">
             {/* Inner glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-brand-400/50 to-transparent" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
             {/* The killer headline */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark-50 tracking-tight mb-4 leading-tight">
               Order Today. Trial Next Week.{" "}
-              <span className="text-brand-400">Deploy This Month.</span>{" "}
+              <span className="text-primary">Deploy This Month.</span>{" "}
               Profit This Quarter.
             </h2>
 
@@ -27,15 +27,15 @@ export function FinalCTA() {
             {/* Turn-Key Kit Trifecta */}
             <div className="grid grid-cols-3 gap-3 mb-6 max-w-lg mx-auto">
               <div className="p-3 rounded-lg bg-dark-800/50 border border-white/[0.04]">
-                <div className="text-brand-400 text-xs font-semibold mb-1">Hardware</div>
+                <div className="text-primary text-xs font-semibold mb-1">Hardware</div>
                 <div className="text-[10px] text-dark-500">OpenLAN AP + Switch</div>
               </div>
               <div className="p-3 rounded-lg bg-dark-800/50 border border-white/[0.04]">
-                <div className="text-brand-400 text-xs font-semibold mb-1">Controller</div>
+                <div className="text-primary text-xs font-semibold mb-1">Controller</div>
                 <div className="text-[10px] text-dark-500">Cloud. Zero on-prem.</div>
               </div>
               <div className="p-3 rounded-lg bg-dark-800/50 border border-white/[0.04]">
-                <div className="text-brand-400 text-xs font-semibold mb-1">Your Portal</div>
+                <div className="text-primary text-xs font-semibold mb-1">Your Portal</div>
                 <div className="text-[10px] text-dark-500">Your brand. Your logo.</div>
               </div>
             </div>
@@ -43,15 +43,15 @@ export function FinalCTA() {
             {/* Timeline journey */}
             <div className="flex items-center justify-center gap-2 text-xs text-dark-500 mb-6">
               <span className="text-dark-300 font-medium">Turn-Key Kit</span>
-              <svg className="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
               <span>First Deployment</span>
-              <svg className="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
               <span>First Invoice</span>
-              <svg className="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
               <span className="text-green-400 font-medium">Profit</span>
@@ -90,7 +90,7 @@ export function FinalCTA() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
                 href="/journey"
-                className="inline-flex items-center gap-1.5 text-xs text-brand-400 hover:text-brand-300 transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs text-primary hover:text-brand-300 transition-colors"
               >
                 See the full Trial-to-Profit journey
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +115,7 @@ export function FinalCTA() {
             <p className="text-xs text-dark-600 mb-3">Not ready to start? Get the data first.</p>
             <a
               href="/resources/msp-wifi-survey"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm text-dark-400 border border-white/[0.06] rounded-full bg-dark-900/50 hover:border-brand-400/30 hover:text-dark-300 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm text-dark-400 border border-white/[0.06] rounded-full bg-dark-900/50 hover:border-primary/30 hover:text-dark-300 transition-all"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />

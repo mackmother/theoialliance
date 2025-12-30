@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Container, Button } from "@/components/ui";
 
 const navLinks = [
-  { label: "Why WiBUZ", href: "/why-wibuz" },
+  { label: "Why OIA", href: "/why-wibuz" },
   { label: "Journey", href: "/journey" },
   { label: "Pricing", href: "/pricing" },
   { label: "Case Studies", href: "/case-studies" },
@@ -20,7 +20,7 @@ export function Navbar() {
       {/* Skip to content link for keyboard users */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-brand-400 focus:text-dark-950 focus:rounded-lg focus:font-medium"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-primary focus:text-dark-950 focus:rounded-lg focus:font-medium"
       >
         Skip to content
       </a>
@@ -29,11 +29,11 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="https://framerusercontent.com/images/HXqaHEddra3gpKSB3iGCA8Bu90w.png"
-              alt="WiBUZ"
-              width={120}
-              height={40}
-              className="h-8 w-auto"
+              src="/images/logos/OAI_Logo2.png"
+              alt="Open Infrastructure Alliance"
+              width={280}
+              height={56}
+              className="h-12 w-auto"
               unoptimized
             />
           </Link>
@@ -63,7 +63,7 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-dark-400 hover:text-dark-100 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-dark-950 rounded-lg"
+            className="md:hidden p-2 text-dark-400 hover:text-dark-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark-950 rounded-lg"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}

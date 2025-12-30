@@ -23,7 +23,7 @@ export function Credibility() {
       <SectionHeading
         title={
           <>
-            <span className="text-brand-400">Battle-Tested</span> at Carrier Scale
+            <span className="text-primary">Battle-Tested</span> at Carrier Scale
           </>
         }
       />

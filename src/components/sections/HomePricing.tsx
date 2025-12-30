@@ -15,7 +15,7 @@ export function HomePricing() {
             style={{ letterSpacing: "-0.02em" }}
           >
             We Price the Partnership.{" "}
-            <span className="text-brand-400">Not the Seat.</span>
+            <span className="text-primary">Not the Seat.</span>
           </h2>
           <p className="text-dark-300 max-w-xl mx-auto">
             Just like we adapt technically to your stack, we adapt commercially to your situation.
@@ -60,8 +60,8 @@ export function HomePricing() {
         </div>
 
         {/* CTA Card */}
-        <div className="p-8 bg-dark-800 border border-brand-400/30 rounded-2xl text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-400/5 to-transparent" />
+        <div className="p-8 bg-dark-800 border border-primary/30 rounded-2xl text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
 
           <div className="relative z-10">
             <h3 className="text-xl font-bold text-dark-50 mb-2">
@@ -75,7 +75,7 @@ export function HomePricing() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/journey"
-                className="inline-flex items-center justify-center py-2.5 px-6 bg-brand-400 text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-brand-400/20 text-sm"
+                className="inline-flex items-center justify-center py-2.5 px-6 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-brand-300 transition-colors shadow-lg shadow-primary/20 text-sm"
               >
                 See the 30-Day Journey
               </Link>

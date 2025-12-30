@@ -62,7 +62,7 @@ export default function DemoPage() {
             </p>
             <div className="flex items-center justify-center gap-2 text-dark-500">
               <svg
-                className="w-5 h-5 text-brand-400"
+                className="w-5 h-5 text-primary"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -85,7 +85,7 @@ export default function DemoPage() {
             {/* Sandbox option */}
             <Card className="p-8 flex flex-col" gradient>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-400">
+                <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center text-primary">
                   <svg
                     className="w-6 h-6"
                     fill="none"
@@ -114,7 +114,7 @@ export default function DemoPage() {
                 {sandboxFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <svg
-                      className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -192,7 +192,7 @@ export default function DemoPage() {
                   {demoHighlights.map((highlight, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <svg
-                        className="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5"
+                        className="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -253,7 +253,7 @@ export default function DemoPage() {
               <div className="absolute -top-4 left-8">
                 <div className="w-12 h-12 bg-brand-500/10 rounded-full flex items-center justify-center">
                   <svg
-                    className="w-6 h-6 text-brand-400"
+                    className="w-6 h-6 text-primary"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -269,7 +269,7 @@ export default function DemoPage() {
               </blockquote>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center text-dark-950 font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-brand-600 flex items-center justify-center text-dark-950 font-bold text-lg">
                   CM
                 </div>
                 <div>
@@ -316,7 +316,7 @@ export default function DemoPage() {
                 className="inline-flex items-center gap-3 px-6 py-3 bg-brand-500/10 border border-brand-500/20 rounded-lg hover:bg-brand-500/20 transition-colors group"
               >
                 <svg
-                  className="w-6 h-6 text-brand-400"
+                  className="w-6 h-6 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -329,7 +329,7 @@ export default function DemoPage() {
                   />
                 </svg>
                 <div className="text-left">
-                  <p className="text-sm font-semibold text-dark-100 group-hover:text-brand-400 transition-colors">
+                  <p className="text-sm font-semibold text-dark-100 group-hover:text-primary transition-colors">
                     Download Full Journey Map
                   </p>
                   <p className="text-xs text-dark-500">PDF presentation</p>
@@ -338,7 +338,7 @@ export default function DemoPage() {
 
               <a
                 href="/journey"
-                className="inline-flex items-center gap-2 px-6 py-3 text-brand-400 hover:text-brand-300 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 text-primary hover:text-brand-300 transition-colors"
               >
                 View detailed journey breakdown
                 <svg

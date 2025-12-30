@@ -72,7 +72,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-brand-400">
+                <div className="text-3xl md:text-4xl font-bold text-primary">
                   {stat.value}
                 </div>
                 <div className="text-sm text-dark-500 mt-1">{stat.label}</div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
               {milestones.map((milestone, index) => (
                 <div key={index} className="flex gap-6">
                   <div className="flex-shrink-0 w-16 text-right">
-                    <span className="text-brand-400 font-bold">
+                    <span className="text-primary font-bold">
                       {milestone.year}
                     </span>
                   </div>

@@ -33,7 +33,7 @@ export function ValueProps() {
         title={
           <>
             Three Capabilities.{" "}
-            <span className="text-brand-400">Zero Rip-and-Replace.</span>
+            <span className="text-primary">Zero Rip-and-Replace.</span>
           </>
         }
       />
@@ -59,7 +59,7 @@ export function ValueProps() {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="text-base font-semibold text-dark-100 mb-2 group-hover:text-brand-400 transition-colors">
+                <h3 className="text-base font-semibold text-dark-100 mb-2 group-hover:text-primary transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-dark-500 text-sm leading-relaxed mb-3">
@@ -67,7 +67,7 @@ export function ValueProps() {
                 </p>
 
                 {/* Proof point */}
-                <div className="flex items-center gap-1.5 text-xs text-brand-400/80 mb-4">
+                <div className="flex items-center gap-1.5 text-xs text-primary/80 mb-4">
                   <svg
                     className="w-3.5 h-3.5"
                     fill="none"
@@ -84,7 +84,7 @@ export function ValueProps() {
                   {feature.proof}
                 </div>
 
-                <span className="inline-flex items-center text-xs font-semibold text-brand-400 group-hover:translate-x-1 transition-transform">
+                <span className="inline-flex items-center text-xs font-semibold text-primary group-hover:translate-x-1 transition-transform">
                   Learn more
                   <svg
                     className="ml-1.5 w-3.5 h-3.5"
@@ -124,7 +124,7 @@ export function ValueProps() {
                 <span className="text-dark-600 text-xs">Jamaica</span>
               </div>
 
-              <blockquote className="text-base md:text-lg text-dark-300 leading-relaxed mb-3 border-l-2 border-brand-400/30 pl-4">
+              <blockquote className="text-base md:text-lg text-dark-300 leading-relaxed mb-3 border-l-2 border-primary/30 pl-4">
                 &ldquo;wibipOS is truly the &lsquo;Red Hat&rsquo; of our network
                 infrastructure.&rdquo;
               </blockquote>
@@ -149,7 +149,7 @@ export function ValueProps() {
                     key={s.label}
                     className="text-center px-4 py-2.5 bg-dark-800/40 rounded-lg border border-white/[0.04]"
                   >
-                    <div className="text-xl font-semibold text-brand-400">
+                    <div className="text-xl font-semibold text-primary">
                       {s.val}
                     </div>
                     <div className="text-[10px] text-dark-500 uppercase tracking-wide">
@@ -194,9 +194,9 @@ export function ValueProps() {
         <div className="mt-6 p-4 rounded-xl bg-dark-800/30 border border-white/[0.04]">
           <p className="text-center text-sm text-dark-400">
             <span className="text-dark-200 font-medium">Proven at scale:</span>{" "}
-            <span className="text-brand-400">5,000</span> APs •{" "}
-            <span className="text-brand-400">2,000</span> Switches •{" "}
-            <span className="text-brand-400">400</span> Schools •{" "}
+            <span className="text-primary">5,000</span> APs •{" "}
+            <span className="text-primary">2,000</span> Switches •{" "}
+            <span className="text-primary">400</span> Schools •{" "}
             Nationwide • Production—Not a Pilot
           </p>
         </div>

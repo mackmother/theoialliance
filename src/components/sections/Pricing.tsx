@@ -27,17 +27,17 @@ export function Pricing() {
               key={index}
               className={`relative p-4 md:p-5 rounded-xl border transition-all duration-300
                 ${tier.highlighted
-                  ? "border-brand-400/40 bg-brand-400/5"
+                  ? "border-primary/40 bg-primary/5"
                   : "border-white/[0.06] bg-dark-900/40 hover:border-white/[0.08]"
                 }`}
             >
               {tier.highlighted && (
-                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 text-[10px] font-medium text-brand-400 bg-dark-950 border border-brand-400/30 rounded-full">
+                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 text-[10px] font-medium text-primary bg-dark-950 border border-primary/30 rounded-full">
                   Popular
                 </span>
               )}
               <h3 className="text-sm md:text-base font-semibold text-dark-100 mb-1">{tier.name}</h3>
-              <div className="text-lg md:text-xl font-bold text-brand-400">{tier.sites}</div>
+              <div className="text-lg md:text-xl font-bold text-primary">{tier.sites}</div>
               <div className="text-xs text-dark-300 mb-1">{tier.price}</div>
               <p className="text-[10px] md:text-xs text-dark-500">{tier.tagline}</p>
             </div>
