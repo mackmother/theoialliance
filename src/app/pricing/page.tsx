@@ -156,7 +156,7 @@ export default function PricingPage() {
             >
               We Built It.
               <br />
-              <span className="bg-gradient-to-r from-primary via-brand-300 to-accent-400 bg-clip-text text-transparent">
+              <span className="gradient-text">
                 So You Don&apos;t Have To.
               </span>
             </h1>
