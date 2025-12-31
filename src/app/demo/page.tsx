@@ -1,6 +1,5 @@
 import { Navbar, Footer } from "@/components/layout";
-import { Section, SectionHeading, Card, Button } from "@/components/ui";
-import Image from "next/image";
+import { Section, SectionHeading, Card, Button, ZoomableImage } from "@/components/ui";
 
 export const metadata = {
   title: "Start Trial-to-Profit | wibipOS",
@@ -298,7 +297,7 @@ export default function DemoPage() {
 
             {/* Journey Infographic */}
             <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.02] p-2 md:p-4">
-              <Image
+              <ZoomableImage
                 src="/images/screenshots/TrialToProfit01.png"
                 alt="From Trial Kit to Profit: Your 30-Day Onboarding Journey showing 5 phases - Commit, Configure, Connect, Commercialize, and Champion"
                 width={1920}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Section } from "@/components/ui";
+import { Section, ZoomableImage } from "@/components/ui";
 
 // The Transformation Story - Jamaica Case Study
 export function ProofPricing() {
@@ -21,7 +21,7 @@ export function ProofPricing() {
         {/* Hero Image - The Transformation Timeline */}
         <div className="relative mb-8">
           <div className="img-container img-shine rounded-2xl overflow-hidden">
-            <Image
+            <ZoomableImage
               src="/images/screenshots/Jamaica Rise to the Occassion.png"
               alt="MsTECH Jamaica transformation: From 5-person team with zero WiFi experience to managing 1,000 schools nationwide in 90 days"
               width={1200}

@@ -1,4 +1,4 @@
-import { Button, Container } from "@/components/ui";
+import { Button, Container, ZoomableImage } from "@/components/ui";
 import Image from "next/image";
 
 export function AllianceHero() {
@@ -109,7 +109,7 @@ export function AllianceHero() {
           {/* Journey map - consistent with other sections */}
           <div className="relative max-w-4xl mx-auto">
             <div className="img-container img-shine">
-              <Image
+              <ZoomableImage
                 src="/images/screenshots/TrialToProfit01.png"
                 alt="30-Day Trial-to-Profit Journey"
                 width={800}

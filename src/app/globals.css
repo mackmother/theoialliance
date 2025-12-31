@@ -167,6 +167,27 @@
   .logo-strip svg {
     @apply h-6 md:h-8 w-auto grayscale hover:grayscale-0 transition-all duration-200;
   }
+
+  /* Image zoom overlay - dark theme */
+  [data-rmiz-modal-overlay="visible"] {
+    background-color: rgba(9, 9, 11, 0.95) !important;
+  }
+
+  [data-rmiz-modal-img] {
+    border-radius: 0.75rem;
+  }
+
+  [data-rmiz-btn-unzoom] {
+    background-color: rgba(24, 24, 27, 0.9) !important;
+    color: #fafafa !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 9999px !important;
+    padding: 0.5rem !important;
+  }
+
+  [data-rmiz-btn-unzoom]:hover {
+    background-color: rgba(39, 39, 42, 0.9) !important;
+  }
 }
 
 @layer utilities {
