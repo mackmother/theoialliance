@@ -106,8 +106,8 @@ export function AllianceHero() {
             </Button>
           </div>
 
-          {/* Journey map - constrained to headline width */}
-          <div className="relative max-w-2xl mx-auto">
+          {/* Journey map - consistent with other sections */}
+          <div className="relative max-w-4xl mx-auto">
             <div className="img-container img-shine">
               <Image
                 src="/images/screenshots/TrialToProfit01.png"

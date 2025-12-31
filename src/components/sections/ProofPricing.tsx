@@ -6,7 +6,7 @@ import { Section } from "@/components/ui";
 export function ProofPricing() {
   return (
     <Section id="proof" background="default" spacing="lg" divider>
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header - The Challenge */}
         <div className="text-center mb-8">
           <p className="text-dark-400 text-sm mb-3 tracking-wide">

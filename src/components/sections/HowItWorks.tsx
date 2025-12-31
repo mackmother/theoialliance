@@ -3,7 +3,7 @@ import { Section, SectionHeading, YouTubeEmbed } from "@/components/ui";
 export function HowItWorks() {
   return (
     <Section id="how-it-works" spacing="md" divider>
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <SectionHeading
           title={
             <>
