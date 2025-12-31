@@ -196,20 +196,20 @@ export default function WhyWiBUZPage() {
           Framework: Design Authority - "Construct Credibility" with third-party logos and real numbers
           Short. Punchy. Numbers.
         */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 bg-dark-900/30" />
 
           <Container className="relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-dark-50 mb-8">
-                Not a Startup. Not Untested.
+                Battle-Tested. <span className="gradient-text">Now Open to MSPs.</span>
               </h2>
 
               <div className="grid grid-cols-3 gap-6 mb-10">
                 {[
-                  { stat: "$7.5M", label: "Ruckus partnership (5 years)" },
-                  { stat: "10,000+", label: "APs under management" },
-                  { stat: "10", label: "Years in production" },
+                  { stat: "10+", label: "Telcos Enabled" },
+                  { stat: "100+", label: "Use Cases Developed" },
+                  { stat: "10,000+", label: "Locations Served" },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
                     <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
@@ -239,8 +239,8 @@ export default function WhyWiBUZPage() {
                 ))}
               </div>
 
-              <p className="text-dark-500 text-sm mt-6">
-                Ruckus paid us $1.5M/year because building it themselves cost more.
+              <p className="text-dark-400 text-sm mt-6">
+                A decade of telco-grade infrastructure—now available to you.
               </p>
             </div>
           </Container>
