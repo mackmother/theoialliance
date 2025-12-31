@@ -52,12 +52,12 @@ export default function DemoPage() {
       <Navbar />
       <main className="pt-16">
         {/* Hero */}
-        <Section className="pt-24">
+        <Section className="pt-16 pb-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 tracking-tight mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-50 tracking-tight mb-4" style={{ letterSpacing: "-0.02em" }}>
               Stop Juggling 3 Vendor Dashboards
             </h1>
-            <p className="text-xl text-dark-400 max-w-2xl mx-auto mb-6">
+            <p className="text-lg md:text-xl text-dark-400 max-w-2xl mx-auto mb-4">
               Book 30 minutes. Leave with a plan to eliminate vendor chaos and manage every AP from one screen.
             </p>
             <div className="flex items-center justify-center gap-2 text-dark-500">
@@ -243,7 +243,7 @@ export default function DemoPage() {
         </Section>
 
         {/* Why MSPs Choose the Demo - Testimonial Section */}
-        <Section className="py-16">
+        <Section className="py-12 md:py-16">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-dark-50 text-center mb-12">
               Why MSPs Choose the Demo
@@ -284,11 +284,11 @@ export default function DemoPage() {
         </Section>
 
         {/* Your 30-Day Journey Section - Infographic */}
-        <Section className="py-16 md:py-20">
+        <Section className="py-12 md:py-16">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-dark-50 mb-4">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-dark-50 mb-3" style={{ letterSpacing: "-0.02em" }}>
                 Your 30-Day Journey to First Revenue
               </h2>
               <p className="text-lg text-dark-400 max-w-2xl mx-auto">
@@ -375,7 +375,7 @@ export default function DemoPage() {
         </Section>
 
         {/* Contact alternative */}
-        <Section className="pb-32">
+        <Section className="pb-16">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold text-dark-50 mb-4">
               Prefer to Talk First?

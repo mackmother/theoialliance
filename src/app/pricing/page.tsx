@@ -136,8 +136,8 @@ export default function PricingPage() {
       <Navbar />
       <main id="main-content" className="pt-16">
         {/* Hero: We Built It */}
-        <section className="relative pt-24 pb-16 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
+        <section className="relative pt-16 pb-12 bg-dark-950">
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
             {/* Dog whistle: Call out their exact frustration */}
@@ -185,7 +185,7 @@ export default function PricingPage() {
         </section>
 
         {/* Stats: What 8 Years Means */}
-        <section className="py-12 bg-dark-900 border-y border-primary/20">
+        <section className="py-10 bg-dark-900 border-y border-white/[0.06]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <div className="grid md:grid-cols-3 gap-8">
               {weBuiltIt.map((item, index) => (
@@ -204,11 +204,11 @@ export default function PricingPage() {
         </section>
 
         {/* The Real Cost: Build vs. Partner */}
-        <section className="py-16 bg-dark-950">
+        <section className="py-12 md:py-16 bg-dark-950">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <h2
-                className="text-3xl md:text-4xl font-bold text-dark-50 mb-4"
+                className="text-2xl md:text-3xl font-bold text-dark-50 mb-3"
                 style={{ letterSpacing: "-0.02em" }}
               >
                 The Real Cost of &ldquo;Building It Yourself&rdquo;
@@ -308,11 +308,11 @@ export default function PricingPage() {
         </section>
 
         {/* Differentiators: LIVE SDK, BYOTS, Dynamic Roadmap */}
-        <section className="py-16 bg-dark-900 border-y border-white/[0.06]">
+        <section className="py-12 md:py-16 bg-dark-900 border-y border-white/[0.06]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <h2
-                className="text-3xl md:text-4xl font-bold text-dark-50 mb-4"
+                className="text-2xl md:text-3xl font-bold text-dark-50 mb-3"
                 style={{ letterSpacing: "-0.02em" }}
               >
                 What You Actually Get
@@ -387,11 +387,11 @@ export default function PricingPage() {
         </section>
 
         {/* Outcomes: What You Can Achieve */}
-        <section className="py-16 bg-dark-950">
+        <section className="py-12 md:py-16 bg-dark-950">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <h2
-                className="text-3xl md:text-4xl font-bold text-dark-50 mb-4"
+                className="text-2xl md:text-3xl font-bold text-dark-50 mb-3"
                 style={{ letterSpacing: "-0.02em" }}
               >
                 What Becomes Possible
@@ -456,7 +456,7 @@ export default function PricingPage() {
         </section>
 
         {/* Social Proof */}
-        <section className="py-12 bg-dark-900 border-y border-white/[0.06]">
+        <section className="py-10 bg-dark-900 border-y border-white/[0.06]">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <div className="p-8 bg-dark-950 border border-white/[0.06] rounded-2xl">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-dark-400 mb-4">
@@ -521,18 +521,18 @@ export default function PricingPage() {
         </section>
 
         {/* CTA: Start the Conversation */}
-        <section className="py-16 bg-dark-950">
+        <section className="py-12 md:py-16 bg-dark-950">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-            <p className="text-dark-400 text-sm mb-4">
+            <p className="text-dark-400 text-sm mb-3">
               How many deals did you walk away from last quarter?
             </p>
             <h2
-              className="text-2xl md:text-3xl font-bold text-dark-50 mb-4"
+              className="text-2xl md:text-3xl font-bold text-dark-50 mb-3"
               style={{ letterSpacing: "-0.02em" }}
             >
               Let&apos;s Make Sure That Number is Zero
             </h2>
-            <p className="text-dark-400 mb-8 max-w-xl mx-auto">
+            <p className="text-dark-400 mb-6 max-w-xl mx-auto">
               We&apos;ll scope your specific needs, understand your growth
               goals, and show you exactly how the OIA helps you win every deal
               you deserve.
@@ -560,7 +560,7 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-12 pb-24 bg-dark-900">
+        <section className="py-12 pb-16 bg-dark-900">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <h2 className="text-2xl font-bold text-dark-50 mb-8 text-center">
               Common Questions

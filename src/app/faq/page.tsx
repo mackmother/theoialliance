@@ -120,7 +120,7 @@ export default function FAQPage() {
       <Navbar />
       <main id="main-content" className="pt-16">
         {/* Hero */}
-        <section className="relative pt-24 pb-16 bg-dark-950">
+        <section className="relative pt-16 pb-12 bg-dark-950">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[100px]" />
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -181,7 +181,7 @@ export default function FAQPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-dark-900">
+        <section className="py-12 md:py-16 bg-dark-900">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
             <h2
               className="text-2xl md:text-3xl font-bold text-dark-50 mb-4"
