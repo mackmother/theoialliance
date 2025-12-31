@@ -202,7 +202,7 @@ export default function WhyWiBUZPage() {
           <Container className="relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-dark-50 mb-8">
-                Battle-Tested. <span className="gradient-text">Now Open to MSPs.</span>
+                Telco Battle-Tested. <span className="gradient-text">Now Open to MSPs.</span>
               </h2>
 
               <div className="grid grid-cols-3 gap-6 mb-10">
