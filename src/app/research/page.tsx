@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Navbar, Footer } from "@/components/layout";
-import { Container, Button } from "@/components/ui";
+import { Container, Button, ReportDownloadForm } from "@/components/ui";
 
 export const metadata = {
   title: "Multi-Vendor WiFi Research | The Data Your CFO Needs",
@@ -14,79 +14,100 @@ export default function ResearchPage() {
       <Navbar />
       <main id="main-content" className="pt-16">
         {/* Hero */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
+        <section className="relative py-16 md:py-20 overflow-hidden">
           <div className="absolute inset-0 bg-hero-gradient" />
           <div className="absolute inset-0 bg-grid opacity-20" />
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/8 rounded-full blur-[120px]" />
 
           <Container className="relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              {/* Eyebrow - Third party credibility */}
-              <p className="text-dark-400 text-sm uppercase tracking-wider mb-4">
-                Independent Research from Maravedis 2024
-              </p>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
+                {/* Left Column - Content */}
+                <div>
+                  {/* Eyebrow */}
+                  <p className="text-dark-400 text-sm uppercase tracking-wider mb-4">
+                    Independent Research from Maravedis 2024
+                  </p>
 
-              {/* Headline */}
-              <h1
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-50 mb-6 leading-[1.1]"
-                style={{ letterSpacing: "-0.02em" }}
-              >
-                Your Ruckus Investment Got You Here.
-                <br />
-                <span className="gradient-text">Multi-Vendor Gets You Further.</span>
-              </h1>
+                  {/* Headline */}
+                  <h1
+                    className="text-3xl md:text-4xl font-bold text-dark-50 mb-6 leading-[1.1]"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    Your Ruckus Investment Got You Here.
+                    <br />
+                    <span className="gradient-text">Multi-Vendor Gets You Further.</span>
+                  </h1>
 
-              {/* Subhead */}
-              <p className="text-lg text-dark-300 max-w-2xl mx-auto mb-10">
-                Independent research shows 56% of MSPs want multi-vendor capability—but fear the rip-and-replace cost.
-                See how one team added 5,000 OpenLAN APs alongside their existing Ruckus fleet, managed from one dashboard.
-              </p>
+                  {/* Subhead */}
+                  <p className="text-lg text-dark-300 mb-8">
+                    Independent research shows 56% of MSPs want multi-vendor capability—but fear the rip-and-replace cost.
+                    See how one team added 5,000 OpenLAN APs alongside their existing Ruckus fleet.
+                  </p>
 
-              {/* Three Stats */}
-              <div className="grid grid-cols-3 gap-6 mb-10 max-w-lg mx-auto">
-                {[
-                  { stat: "56%", label: "want multi-vendor" },
-                  { stat: "6", label: "vendors, one dashboard" },
-                  { stat: "$180K", label: "saved vs. rip-and-replace" },
-                ].map((item, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold gradient-text mb-1">
-                      {item.stat}
-                    </div>
-                    <div className="text-dark-500 text-xs">{item.label}</div>
+                  {/* Three Stats */}
+                  <div className="grid grid-cols-3 gap-4 mb-8">
+                    {[
+                      { stat: "56%", label: "want multi-vendor" },
+                      { stat: "6", label: "vendors, one dashboard" },
+                      { stat: "$180K", label: "saved vs. rip-and-replace" },
+                    ].map((item, i) => (
+                      <div key={i} className="text-center">
+                        <div className="text-2xl md:text-3xl font-bold gradient-text mb-1">
+                          {item.stat}
+                        </div>
+                        <div className="text-dark-500 text-xs">{item.label}</div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+
+                  {/* Objection Bash Quote - Desktop only */}
+                  <blockquote className="hidden lg:block p-5 rounded-xl bg-dark-800/30 border border-white/[0.04]">
+                    <p className="text-dark-300 italic mb-3">
+                      &ldquo;We thought going multi-vendor meant replacing everything. Instead, we kept our Ruckus,
+                      added Edgecore for new builds, and now manage both from the same dashboard.&rdquo;
+                    </p>
+                    <cite className="text-dark-500 text-sm not-italic">
+                      — MSP CEO, 500+ site deployment
+                    </cite>
+                  </blockquote>
+                </div>
+
+                {/* Right Column - Form */}
+                <div className="lg:sticky lg:top-24">
+                  <div className="p-6 md:p-8 rounded-2xl bg-dark-900/80 backdrop-blur-sm border border-white/[0.08]">
+                    <div className="text-center mb-6">
+                      <h2 className="text-xl font-bold text-dark-50 mb-2">
+                        Get the Full Report
+                      </h2>
+                      <p className="text-dark-400 text-sm">
+                        The math your CFO needs to see
+                      </p>
+                    </div>
+                    <ReportDownloadForm />
+                  </div>
+                </div>
               </div>
             </div>
           </Container>
         </section>
 
-        {/* Objection Bash + What's Inside */}
+        {/* What's Inside */}
         <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-dark-900/50" />
 
           <Container className="relative z-10">
-            <div className="max-w-3xl mx-auto">
-              {/* Objection Bash Quote */}
-              <blockquote className="text-center mb-12 p-6 rounded-xl bg-dark-800/30 border border-white/[0.04]">
-                <p className="text-dark-200 text-lg md:text-xl italic mb-4">
-                  &ldquo;We thought going multi-vendor meant replacing everything. Instead, we kept our Ruckus,
-                  added Edgecore for new builds, and now manage both from the same dashboard.
-                  Our supply chain risk is gone.&rdquo;
-                </p>
-                <cite className="text-dark-400 text-sm not-italic">
-                  — MSP CEO, 500+ site deployment
-                </cite>
-              </blockquote>
-
-              {/* What's Inside */}
+            <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="text-xl md:text-2xl font-bold text-dark-50 mb-6">
+                <h2 className="text-xl md:text-2xl font-bold text-dark-50 mb-2">
                   What&apos;s in the Report
                 </h2>
+                <p className="text-dark-400 text-sm">
+                  Data-backed insights for your next board meeting
+                </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4 mb-10">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
                   {
                     title: "Why single-vendor is a supply chain risk",
@@ -102,7 +123,7 @@ export default function ResearchPage() {
                   },
                   {
                     title: "What 500 MSPs say is blocking growth",
-                    desc: "Survey data on the real challenges (it's not technology)",
+                    desc: "Survey data on the real challenges",
                   },
                   {
                     title: "The LiveSDK model",
@@ -110,7 +131,7 @@ export default function ResearchPage() {
                   },
                   {
                     title: "5-year TCO breakdown",
-                    desc: "Platform + staffing costs—the full picture",
+                    desc: "Platform + staffing—the full picture",
                   },
                 ].map((item, i) => (
                   <div
@@ -136,16 +157,6 @@ export default function ResearchPage() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* CTA */}
-              <div className="text-center">
-                <Button variant="primary" size="lg" href="/demo#schedule">
-                  Get the Report: The Math Your CFO Needs
-                </Button>
-                <p className="text-dark-500 text-xs mt-3">
-                  Free. Instant access. No sales call required.
-                </p>
               </div>
             </div>
           </Container>
@@ -217,8 +228,8 @@ export default function ResearchPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="primary" size="lg" href="/demo#schedule">
-                  Download the Report
+                <Button variant="primary" size="lg" href="#top">
+                  Get the Report
                 </Button>
                 <Button variant="secondary" href="/journey">
                   See the 30-Day Journey

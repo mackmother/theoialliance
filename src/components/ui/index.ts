@@ -11,3 +11,4 @@ export { TestimonialCard } from "./TestimonialCard";
 export { Accordion } from "./Accordion";
 export { SignupModal } from "./SignupModal";
 export { ZoomableImage } from "./ZoomableImage";
+export { ReportDownloadForm } from "./ReportDownloadForm";
