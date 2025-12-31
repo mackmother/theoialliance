@@ -233,6 +233,52 @@ export default function WhyWiBUZPage() {
         </section>
 
         {/*
+          RESEARCH TEASER - Beacon Lead Magnet
+          Framework: Content Funnel Blueprint - Drive to downloadable resource
+        */}
+        <section className="relative py-12 md:py-16 overflow-hidden">
+          <div className="absolute inset-0 bg-primary/[0.02]" />
+          <div className="absolute inset-0 border-y border-primary/10" />
+
+          <Container className="relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                {/* Stats Column */}
+                <div className="flex-shrink-0 grid grid-cols-3 gap-4 md:flex md:flex-col md:gap-3">
+                  {[
+                    { stat: "56%", label: "want multi-vendor" },
+                    { stat: "44%", label: "seeking change" },
+                    { stat: "37%", label: "blocked by talent" },
+                  ].map((item, i) => (
+                    <div key={i} className="text-center md:text-left">
+                      <span className="text-2xl font-bold gradient-text">{item.stat}</span>
+                      <span className="text-dark-500 text-xs ml-2">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Content Column */}
+                <div className="flex-1 text-center md:text-left">
+                  <p className="text-dark-400 text-xs uppercase tracking-wider mb-2">
+                    Independent Research
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-bold text-dark-50 mb-3">
+                    What 500 MSPs Say Is Blocking Growth
+                  </h3>
+                  <p className="text-dark-300 text-sm mb-4">
+                    Maravedis 2024 survey data reveals the real challenges—and how one deployment
+                    added 5,000 APs alongside existing Ruckus without rip-and-replace.
+                  </p>
+                  <Button variant="primary" href="/research">
+                    Get the Report
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/*
           ECONOMICS - Address the Fear
           Framework: Avatar Hot Buttons - "Fears" quadrant
           One section. One fear. One answer.
