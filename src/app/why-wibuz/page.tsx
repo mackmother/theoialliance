@@ -25,25 +25,6 @@ export default function WhyWiBUZPage() {
 
           <Container className="relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              {/* Instant credibility - moved UP per Design Authority principle */}
-              <div className="flex items-center justify-center gap-6 mb-8 opacity-60">
-                {[
-                  { name: "AT&T", url: "https://framerusercontent.com/images/vypGMHttHsFpjWtzjxaRzwnTkMg.png" },
-                  { name: "Verizon", url: "https://framerusercontent.com/images/PdMqdEOAhM8eNJGnVODgyMX1zwE.png" },
-                  { name: "Frontier", url: "https://framerusercontent.com/images/J6EQ6l0mfj8KgZOTvBadrIH2R08.png" },
-                ].map((logo) => (
-                  <Image
-                    key={logo.name}
-                    src={logo.url}
-                    alt={logo.name}
-                    width={60}
-                    height={20}
-                    className="h-4 md:h-5 w-auto object-contain grayscale brightness-200"
-                    unoptimized
-                  />
-                ))}
-              </div>
-
               {/* The Problem - in their words */}
               <h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-8 leading-[1.08]"
