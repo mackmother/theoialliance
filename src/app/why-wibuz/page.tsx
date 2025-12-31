@@ -105,7 +105,7 @@ export default function WhyWiBUZPage() {
               {/* One-sentence answer */}
               <p className="text-lg md:text-xl text-dark-300 max-w-2xl mx-auto mb-8">
                 Edgecore and NetExperience bring enterprise-ready OpenLAN. wibipOS brings the universal single pane of glass—
-                <span className="text-dark-100 font-medium">manage OpenLAN alongside Ruckus, Aruba, and Cisco, with the business layer to bill it all.</span>
+                <span className="text-dark-100 font-medium">manage OpenLAN alongside Ruckus, Aruba, and Cisco, with the business intelligence layer to manage, monetize, and bill it all.</span>
               </p>
 
               {/* Single CTA - "Sell the vacation, not the flight" */}
