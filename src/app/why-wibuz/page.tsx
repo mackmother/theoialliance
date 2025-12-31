@@ -46,13 +46,61 @@ export default function WhyWiBUZPage() {
 
               {/* The Problem - in their words */}
               <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-6 leading-[1.08]"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-8 leading-[1.08]"
                 style={{ letterSpacing: "-0.03em" }}
               >
                 Stuck Between Pilot
                 <br />
                 <span className="gradient-text">and Profit?</span>
               </h1>
+
+              {/* Alliance Partners - The Solution */}
+              <div className="mb-8">
+                <p className="text-dark-500 text-xs uppercase tracking-wider mb-4">The Open Infrastructure Alliance</p>
+                <div className="flex items-center justify-center gap-4 md:gap-8">
+                  {/* Edgecore */}
+                  <div className="flex flex-col items-center gap-1.5">
+                    <Image
+                      src="https://be-net.com/wp-content/uploads/2024/06/Edgecore-logo.png"
+                      alt="Edgecore"
+                      width={100}
+                      height={30}
+                      className="h-5 md:h-7 w-auto object-contain"
+                      unoptimized
+                    />
+                    <span className="text-[10px] md:text-xs text-dark-400">Hardware</span>
+                  </div>
+
+                  <span className="text-dark-500 text-lg">+</span>
+
+                  {/* NetExperience */}
+                  <div className="flex flex-col items-center gap-1.5">
+                    <Image
+                      src="https://www.netexperience.com/wp-content/uploads/2025/08/4060W.png"
+                      alt="NetExperience"
+                      width={120}
+                      height={30}
+                      className="h-5 md:h-7 w-auto object-contain"
+                      unoptimized
+                    />
+                    <span className="text-[10px] md:text-xs text-dark-400">Controller</span>
+                  </div>
+
+                  <span className="text-dark-500 text-lg">+</span>
+
+                  {/* wibipOS */}
+                  <div className="flex flex-col items-center gap-1.5">
+                    <Image
+                      src="/images/logos/wibipOS - White.svg"
+                      alt="wibipOS"
+                      width={80}
+                      height={30}
+                      className="h-5 md:h-7 w-auto object-contain"
+                    />
+                    <span className="text-[10px] md:text-xs text-dark-400">Orchestration</span>
+                  </div>
+                </div>
+              </div>
 
               {/* One-sentence answer */}
               <p className="text-lg md:text-xl text-dark-300 max-w-2xl mx-auto mb-8">
