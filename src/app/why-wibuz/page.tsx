@@ -223,6 +223,11 @@ export default function WhyWiBUZPage() {
               <p className="text-dark-400 text-sm mt-6">
                 A decade of telco-grade infrastructure—now available to you.
               </p>
+
+              {/* Legal disclaimer for Ruckus */}
+              <p className="text-dark-600 text-[10px] mt-8 max-w-xl mx-auto leading-relaxed">
+                From 2016 to 2024, CommScope acted as a reseller of WiBIP® solutions. This arrangement has ended, and WiBUZ and CommScope/Ruckus currently have no ongoing co-development or co-branding relationship. Our only affiliation is that WiBUZ remains a registered Ruckus reseller exclusively in the CALA region. All references to past collaborations are factual and do not imply any new joint venture or expanded partnership.
+              </p>
             </div>
           </Container>
         </section>
