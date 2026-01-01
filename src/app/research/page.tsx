@@ -80,7 +80,7 @@ export default function ResearchPage() {
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-20 h-14 rounded-lg bg-dark-700/50 border border-white/[0.06] flex items-center justify-center overflow-hidden">
                         <img
-                          src="/images/research/msp-challenges-infographic-thumb.png"
+                          src="/images/research/msp-challenges-infographic-thumb.jpeg"
                           alt="MSP Challenges Infographic"
                           className="w-full h-full object-cover"
                         />
