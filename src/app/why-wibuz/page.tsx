@@ -106,9 +106,9 @@ export default function WhyWiBUZPage() {
                   <div className="flex items-center gap-6">
                     <span><span className="text-dark-100 font-semibold">56%</span> <span className="text-dark-400">want multi-vendor</span></span>
                     <span className="text-dark-700">·</span>
-                    <span><span className="text-dark-100 font-semibold">37%</span> <span className="text-dark-400">stuck by skills gap</span></span>
+                    <span><span className="text-dark-100 font-semibold">44%</span> <span className="text-dark-400">unsatisfied with current vendor</span></span>
                     <span className="text-dark-700">·</span>
-                    <span><span className="text-dark-100 font-semibold">34%</span> <span className="text-dark-400">think multi-platform is too expensive</span></span>
+                    <span><span className="text-dark-100 font-semibold">37%</span> <span className="text-dark-400">blocked by talent gap</span></span>
                   </div>
                   <a href="/research" className="text-primary hover:text-primary-400 transition-colors text-sm font-medium">
                     Get the Report →
