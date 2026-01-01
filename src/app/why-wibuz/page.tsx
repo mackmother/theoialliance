@@ -102,13 +102,13 @@ export default function WhyWiBUZPage() {
               {/* Credibility Bar - Integrated into hero per "front-load credibility above the fold" */}
               <div className="mt-10 pt-8 border-t border-white/[0.06]">
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
-                  <span className="text-dark-500 text-xs uppercase tracking-wider">Maravedis 2024</span>
+                  <span className="text-dark-500 text-xs uppercase tracking-wider">Maravedis MSP Pain Point Survey</span>
                   <div className="flex items-center gap-6">
                     <span><span className="text-dark-100 font-semibold">56%</span> <span className="text-dark-400">want multi-vendor</span></span>
                     <span className="text-dark-700">·</span>
-                    <span><span className="text-dark-100 font-semibold">44%</span> <span className="text-dark-400">seeking change</span></span>
+                    <span><span className="text-dark-100 font-semibold">37%</span> <span className="text-dark-400">stuck by skills gap</span></span>
                     <span className="text-dark-700">·</span>
-                    <span><span className="text-dark-100 font-semibold">37%</span> <span className="text-dark-400">blocked by talent</span></span>
+                    <span><span className="text-dark-100 font-semibold">34%</span> <span className="text-dark-400">think multi-platform is too expensive</span></span>
                   </div>
                   <a href="/research" className="text-primary hover:text-primary-400 transition-colors text-sm font-medium">
                     Get the Report →
