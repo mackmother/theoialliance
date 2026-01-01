@@ -98,50 +98,21 @@ export default function WhyWiBUZPage() {
                   See 400 Schools Go Live
                 </Button>
               </div>
-            </div>
-          </Container>
-        </section>
 
-        {/*
-          RESEARCH TEASER - Beacon Lead Magnet (moved up for credibility-first)
-          Framework: Design Authority - "Construct Credibility" with third-party data before claims
-        */}
-        <section className="relative py-10 md:py-12 overflow-hidden">
-          <div className="absolute inset-0 bg-primary/[0.02]" />
-          <div className="absolute inset-0 border-y border-primary/10" />
-
-          <Container className="relative z-10">
-            <div className="max-w-3xl mx-auto">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                {/* Stats Column */}
-                <div className="flex-shrink-0 grid grid-cols-3 gap-4 md:flex md:flex-col md:gap-3">
-                  {[
-                    { stat: "56%", label: "want multi-vendor" },
-                    { stat: "44%", label: "seeking change" },
-                    { stat: "37%", label: "blocked by talent" },
-                  ].map((item, i) => (
-                    <div key={i} className="text-center md:text-left">
-                      <span className="text-2xl font-bold gradient-text">{item.stat}</span>
-                      <span className="text-dark-500 text-xs ml-2">{item.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Content Column */}
-                <div className="flex-1 text-center md:text-left">
-                  <p className="text-dark-400 text-xs uppercase tracking-wider mb-2">
-                    Independent Research — Maravedis 2024
-                  </p>
-                  <h3 className="text-xl md:text-2xl font-bold text-dark-50 mb-3">
-                    You&apos;re Not Alone. Here&apos;s the Data.
-                  </h3>
-                  <p className="text-dark-300 text-sm mb-4">
-                    500 MSPs surveyed. The same frustrations. The same blockers.
-                    See how one team broke through—adding 5,000 APs alongside existing Ruckus.
-                  </p>
-                  <Button variant="primary" href="/research">
-                    Get the Full Report
-                  </Button>
+              {/* Credibility Bar - Integrated into hero per "front-load credibility above the fold" */}
+              <div className="mt-10 pt-8 border-t border-white/[0.06]">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
+                  <span className="text-dark-500 text-xs uppercase tracking-wider">Maravedis 2024</span>
+                  <div className="flex items-center gap-6">
+                    <span><span className="text-dark-100 font-semibold">56%</span> <span className="text-dark-400">want multi-vendor</span></span>
+                    <span className="text-dark-700">·</span>
+                    <span><span className="text-dark-100 font-semibold">44%</span> <span className="text-dark-400">seeking change</span></span>
+                    <span className="text-dark-700">·</span>
+                    <span><span className="text-dark-100 font-semibold">37%</span> <span className="text-dark-400">blocked by talent</span></span>
+                  </div>
+                  <a href="/research" className="text-primary hover:text-primary-400 transition-colors text-sm font-medium">
+                    Get the Report →
+                  </a>
                 </div>
               </div>
             </div>
