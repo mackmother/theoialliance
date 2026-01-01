@@ -103,6 +103,52 @@ export default function WhyWiBUZPage() {
         </section>
 
         {/*
+          RESEARCH TEASER - Beacon Lead Magnet (moved up for credibility-first)
+          Framework: Design Authority - "Construct Credibility" with third-party data before claims
+        */}
+        <section className="relative py-10 md:py-12 overflow-hidden">
+          <div className="absolute inset-0 bg-primary/[0.02]" />
+          <div className="absolute inset-0 border-y border-primary/10" />
+
+          <Container className="relative z-10">
+            <div className="max-w-3xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                {/* Stats Column */}
+                <div className="flex-shrink-0 grid grid-cols-3 gap-4 md:flex md:flex-col md:gap-3">
+                  {[
+                    { stat: "56%", label: "want multi-vendor" },
+                    { stat: "44%", label: "seeking change" },
+                    { stat: "37%", label: "blocked by talent" },
+                  ].map((item, i) => (
+                    <div key={i} className="text-center md:text-left">
+                      <span className="text-2xl font-bold gradient-text">{item.stat}</span>
+                      <span className="text-dark-500 text-xs ml-2">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Content Column */}
+                <div className="flex-1 text-center md:text-left">
+                  <p className="text-dark-400 text-xs uppercase tracking-wider mb-2">
+                    Independent Research — Maravedis 2024
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-bold text-dark-50 mb-3">
+                    You&apos;re Not Alone. Here&apos;s the Data.
+                  </h3>
+                  <p className="text-dark-300 text-sm mb-4">
+                    500 MSPs surveyed. The same frustrations. The same blockers.
+                    See how one team broke through—adding 5,000 APs alongside existing Ruckus.
+                  </p>
+                  <Button variant="primary" href="/research">
+                    Get the Full Report
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/*
           FRUSTRATION → SOLUTION SECTION
           Framework: Avatar Hot Buttons - Pair each frustration with its solution (Before → After)
           "If you can describe their problem better than they can, you win their trust"
@@ -228,52 +274,6 @@ export default function WhyWiBUZPage() {
               <p className="text-dark-600 text-[10px] mt-8 max-w-xl mx-auto leading-relaxed">
                 From 2016 to 2024, CommScope acted as a reseller of WiBIP® solutions. This arrangement has ended, and WiBUZ and CommScope/Ruckus currently have no ongoing co-development or co-branding relationship. Our only affiliation is that WiBUZ remains a registered Ruckus reseller exclusively in the CALA region. All references to past collaborations are factual and do not imply any new joint venture or expanded partnership.
               </p>
-            </div>
-          </Container>
-        </section>
-
-        {/*
-          RESEARCH TEASER - Beacon Lead Magnet
-          Framework: Content Funnel Blueprint - Drive to downloadable resource
-        */}
-        <section className="relative py-12 md:py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-primary/[0.02]" />
-          <div className="absolute inset-0 border-y border-primary/10" />
-
-          <Container className="relative z-10">
-            <div className="max-w-3xl mx-auto">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                {/* Stats Column */}
-                <div className="flex-shrink-0 grid grid-cols-3 gap-4 md:flex md:flex-col md:gap-3">
-                  {[
-                    { stat: "56%", label: "want multi-vendor" },
-                    { stat: "44%", label: "seeking change" },
-                    { stat: "37%", label: "blocked by talent" },
-                  ].map((item, i) => (
-                    <div key={i} className="text-center md:text-left">
-                      <span className="text-2xl font-bold gradient-text">{item.stat}</span>
-                      <span className="text-dark-500 text-xs ml-2">{item.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Content Column */}
-                <div className="flex-1 text-center md:text-left">
-                  <p className="text-dark-400 text-xs uppercase tracking-wider mb-2">
-                    Independent Research
-                  </p>
-                  <h3 className="text-xl md:text-2xl font-bold text-dark-50 mb-3">
-                    What 500 MSPs Say Is Blocking Growth
-                  </h3>
-                  <p className="text-dark-300 text-sm mb-4">
-                    Maravedis 2024 survey data reveals the real challenges—and how one deployment
-                    added 5,000 APs alongside existing Ruckus without rip-and-replace.
-                  </p>
-                  <Button variant="primary" href="/research">
-                    Get the Report
-                  </Button>
-                </div>
-              </div>
             </div>
           </Container>
         </section>
