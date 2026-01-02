@@ -15,14 +15,15 @@ interface ButtonProps {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  // Primary CTA - Safety Orange (action, priority)
+  // Primary CTA - Warm Orange with glow
   primary:
-    "bg-accent-500 text-dark-950 font-bold hover:bg-accent-400 focus:ring-accent-500 shadow-lg shadow-accent-500/30 hover:shadow-xl hover:shadow-accent-500/50",
-  // Secondary - Signal Green border (infrastructure, stability)
+    "bg-primary-500 text-white font-bold hover:bg-primary-400 focus:ring-primary-500 shadow-[0_0_20px_rgba(255,107,53,0.4),0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(255,107,53,0.5),0_8px_25px_rgba(0,0,0,0.4)] hover:-translate-y-0.5",
+  // Secondary - Glass with purple tint
   secondary:
-    "bg-transparent text-primary border border-primary hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20 focus:ring-primary",
+    "bg-secondary-500/10 text-dark-50 border border-secondary-500/30 backdrop-blur-sm hover:bg-secondary-500/20 hover:border-secondary-500/50 hover:shadow-[0_0_20px_rgba(147,51,234,0.2)] focus:ring-secondary-500",
+  // Ghost - Subtle
   ghost:
-    "text-dark-300 hover:text-dark-100 hover:bg-dark-800/50 focus:ring-dark-500",
+    "text-dark-300 hover:text-dark-100 hover:bg-white/5 focus:ring-dark-500",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -42,7 +43,7 @@ export function Button({
   external = false,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-950 disabled:opacity-50 disabled:cursor-not-allowed";
+    "inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-900 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const combinedStyles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
 

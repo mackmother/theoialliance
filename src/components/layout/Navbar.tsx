@@ -16,11 +16,11 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-xl border-b border-dark-800/50" aria-label="Main navigation">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900/70 backdrop-blur-xl border-b border-white/[0.06]" aria-label="Main navigation">
       {/* Skip to content link for keyboard users */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-primary focus:text-dark-950 focus:rounded-lg focus:font-medium"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:font-medium"
       >
         Skip to content
       </a>
@@ -44,7 +44,7 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-dark-400 hover:text-dark-100 transition-colors"
+                className="text-sm text-dark-400 hover:text-dark-100 transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -63,7 +63,7 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-dark-400 hover:text-dark-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark-950 rounded-lg"
+            className="md:hidden p-2 text-dark-400 hover:text-dark-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark-900 rounded-lg"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -83,7 +83,7 @@ export function Navbar() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div id="mobile-menu" className="md:hidden py-4 border-t border-dark-800" role="menu">
+          <div id="mobile-menu" className="md:hidden py-4 border-t border-white/[0.06]" role="menu">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
@@ -95,7 +95,7 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 pt-4 border-t border-dark-800">
+              <div className="flex flex-col gap-2 pt-4 border-t border-white/[0.06]">
                 <Button variant="primary" href="/journey">
                   Start Trial-to-Profit
                 </Button>
