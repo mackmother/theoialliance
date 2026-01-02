@@ -72,27 +72,14 @@ export default function ResearchPage() {
           </Container>
         </section>
 
-        {/* Downloads Section - Two Column */}
+        {/* Downloads Section - 70/30 split: Form (primary) | Infographic (bonus) */}
         <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-dark-900/50" />
 
           <Container className="relative z-10">
             <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8 items-start">
-                {/* Left - Infographic */}
-                <a
-                  href="/docs/msp-ceo-challenges-infographic.png"
-                  download
-                  className="block rounded-2xl overflow-hidden border border-white/[0.08] hover:border-primary/40 transition-all hover:shadow-lg hover:shadow-primary/5"
-                >
-                  <img
-                    src="/images/research/msp-challenges-infographic-thumb.jpeg"
-                    alt="Unlock the Solution to the MSP CEO's Dilemma - Click to download infographic"
-                    className="w-full h-auto"
-                  />
-                </a>
-
-                {/* Right - Form */}
+              <div className="grid md:grid-cols-[1fr_200px] gap-8 items-start">
+                {/* Left - Form (primary, 70%) */}
                 <div className="p-6 md:p-8 rounded-2xl bg-dark-900/80 backdrop-blur-sm border border-white/[0.08]">
                   <div className="text-center mb-6">
                     <h2 className="text-xl font-bold text-dark-50 mb-2">
@@ -103,6 +90,22 @@ export default function ResearchPage() {
                     </p>
                   </div>
                   <ReportDownloadForm />
+                </div>
+
+                {/* Right - Infographic (bonus, 30%) */}
+                <div className="flex flex-col items-center">
+                  <p className="text-dark-500 text-xs uppercase tracking-wider mb-3">Free Download</p>
+                  <a
+                    href="/docs/msp-ceo-challenges-infographic.png"
+                    download
+                    className="block rounded-xl overflow-hidden border border-white/[0.08] hover:border-primary/40 transition-all hover:shadow-lg hover:shadow-primary/5"
+                  >
+                    <img
+                      src="/images/research/msp-challenges-infographic-thumb.jpeg"
+                      alt="Unlock the Solution to the MSP CEO's Dilemma - Click to download infographic"
+                      className="w-full h-auto"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
