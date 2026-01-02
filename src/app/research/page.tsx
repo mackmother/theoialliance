@@ -75,37 +75,24 @@ export default function ResearchPage() {
 
                 {/* Right Column - Downloads */}
                 <div className="lg:sticky lg:top-24 space-y-6">
-                  {/* Free Infographic - Ungated */}
-                  <div className="p-5 rounded-xl bg-dark-800/30 border border-white/[0.04]">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-20 h-14 rounded-lg bg-dark-700/50 border border-white/[0.06] flex items-center justify-center overflow-hidden">
-                        <img
-                          src="/images/research/msp-challenges-infographic-thumb.jpeg"
-                          alt="MSP Challenges Infographic"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-dark-500 text-[10px] uppercase tracking-wider mb-1">Free Download</p>
-                        <h3 className="text-dark-100 font-semibold text-sm mb-1">
-                          MSP CEO&apos;s Dilemma Infographic
-                        </h3>
-                        <p className="text-dark-400 text-xs mb-3">
-                          The top challenges in managed WiFi—visualized.
-                        </p>
-                        <a
-                          href="/docs/msp-ceo-challenges-infographic.png"
-                          download
-                          className="inline-flex items-center gap-1.5 text-primary text-xs font-medium hover:text-primary-400 transition-colors"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                          </svg>
-                          Download Infographic
-                        </a>
-                      </div>
+                  {/* Free Infographic - Ungated, clickable image */}
+                  <a
+                    href="/docs/msp-ceo-challenges-infographic.png"
+                    download
+                    className="block rounded-xl overflow-hidden border border-white/[0.08] hover:border-primary/30 transition-colors group"
+                  >
+                    <img
+                      src="/images/research/msp-challenges-infographic-thumb.jpeg"
+                      alt="MSP CEO's Dilemma: Top Challenges in Managed WiFi - Click to download"
+                      className="w-full h-auto"
+                    />
+                    <div className="p-3 bg-dark-800/50 flex items-center justify-center gap-2 text-primary text-sm font-medium group-hover:bg-primary/10 transition-colors">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                      Download Infographic
                     </div>
-                  </div>
+                  </a>
 
                   {/* Gated Whitepaper */}
                   <div className="p-6 md:p-8 rounded-2xl bg-dark-900/80 backdrop-blur-sm border border-white/[0.08]">
