@@ -79,19 +79,13 @@ export default function ResearchPage() {
                   <a
                     href="/docs/msp-ceo-challenges-infographic.png"
                     download
-                    className="block rounded-xl overflow-hidden border border-white/[0.08] hover:border-primary/30 transition-colors group"
+                    className="block rounded-2xl overflow-hidden border border-white/[0.08] hover:border-primary/40 transition-all group hover:shadow-lg hover:shadow-primary/5"
                   >
                     <img
                       src="/images/research/msp-challenges-infographic-thumb.jpeg"
-                      alt="MSP CEO's Dilemma: Top Challenges in Managed WiFi - Click to download"
+                      alt="Unlock the Solution to the MSP CEO's Dilemma - Click to download infographic"
                       className="w-full h-auto"
                     />
-                    <div className="p-3 bg-dark-800/50 flex items-center justify-center gap-2 text-primary text-sm font-medium group-hover:bg-primary/10 transition-colors">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      Download Infographic
-                    </div>
                   </a>
 
                   {/* Gated Whitepaper */}
