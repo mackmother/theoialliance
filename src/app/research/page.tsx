@@ -20,9 +20,10 @@ export default function ResearchPage() {
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/8 rounded-full blur-[120px]" />
 
           <Container className="relative z-10">
-            <div className="max-w-5xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
-                {/* Left Column - Content */}
+            <div className="max-w-6xl mx-auto">
+              {/* Top Row: 70/30 split - Content left, Infographic right */}
+              <div className="grid lg:grid-cols-[1fr_320px] gap-8 lg:gap-12 items-start mb-10">
+                {/* Left Column - Content (70%) */}
                 <div>
                   {/* Eyebrow */}
                   <p className="text-dark-400 text-sm uppercase tracking-wider mb-4">
@@ -61,8 +62,8 @@ export default function ResearchPage() {
                     ))}
                   </div>
 
-                  {/* Objection Bash Quote - Desktop only */}
-                  <blockquote className="hidden lg:block p-5 rounded-xl bg-dark-800/30 border border-white/[0.04]">
+                  {/* Objection Bash Quote */}
+                  <blockquote className="p-5 rounded-xl bg-dark-800/30 border border-white/[0.04]">
                     <p className="text-dark-300 italic mb-3">
                       &ldquo;We thought going multi-vendor meant replacing everything. Instead, we kept our Ruckus,
                       added Edgecore for new builds, and now manage both from the same dashboard.&rdquo;
@@ -73,13 +74,12 @@ export default function ResearchPage() {
                   </blockquote>
                 </div>
 
-                {/* Right Column - Downloads */}
-                <div className="lg:sticky lg:top-24 space-y-6">
-                  {/* Free Infographic - Ungated, clickable image */}
+                {/* Right Column - Infographic (30%) */}
+                <div className="lg:sticky lg:top-24">
                   <a
                     href="/docs/msp-ceo-challenges-infographic.png"
                     download
-                    className="block rounded-2xl overflow-hidden border border-white/[0.08] hover:border-primary/40 transition-all group hover:shadow-lg hover:shadow-primary/5"
+                    className="block rounded-2xl overflow-hidden border border-white/[0.08] hover:border-primary/40 transition-all hover:shadow-lg hover:shadow-primary/5"
                   >
                     <img
                       src="/images/research/msp-challenges-infographic-thumb.jpeg"
@@ -87,19 +87,21 @@ export default function ResearchPage() {
                       className="w-full h-auto"
                     />
                   </a>
+                </div>
+              </div>
 
-                  {/* Gated Whitepaper */}
-                  <div className="p-6 md:p-8 rounded-2xl bg-dark-900/80 backdrop-blur-sm border border-white/[0.08]">
-                    <div className="text-center mb-6">
-                      <h2 className="text-xl font-bold text-dark-50 mb-2">
-                        Get the Full Report
-                      </h2>
-                      <p className="text-dark-400 text-sm">
-                        The math your CFO needs to see
-                      </p>
-                    </div>
-                    <ReportDownloadForm />
+              {/* Full Width Form */}
+              <div className="max-w-2xl mx-auto">
+                <div className="p-6 md:p-8 rounded-2xl bg-dark-900/80 backdrop-blur-sm border border-white/[0.08]">
+                  <div className="text-center mb-6">
+                    <h2 className="text-xl font-bold text-dark-50 mb-2">
+                      Get the Full Report
+                    </h2>
+                    <p className="text-dark-400 text-sm">
+                      The math your CFO needs to see
+                    </p>
                   </div>
+                  <ReportDownloadForm />
                 </div>
               </div>
             </div>
