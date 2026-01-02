@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar, Footer } from "@/components/layout";
+import { Button } from "@/components/ui";
 
 export const metadata = {
   title: "Partnership | Open Infrastructure Alliance — We Built It, So You Don't Have To",
@@ -154,7 +155,7 @@ export default function PricingPage() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mt-4 mb-6"
               style={{ letterSpacing: "-0.02em" }}
             >
-              We Built It.
+              <span className="tech-swoosh-orange">We Built It.</span>
               <br />
               <span className="gradient-text">
                 So You Don&apos;t Have To.
@@ -168,23 +169,18 @@ export default function PricingPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/journey"
-                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-primary/20"
-              >
+              <Button variant="primary" size="lg" href="/journey">
                 Start Trial-to-Profit
-              </Link>
-              <Link
-                href="/demo#schedule"
-                className="inline-flex items-center justify-center py-3 px-8 border border-white/[0.1] text-dark-50 rounded-lg hover:bg-white/[0.05] transition-colors"
-              >
+              </Button>
+              <Button variant="secondary" href="/demo#schedule">
                 Talk to the Alliance
-              </Link>
+              </Button>
             </div>
           </div>
         </section>
 
-        {/* Stats: What 8 Years Means */}
+        {/* Stats: What 8 Years Means - Orange divider line */}
+        <div className="h-1 bg-gradient-to-r from-transparent via-accent-500 to-transparent" />
         <section className="py-10 bg-dark-900 border-y border-white/[0.06]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <div className="grid md:grid-cols-3 gap-8">
@@ -539,18 +535,12 @@ export default function PricingPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/journey"
-                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-primary/20"
-              >
+              <Button variant="primary" size="lg" href="/journey">
                 Start Trial-to-Profit
-              </Link>
-              <Link
-                href="/demo#schedule"
-                className="inline-flex items-center justify-center py-3 px-8 border border-white/[0.1] text-dark-50 rounded-lg hover:bg-white/[0.05] transition-colors"
-              >
+              </Button>
+              <Button variant="secondary" href="/demo#schedule">
                 Talk to the Alliance
-              </Link>
+              </Button>
             </div>
 
             <p className="text-dark-400 text-sm mt-6">
