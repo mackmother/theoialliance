@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary color - uses CSS variable for easy switching
+        // Primary color - Signal Green (infrastructure, growth, systems online)
         primary: {
           DEFAULT: "var(--primary)",
           50: "rgba(var(--primary-rgb), 0.05)",
@@ -21,7 +21,21 @@ const config: Config = {
           500: "var(--primary)",
           600: "rgba(var(--primary-rgb), 0.8)",
         },
-        // Brand colors - Gold/Amber from wibuz.com
+        // Accent color - Safety Orange (CTAs, action, priority)
+        accent: {
+          DEFAULT: "var(--accent-orange)",
+          50: "rgba(var(--accent-orange-rgb), 0.05)",
+          100: "rgba(var(--accent-orange-rgb), 0.1)",
+          200: "rgba(var(--accent-orange-rgb), 0.2)",
+          300: "rgba(var(--accent-orange-rgb), 0.3)",
+          400: "#FF6B1A",
+          500: "#FF5500",
+          600: "#E64D00",
+          700: "#CC4400",
+          800: "#B33B00",
+          900: "#993300",
+        },
+        // Brand colors - kept for backwards compatibility
         brand: {
           50: "#FFF9E6",
           100: "#FFF0C2",
@@ -34,33 +48,20 @@ const config: Config = {
           800: "#99731F",
           900: "#805F1A",
         },
-        // Accent colors - Cyan/Teal for testing
-        accent: {
-          50: "#EEFCFD",
-          100: "#D5F7FA",
-          200: "#ABF0F5",
-          300: "#81E8F0",
-          400: "#56FAF9",
-          500: "#3DD8D8",
-          600: "#2FB5B5",
-          700: "#239292",
-          800: "#186F6F",
-          900: "#0D4C4C",
-        },
-        // Dark theme colors - from wibuz.com
+        // Dark theme colors - Void Black with warm undertones
         dark: {
-          50: "#FCFDF2",
-          100: "#F5F5F5",
-          200: "#E5E5E5",
-          300: "#D5D4D6",
-          400: "#A1A1AA",
-          500: "#696969",
-          600: "#52525B",
-          700: "#3F3F46",
-          800: "#191720",
-          850: "#111111",
-          900: "#0E0C12",
-          950: "#0A0810",
+          50: "#F5F5F0",
+          100: "#E8E8E4",
+          200: "#D5D5D0",
+          300: "#B5B5B0",
+          400: "#8A8A85",
+          500: "#6B6B65",
+          600: "#4A4A45",
+          700: "#2A2A28",
+          800: "#1A1A18",
+          850: "#0D0D0C",
+          900: "#080808",
+          950: "#050505",
         },
       },
       fontFamily: {

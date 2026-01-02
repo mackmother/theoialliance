@@ -15,10 +15,12 @@ interface ButtonProps {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
+  // Primary CTA - Safety Orange (action, priority)
   primary:
-    "bg-primary text-dark-950 font-semibold hover:bg-[var(--primary-hover)] focus:ring-primary shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40",
+    "bg-accent-500 text-dark-950 font-bold hover:bg-accent-400 focus:ring-accent-500 shadow-lg shadow-accent-500/30 hover:shadow-xl hover:shadow-accent-500/50",
+  // Secondary - Signal Green border (infrastructure, stability)
   secondary:
-    "bg-dark-800 text-dark-100 border border-dark-700 hover:bg-dark-700 hover:border-dark-600 focus:ring-dark-500",
+    "bg-transparent text-primary border border-primary hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20 focus:ring-primary",
   ghost:
     "text-dark-300 hover:text-dark-100 hover:bg-dark-800/50 focus:ring-dark-500",
 };
