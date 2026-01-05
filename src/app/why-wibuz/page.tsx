@@ -1,12 +1,74 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { Navbar, Footer } from "@/components/layout";
 import { Button } from "@/components/ui";
 
+// Sound Familiar data
+const soundFamiliarItems = [
+  {
+    frustration: "I can't stitch together APs, controllers, and my billing system.",
+    solution: "OSS/BSS integration. Billing events trigger provisioning automatically.",
+    proof: "Optimum runs 50K SMBs with zero manual touch.",
+  },
+  {
+    frustration: "Where's the multi-tenant portal? The customer-facing branding?",
+    solution: "Unlimited hierarchy: MSP → Reseller → Property → Site. White-label portals per tenant.",
+    proof: "Jamaica: 6 vendors, 400 schools, one dashboard.",
+  },
+  {
+    frustration: "I don't have engineers who can customize open-source controllers.",
+    solution: "LiveSDK: 25 R&D engineers build your integrations on demand.",
+    proof: "NetExperience integration: 3 weeks, now standard.",
+  },
+  {
+    frustration: "Why trade Cisco lock-in for controller lock-in?",
+    solution: "Controller-agnostic. Ingest legacy Ruckus/Cisco via API. Add Edgecore. Same UI.",
+    proof: "Turns $200K rip-and-replace into $20K expansion.",
+  },
+];
+
 export default function WhyWiBUZPage() {
   const [showModal, setShowModal] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Swipe gesture handling for mobile Sound Familiar carousel
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50;
+
+  const goToNextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % soundFamiliarItems.length);
+  }, []);
+
+  const goToPrevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + soundFamiliarItems.length) % soundFamiliarItems.length);
+  }, []);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null;
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const isSwipe = Math.abs(distance) > minSwipeDistance;
+    if (isSwipe) {
+      if (distance > 0) {
+        goToNextSlide();
+      } else {
+        goToPrevSlide();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  }, [goToNextSlide, goToPrevSlide]);
 
   return (
     <>
@@ -245,29 +307,101 @@ export default function WhyWiBUZPage() {
               </span>
             </h2>
 
-            <div className="space-y-4">
-              {[
-                {
-                  frustration: "I can't stitch together APs, controllers, and my billing system.",
-                  solution: "OSS/BSS integration. Billing events trigger provisioning automatically.",
-                  proof: "Optimum runs 50K SMBs with zero manual touch.",
-                },
-                {
-                  frustration: "Where's the multi-tenant portal? The customer-facing branding?",
-                  solution: "Unlimited hierarchy: MSP → Reseller → Property → Site. White-label portals per tenant.",
-                  proof: "Jamaica: 6 vendors, 400 schools, one dashboard.",
-                },
-                {
-                  frustration: "I don't have engineers who can customize open-source controllers.",
-                  solution: "LiveSDK: 25 R&D engineers build your integrations on demand.",
-                  proof: "NetExperience integration: 3 weeks, now standard.",
-                },
-                {
-                  frustration: "Why trade Cisco lock-in for controller lock-in?",
-                  solution: "Controller-agnostic. Ingest legacy Ruckus/Cisco via API. Add Edgecore. Same UI.",
-                  proof: "Turns $200K rip-and-replace into $20K expansion.",
-                },
-              ].map((item, i) => (
+            {/* Mobile: Swipeable Carousel */}
+            <div
+              className="md:hidden"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              {/* Current Card */}
+              <div className="space-y-3">
+                {/* Frustration Card */}
+                <div
+                  className="p-5 rounded-xl"
+                  style={{
+                    background: 'rgba(30, 27, 38, 0.4)',
+                    border: '1px solid rgba(255, 255, 255, 0.06)',
+                  }}
+                >
+                  <span className="text-red-400/70 text-xs font-medium uppercase tracking-wider">Stuck</span>
+                  <p className="text-white/70 italic mt-1">&ldquo;{soundFamiliarItems[currentSlide].frustration}&rdquo;</p>
+                </div>
+
+                {/* Solution Card */}
+                <div
+                  className="p-5 rounded-xl"
+                  style={{
+                    background: 'rgba(240, 165, 89, 0.08)',
+                    border: '1px solid rgba(240, 165, 89, 0.15)',
+                  }}
+                >
+                  <span className="text-[#f0a559] text-xs font-medium uppercase tracking-wider">Unlocked</span>
+                  <p className="text-white/90 mt-1">{soundFamiliarItems[currentSlide].solution}</p>
+                </div>
+              </div>
+
+              {/* Navigation: Dots + Arrows */}
+              <div className="flex items-center justify-center gap-4 mt-6">
+                {/* Previous Arrow */}
+                <button
+                  onClick={goToPrevSlide}
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-all"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.08)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                  }}
+                  aria-label="Previous"
+                >
+                  <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Dot Indicators */}
+                <div className="flex items-center gap-2">
+                  {soundFamiliarItems.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentSlide(i)}
+                      className={`transition-all duration-300 rounded-full ${
+                        i === currentSlide
+                          ? 'w-6 h-2'
+                          : 'w-2 h-2 opacity-40'
+                      }`}
+                      style={{
+                        background: i === currentSlide
+                          ? 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)'
+                          : 'rgba(255, 255, 255, 0.5)',
+                      }}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Next Arrow */}
+                <button
+                  onClick={goToNextSlide}
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-all"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.08)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                  }}
+                  aria-label="Next"
+                >
+                  <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Swipe Hint */}
+              <p className="text-center text-white/30 text-xs mt-3">Swipe to explore</p>
+            </div>
+
+            {/* Desktop: Grid Layout (unchanged) */}
+            <div className="hidden md:block space-y-4">
+              {soundFamiliarItems.map((item, i) => (
                 <div
                   key={i}
                   className="grid md:grid-cols-2 gap-4 items-stretch"
