@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 const journeyPhases = [
@@ -391,6 +391,41 @@ export function JourneyCarousel() {
     };
   }, [lightboxOpen, goToPrev, goToNext]);
 
+  // Swipe gesture handling for mobile
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50; // minimum swipe distance in pixels
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null;
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    if (!touchStartX.current || !touchEndX.current) return;
+
+    const distance = touchStartX.current - touchEndX.current;
+    const isSwipe = Math.abs(distance) > minSwipeDistance;
+
+    if (isSwipe) {
+      if (distance > 0) {
+        // Swiped left -> go to next
+        goToNext();
+      } else {
+        // Swiped right -> go to prev
+        goToPrev();
+      }
+    }
+
+    // Reset
+    touchStartX.current = null;
+    touchEndX.current = null;
+  }, [goToNext, goToPrev]);
+
   const activePhase = journeyPhases[activeIndex];
 
   return (
@@ -426,6 +461,9 @@ export function JourneyCarousel() {
       <div
         className="relative flex flex-col overflow-hidden md:overflow-visible"
         style={{ perspective: '1500px' }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {/* Cards container - auto height on mobile, fixed on desktop */}
         <div className="relative min-h-0 md:h-[580px]">
