@@ -143,11 +143,19 @@ function CarouselCard({
     return 0;
   };
 
-  // On mobile, only render the center card as a normal flow element
-  // On desktop, use absolute positioning with 3D transforms
-  if (!isCenter) {
-    // Non-center cards: only visible on desktop with 3D effect
-    return (
+  // Render both mobile and desktop versions
+  // Mobile: only center card visible, normal flow
+  // Desktop: all cards with 3D transforms
+  return (
+    <>
+      {/* Mobile: only show center card in normal flow */}
+      {isCenter && (
+        <div className="md:hidden w-full max-w-[1020px] mx-auto">
+          <CardContent phase={phase} isCenter={true} onLightbox={onLightbox} />
+        </div>
+      )}
+
+      {/* Desktop: all cards with 3D carousel effect */}
       <div
         className="hidden md:block absolute left-1/2 top-0 w-full max-w-[1020px] cursor-pointer"
         style={{
@@ -157,32 +165,9 @@ function CarouselCard({
           transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
           transformStyle: 'preserve-3d',
         }}
-        onClick={onClick}
+        onClick={!isCenter ? onClick : undefined}
       >
-        <CardContent phase={phase} isCenter={false} onLightbox={onLightbox} />
-      </div>
-    );
-  }
-
-  // Center card: relative on mobile, absolute on desktop
-  return (
-    <>
-      {/* Mobile: normal flow */}
-      <div className="md:hidden w-full max-w-[1020px] mx-auto">
-        <CardContent phase={phase} isCenter={true} onLightbox={onLightbox} />
-      </div>
-      {/* Desktop: absolute positioned */}
-      <div
-        className="hidden md:block absolute left-1/2 top-0 w-full max-w-[1020px]"
-        style={{
-          transform: 'translateX(-50%) translateX(0) scale(1) rotateY(0deg)',
-          zIndex: 50,
-          opacity: 1,
-          transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-          transformStyle: 'preserve-3d',
-        }}
-      >
-        <CardContent phase={phase} isCenter={true} onLightbox={onLightbox} />
+        <CardContent phase={phase} isCenter={isCenter} onLightbox={onLightbox} />
       </div>
     </>
   );
@@ -234,7 +219,7 @@ function CardContent({
                   {phase.days}
                 </span>
                 <span className="text-xs text-white/40 uppercase tracking-wider font-medium">
-                  Phase {phase.phaseNumber} of 5
+                  Step {phase.phaseNumber} of 5
                 </span>
               </div>
 
@@ -243,7 +228,7 @@ function CardContent({
                 className="font-display text-[1.75rem] md:text-[2rem] font-bold text-white mb-2 leading-[1.1]"
                 style={{ letterSpacing: '-0.025em' }}
               >
-                {phase.phase}
+                {phase.phaseNumber}. {phase.phase}
               </h3>
 
               {/* Tagline */}

@@ -18,15 +18,15 @@ export default function JourneyPage() {
 
             {/* Headline */}
             <h1
-              className="font-display text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-bold text-white mb-10 leading-[1.05]"
+              className="font-display text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-bold text-white mb-6 leading-[1.05]"
               style={{
                 letterSpacing: '-0.025em',
                 textShadow: '0 2px 30px rgba(0,0,0,0.5)',
               }}
             >
-              Unbox. Deploy.{' '}
+              Trial to Revenue in{' '}
               <span className="relative inline-block">
-                Bill.
+                30 Days
                 {/* Curved Underline */}
                 <svg
                   className="absolute -bottom-1 left-0 w-full h-4"
@@ -34,7 +34,7 @@ export default function JourneyPage() {
                   preserveAspectRatio="none"
                 >
                   <defs>
-                    <linearGradient id="billSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id="daysSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#f0a559" />
                       <stop offset="100%" stopColor="#a93295" />
                     </linearGradient>
@@ -42,7 +42,7 @@ export default function JourneyPage() {
                   <path
                     d="M0,14 Q100,2 200,14"
                     fill="none"
-                    stroke="url(#billSwoosh)"
+                    stroke="url(#daysSwoosh)"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
@@ -52,7 +52,7 @@ export default function JourneyPage() {
 
             {/* Subheadline */}
             <p className="text-[#8B8B9A] text-base md:text-lg font-light">
-              The Alliance assigns you a single point of contact.
+              Your 5-step journey with an Alliance-assigned single point of contact.
               <br />
               <span className="text-white/80 font-medium">Dedicated to your success.</span>
             </p>
