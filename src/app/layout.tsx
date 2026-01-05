@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { PasswordGate } from "@/components/auth";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -62,7 +63,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://framerusercontent.com" />
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>{children}</body>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
+        <PasswordGate>{children}</PasswordGate>
+      </body>
     </html>
   );
 }

@@ -10,8 +10,11 @@ const journeyPhases = [
     days: "Days 0-3",
     phaseNumber: 1,
     tagline: "I'm in—show me this was the right decision",
-    description:
-      "Order confirmation triggers your welcome sequence. Your trial kit ships within 24 hours with full tracking. We schedule your kickoff call and send a pre-work questionnaire so we can tailor onboarding to your specific goals.",
+    descriptionParts: [
+      { text: "Order confirmation triggers your welcome sequence. " },
+      { text: "Your trial kit ships within 24 hours with full tracking.", highlight: true },
+      { text: " We schedule your kickoff call and send a pre-work questionnaire so we can tailor onboarding to your specific goals." },
+    ],
     milestones: [
       "Order confirmation & welcome email",
       "Trial kit ships with tracking",
@@ -27,8 +30,11 @@ const journeyPhases = [
     days: "Days 4-10",
     phaseNumber: 2,
     tagline: "It works—I can see my network in wibipOS",
-    description:
-      "Your kit arrives and we walk you through setup on the kickoff call. Within 72 hours, your first AP is online and visible in the wibipOS dashboard. You'll validate the technology works before betting a customer relationship on it.",
+    descriptionParts: [
+      { text: "Your kit arrives and we walk you through setup on the kickoff call. " },
+      { text: "Within 72 hours, your first AP is online and visible in the wibipOS dashboard.", highlight: true },
+      { text: " You'll validate the technology works before betting a customer relationship on it." },
+    ],
     milestones: [
       "Kit arrives with unboxing guide",
       "30-min kickoff call with live configuration",
@@ -44,8 +50,11 @@ const journeyPhases = [
     days: "Days 11-20",
     phaseNumber: 3,
     tagline: "It's live—real users on a real network",
-    description:
-      "Now it gets real. We help you plan and execute your first production deployment at a customer site. Real users, real traffic, real stakes. Your CSM is on standby during go-live to ensure success.",
+    descriptionParts: [
+      { text: "Now it gets real. " },
+      { text: "We help you plan and execute your first production deployment at a customer site.", highlight: true },
+      { text: " Real users, real traffic, real stakes. Your CSM is on standby during go-live to ensure success." },
+    ],
     milestones: [
       "Deployment planning call (Day 11)",
       "Site preparation with async support",
@@ -61,8 +70,11 @@ const journeyPhases = [
     days: "Days 21-30",
     phaseNumber: 4,
     tagline: "I got paid—this is a real business",
-    description:
-      "The moment of truth: generating revenue. We help you integrate billing, set up your first invoice, and confirm payment received. This is the 'first value' milestone—when you see ROI is real.",
+    descriptionParts: [
+      { text: "The moment of truth: ", highlight: true },
+      { text: "generating revenue.", highlight: true },
+      { text: " We help you integrate billing, set up your first invoice, and confirm payment received. This is the 'first value' milestone—when you see ROI is real." },
+    ],
     milestones: [
       "Billing integration call (Day 21)",
       "Invoice configuration setup",
@@ -78,8 +90,10 @@ const journeyPhases = [
     days: "Day 31+",
     phaseNumber: 5,
     tagline: "I'm sold—let me tell others",
-    description:
-      "You took a risk on OpenWiFi and won. Now we convert your success into expansion, case studies, and advocacy. Quarterly business reviews keep the partnership growing.",
+    descriptionParts: [
+      { text: "You took a calculated chance on OpenLAN and won.", highlight: true },
+      { text: " Now we convert your success into expansion, case studies, and advocacy. Quarterly business reviews keep the partnership growing." },
+    ],
     milestones: [
       "Expansion proposal presented",
       "NPS survey completed",
@@ -130,7 +144,7 @@ function CarouselCard({
 
   return (
     <div
-      className="absolute left-1/2 top-0 w-full max-w-[900px] cursor-pointer"
+      className="absolute left-1/2 top-0 w-full max-w-[1020px] cursor-pointer"
       style={{
         transform: `translateX(-50%) ${getTransform()}`,
         zIndex: getZIndex(),
@@ -194,7 +208,13 @@ function CarouselCard({
 
               {/* Description */}
               <p className="text-white/50 text-xs md:text-sm leading-relaxed mb-4">
-                {phase.description}
+                {phase.descriptionParts.map((part, i) => (
+                  part.highlight ? (
+                    <span key={i} className="text-[#f0a559] font-medium">{part.text}</span>
+                  ) : (
+                    <span key={i}>{part.text}</span>
+                  )
+                ))}
               </p>
 
               {/* Milestones */}
@@ -243,7 +263,7 @@ function CarouselCard({
 
             {/* Right - Image */}
             <div
-              className="relative rounded-xl overflow-hidden group h-full min-h-[280px] md:min-h-[340px]"
+              className="relative rounded-xl overflow-hidden group h-full min-h-[400px] md:min-h-[500px]"
               onClick={isCenter ? (e) => { e.stopPropagation(); onLightbox(); } : undefined}
               style={{
                 background: 'rgba(30, 27, 38, 0.5)',
@@ -329,7 +349,7 @@ export function JourneyCarousel() {
   const activePhase = journeyPhases[activeIndex];
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6">
+    <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6">
       {/* Lightbox Modal */}
       {lightboxOpen && (
         <div
@@ -357,80 +377,83 @@ export function JourneyCarousel() {
         </div>
       )}
 
-      {/* 3D Carousel */}
+      {/* 3D Carousel with Navigation inside */}
       <div
-        className="relative h-[480px] md:h-[520px]"
+        className="relative flex flex-col"
         style={{ perspective: '1500px' }}
       >
-        {journeyPhases.map((phase, index) => {
-          const position = getPosition(index);
-          // Only render cards within visible range
-          if (Math.abs(position) > 2) return null;
+        {/* Cards container */}
+        <div className="relative h-[520px] md:h-[580px]">
+          {journeyPhases.map((phase, index) => {
+            const position = getPosition(index);
+            // Only render cards within visible range
+            if (Math.abs(position) > 2) return null;
 
-          return (
-            <CarouselCard
-              key={phase.id}
-              phase={phase}
-              position={position}
-              onClick={() => goToIndex(index)}
-              onLightbox={() => setLightboxOpen(true)}
-            />
-          );
-        })}
-      </div>
-
-      {/* Navigation Controls */}
-      <div className="flex items-center justify-center gap-6 mt-1">
-        {/* Previous Button */}
-        <button
-          onClick={goToPrev}
-          className="p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-white/10"
-          style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-          }}
-          aria-label="Previous phase"
-        >
-          <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        {/* Dot Indicators */}
-        <div className="flex items-center gap-2">
-          {journeyPhases.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToIndex(index)}
-              className={`h-2 rounded-full transition-all duration-500 ${
-                activeIndex === index
-                  ? "w-8"
-                  : "w-2 hover:bg-white/30"
-              }`}
-              style={{
-                background: activeIndex === index
-                  ? 'linear-gradient(90deg, #f0a559, #a93295)'
-                  : 'rgba(255, 255, 255, 0.2)',
-              }}
-              aria-label={`Go to phase ${index + 1}`}
-            />
-          ))}
+            return (
+              <CarouselCard
+                key={phase.id}
+                phase={phase}
+                position={position}
+                onClick={() => goToIndex(index)}
+                onLightbox={() => setLightboxOpen(true)}
+              />
+            );
+          })}
         </div>
 
-        {/* Next Button */}
-        <button
-          onClick={goToNext}
-          className="p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-white/10"
-          style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-          }}
-          aria-label="Next phase"
-        >
-          <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+        {/* Navigation Controls - inside same container */}
+        <div className="flex items-center justify-center gap-6 mt-4">
+          {/* Previous Button */}
+          <button
+            onClick={goToPrev}
+            className="p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-white/10"
+            style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+            }}
+            aria-label="Previous phase"
+          >
+            <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Dot Indicators */}
+          <div className="flex items-center gap-2">
+            {journeyPhases.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToIndex(index)}
+                className={`h-2 rounded-full transition-all duration-500 ${
+                  activeIndex === index
+                    ? "w-8"
+                    : "w-2 hover:bg-white/30"
+                }`}
+                style={{
+                  background: activeIndex === index
+                    ? 'linear-gradient(90deg, #f0a559, #a93295)'
+                    : 'rgba(255, 255, 255, 0.2)',
+                }}
+                aria-label={`Go to phase ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={goToNext}
+            className="p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-white/10"
+            style={{
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+            }}
+            aria-label="Next phase"
+          >
+            <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );

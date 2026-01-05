@@ -13,7 +13,7 @@ export default function JourneyPage() {
       <Navbar />
       <main id="main-content">
         {/* Hero - Headline + Journey Image */}
-        <section className="relative pt-32 pb-12 overflow-hidden">
+        <section className="relative pt-32 pb-4 overflow-hidden">
           <div className="relative z-10 w-full max-w-[1000px] mx-auto px-4 sm:px-6 text-center">
 
             {/* Headline */}
@@ -60,7 +60,7 @@ export default function JourneyPage() {
         </section>
 
         {/* Journey Phases - Glass Card Carousel */}
-        <section className="relative py-12 overflow-hidden">
+        <section className="relative py-8 overflow-hidden">
           <JourneyCarousel />
         </section>
 

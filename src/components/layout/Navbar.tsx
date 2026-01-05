@@ -39,14 +39,14 @@ export function Navbar() {
         }}
       >
         <div className="flex items-center justify-between h-12 md:h-14">
-          {/* Logo - OIA Logo Image */}
+          {/* Logo - OIA Logo Image (Long version with full name) */}
           <Link href="/" className="flex items-center pl-2">
             <Image
               src="/images/logos/OIALOGOnew.png"
               alt="OIA"
-              width={80}
+              width={220}
               height={32}
-              className="h-7 w-auto"
+              className="h-8 md:h-10 w-auto"
             />
           </Link>
 

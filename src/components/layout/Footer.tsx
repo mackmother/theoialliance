@@ -110,8 +110,33 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Alliance Partners + Copyright */}
         <div className="mt-12 pt-8 border-t border-dark-800">
+          {/* Partner Logos */}
+          <div className="flex items-center justify-center gap-8 md:gap-12 mb-6">
+            <Image
+              src="/images/logos/LOGO.png"
+              alt="Edgecore Networks"
+              width={120}
+              height={30}
+              className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <Image
+              src="https://www.netexperience.com/wp-content/uploads/2025/08/4060W.png"
+              alt="NetExperience"
+              width={140}
+              height={30}
+              className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
+              unoptimized
+            />
+            <Image
+              src="/images/logos/wibipOS - White.svg"
+              alt="wibipOS"
+              width={100}
+              height={30}
+              className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity"
+            />
+          </div>
           <p className="text-sm text-dark-500 text-center">
             &copy; {new Date().getFullYear()} Open Infrastructure Alliance. All rights reserved.
           </p>

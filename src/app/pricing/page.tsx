@@ -40,6 +40,7 @@ const outcomes = [
       "One team manages everything",
     ],
     cta: "Stop losing deals to vendor lock-in",
+    level: "Achievable",
   },
   {
     title: "Compete With the Telcos",
@@ -51,6 +52,7 @@ const outcomes = [
     ],
     cta: "Become the regional powerhouse",
     highlighted: true,
+    level: "Ambitious",
   },
   {
     title: "Land National Contracts",
@@ -61,6 +63,7 @@ const outcomes = [
       "Strategic partnership SLAs",
     ],
     cta: "Play at the highest level",
+    level: "Audacious",
   },
 ];
 
@@ -117,10 +120,8 @@ export default function PricingPage() {
                       letterSpacing: '-0.025em',
                     }}
                   >
-                    We Built It.
-                    <br />
                     <span className="relative inline-block">
-                      So You Don&apos;t Have To.
+                      We Built It.
                       {/* Curved Underline - curves downward */}
                       <svg
                         className="absolute -bottom-1 left-0 w-full h-3"
@@ -142,6 +143,8 @@ export default function PricingPage() {
                         />
                       </svg>
                     </span>
+                    <br />
+                    So You Don&apos;t Have To.
                   </h1>
 
                   <p className="text-[#8B8B9A] text-base md:text-lg max-w-[380px] mb-8 font-light leading-relaxed">
@@ -464,17 +467,19 @@ export default function PricingPage() {
                       backdropFilter: 'blur(12px)',
                     }}
                   >
-                    {outcome.highlighted && (
-                      <div
-                        className="self-start px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                        style={{
-                          background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
-                          color: 'white',
-                        }}
-                      >
-                        Most Common
-                      </div>
-                    )}
+                    {/* Level Badge */}
+                    <div
+                      className="self-start px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-4"
+                      style={{
+                        background: outcome.highlighted
+                          ? 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)'
+                          : 'rgba(240, 165, 89, 0.15)',
+                        color: outcome.highlighted ? 'white' : '#f0a559',
+                        border: outcome.highlighted ? 'none' : '1px solid rgba(240, 165, 89, 0.3)',
+                      }}
+                    >
+                      {outcome.level}
+                    </div>
 
                     <h3 className="font-display text-xl font-bold text-white mb-2" style={{ letterSpacing: '-0.02em' }}>
                       {outcome.title}
