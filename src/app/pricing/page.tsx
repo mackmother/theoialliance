@@ -169,13 +169,24 @@ export default function PricingPage() {
                     </span>
                   </Link>
                 </div>
+
+                {/* Handshake Image - Mobile (below content) */}
+                <div className="md:hidden flex justify-center pb-6">
+                  <Image
+                    src="/images/screenshots/golden handshake.png"
+                    alt="Partnership"
+                    width={200}
+                    height={200}
+                    className="h-[150px] w-auto object-contain opacity-80"
+                  />
+                </div>
               </div>
             </div>
 
             {/* ============================================
                 FLOATING PROOF BAR - 50/50 overlap on card bottom
                 ============================================ */}
-            <div className="relative -mt-10 mx-auto max-w-[750px]">
+            <div className="relative -mt-8 md:-mt-10 mx-auto max-w-[750px]">
               {/* Label above the pill */}
               <p className="text-center text-[10px] font-medium tracking-[0.2em] text-white/40 uppercase mb-2">
                 Why Partner With Us
@@ -266,17 +277,19 @@ export default function PricingPage() {
 
               {/* LEFT - Build Trap Image Card */}
               <div
-                className="relative rounded-3xl overflow-hidden min-h-[400px] md:row-span-2"
+                className="relative rounded-3xl overflow-hidden md:row-span-2"
                 style={{
                   border: '1px solid rgba(255, 255, 255, 0.1)',
+                  background: 'rgba(20, 18, 25, 0.6)',
                 }}
               >
                 {/* Background Image */}
                 <Image
                   src="/images/screenshots/BuildTrap.png"
                   alt="The Build Trap vs Partnership Path"
-                  fill
-                  className="object-cover"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-contain"
                   priority
                 />
               </div>

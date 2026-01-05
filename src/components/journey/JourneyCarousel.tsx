@@ -120,6 +120,7 @@ function CarouselCard({
   const isCenter = position === 0;
 
   // Calculate transforms based on position
+  // On mobile, only show centered card (no 3D effect)
   const getTransform = () => {
     if (position === 0) return 'translateX(0) scale(1) rotateY(0deg)';
     if (position === -1) return 'translateX(-75%) scale(0.85) rotateY(25deg)';
@@ -142,19 +143,63 @@ function CarouselCard({
     return 0;
   };
 
+  // On mobile, only render the center card as a normal flow element
+  // On desktop, use absolute positioning with 3D transforms
+  if (!isCenter) {
+    // Non-center cards: only visible on desktop with 3D effect
+    return (
+      <div
+        className="hidden md:block absolute left-1/2 top-0 w-full max-w-[1020px] cursor-pointer"
+        style={{
+          transform: `translateX(-50%) ${getTransform()}`,
+          zIndex: getZIndex(),
+          opacity: getOpacity(),
+          transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+          transformStyle: 'preserve-3d',
+        }}
+        onClick={onClick}
+      >
+        <CardContent phase={phase} isCenter={false} onLightbox={onLightbox} />
+      </div>
+    );
+  }
+
+  // Center card: relative on mobile, absolute on desktop
   return (
-    <div
-      className="absolute left-1/2 top-0 w-full max-w-[1020px] cursor-pointer"
-      style={{
-        transform: `translateX(-50%) ${getTransform()}`,
-        zIndex: getZIndex(),
-        opacity: getOpacity(),
-        transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-        transformStyle: 'preserve-3d',
-        pointerEvents: isCenter ? 'auto' : 'auto',
-      }}
-      onClick={!isCenter ? onClick : undefined}
-    >
+    <>
+      {/* Mobile: normal flow */}
+      <div className="md:hidden w-full max-w-[1020px] mx-auto">
+        <CardContent phase={phase} isCenter={true} onLightbox={onLightbox} />
+      </div>
+      {/* Desktop: absolute positioned */}
+      <div
+        className="hidden md:block absolute left-1/2 top-0 w-full max-w-[1020px]"
+        style={{
+          transform: 'translateX(-50%) translateX(0) scale(1) rotateY(0deg)',
+          zIndex: 50,
+          opacity: 1,
+          transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+          transformStyle: 'preserve-3d',
+        }}
+      >
+        <CardContent phase={phase} isCenter={true} onLightbox={onLightbox} />
+      </div>
+    </>
+  );
+}
+
+// Extracted card content to avoid duplication
+function CardContent({
+  phase,
+  isCenter,
+  onLightbox,
+}: {
+  phase: typeof journeyPhases[0];
+  isCenter: boolean;
+  onLightbox: () => void;
+}) {
+  return (
+    <>
       {/* Gradient Border */}
       <div
         className="rounded-[28px] p-[2px]"
@@ -300,7 +345,7 @@ function CarouselCard({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -379,11 +424,11 @@ export function JourneyCarousel() {
 
       {/* 3D Carousel with Navigation inside */}
       <div
-        className="relative flex flex-col"
+        className="relative flex flex-col overflow-hidden md:overflow-visible"
         style={{ perspective: '1500px' }}
       >
-        {/* Cards container */}
-        <div className="relative h-[520px] md:h-[580px]">
+        {/* Cards container - auto height on mobile, fixed on desktop */}
+        <div className="relative min-h-0 md:h-[580px]">
           {journeyPhases.map((phase, index) => {
             const position = getPosition(index);
             // Only render cards within visible range
