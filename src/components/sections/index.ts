@@ -1,5 +1,6 @@
 export { Hero } from "./Hero";
 export { AllianceHero } from "./AllianceHero";
+export { MangeoHero } from "./MangeoHero";
 export { HowItWorks } from "./HowItWorks";
 export { ProofPricing } from "./ProofPricing";
 export { FinalCTA } from "./FinalCTA";

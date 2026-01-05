@@ -1,212 +1,334 @@
-import { Navbar, Footer } from "@/components/layout";
-import { Accordion } from "@/components/ui";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import { Navbar, Footer } from "@/components/layout";
 
-export const metadata = {
-  title: "FAQ | wibipOS — Your Questions Answered",
-  description:
-    "Common questions about wibipOS, multi-vendor Wi-Fi management, pricing, integrations, and how we help MSPs win more deals.",
-};
-
-const lockInFaqs = [
+const concerns = [
   {
-    question: "How is wibipOS different from RGNETs, RoamingIQ, or Cloud4Wi?",
-    answer:
-      "Those platforms often focus on captive portal features, analytics, or single-vertical workflows. wibipOS is a multi-service OS that unifies switching, firewalls, IoT, and advanced orchestration across multiple hardware vendors. We're not a portal layer—we're the control plane that lets you manage any vendor from one dashboard.",
+    category: "Pricing & Investment",
+    items: [
+      {
+        question: "Why don't you publish prices?",
+        answer:
+          "Because we price partnerships, not licenses. Your investment depends on your scale, integration complexity, and growth trajectory. We'll scope your specific needs and provide a clear proposal—typically within 48 hours of our first conversation.",
+      },
+      {
+        question: "How does the ROI math work?",
+        answer:
+          "A 500-location deal generates $250K+ in annual revenue. If your partnership fee delivers access to deals like that, the math is simple. We structure partnerships so we only win when you win—our incentives are aligned.",
+      },
+      {
+        question: "What's the 30-day Trial-to-Profit?",
+        answer:
+          "Full platform access. Real hardware integration. Production-ready deployment. You'll know within 30 days whether the OIA helps you win. No credit card. No contracts. Ruckus MSPs: 15-minute setup.",
+      },
+      {
+        question: "Is wibipOS just another SaaS with per-AP pricing?",
+        answer:
+          "We offer partnership models, not just subscriptions. Pricing depends on your scale, integration needs, and business model. Some partners prefer revenue share, others prefer flat fees. We'll design a structure that aligns our success with yours.",
+      },
+    ],
   },
   {
-    question: "Don't we end up locked in if wibipOS raises prices?",
-    answer:
-      "Your hardware remains yours. wibipOS orchestrates your existing gear—we don't own your APs, switches, or customer relationships. If you ever leave, your hardware still works with native vendor tools. Our business model depends on your success, not on trapping you.",
+    category: "Technical & Integration",
+    items: [
+      {
+        question: "What does 'LIVE SDK Engineers' actually mean?",
+        answer:
+          "Our engineers become an extension of your team. They integrate your specific tech stack, build custom workflows, and solve the edge cases that generic platforms can't handle. Think of it as having a senior dev team on retainer—without the hiring, management, or overhead.",
+      },
+      {
+        question: "What if you don't support our hardware vendor?",
+        answer:
+          "We've integrated 12+ vendors already including Ruckus, Edgecore, Fortinet, Cisco Meraki, Aruba, and NetExperience. If yours isn't on the list, our LIVE SDK team can add support in 2-4 weeks. We'll scope the integration before you commit—no surprises.",
+      },
+      {
+        question: "We already have vendor portals. Why add another tool?",
+        answer:
+          "You have portals. But are you winning multi-vendor RFPs? Most MSPs lose 2-3 deals per quarter because they can't support mixed hardware. One won deal typically covers your entire partnership investment.",
+      },
+      {
+        question: "Does wibipOS support Passpoint and advanced Wi-Fi features?",
+        answer:
+          "Yes. We support Passpoint (Hotspot 2.0), OpenRoaming, captive portals, RADIUS integration, and advanced RF management. Feature availability depends on underlying hardware capabilities.",
+      },
+      {
+        question: "What limitations does wibipOS have?",
+        answer:
+          "We're only as capable as the hardware allows. Some legacy devices have limited API support. We'll tell you upfront during sandbox evaluation what's possible with your specific gear—no surprises after you commit.",
+      },
+    ],
   },
   {
-    question: "Why not hire in-house devs so we own all IP?",
-    answer:
-      "You can—expect 18-24 months and $500K-$2M to reach production parity with what we offer today. Most MSPs find that timeline means lost deals. Our partners get multi-vendor capability in 30 days while keeping full control of their customer relationships and branding.",
+    category: "Build vs. Partner",
+    items: [
+      {
+        question: "How is this different from just hiring developers?",
+        answer:
+          "A senior network engineer costs $150K+/year plus benefits and takes 6 months to ramp. Our team has 8 years of production experience across 100+ integrations. You get day-one expertise on complex problems we've solved before—at a fraction of the cost.",
+      },
+      {
+        question: "Why not build our own platform?",
+        answer:
+          "You could. Budget 18-24 months and $500K-$2M in engineering salaries. You'll still be single-vendor when you ship. Meanwhile, every RFP you lose to multi-vendor requirements goes to a competitor. The opportunity cost is the real killer.",
+      },
+      {
+        question: "What about vendor lock-in with OIA?",
+        answer:
+          "We're controller-agnostic—that's the whole point. Ingest legacy Ruckus/Cisco via API. Add Edgecore. Same UI. Your data stays yours. Your hardware remains yours. We orchestrate; we don't trap. If you ever leave, your hardware still works with native vendor tools.",
+      },
+      {
+        question: "How do I stay unique if modules are shared?",
+        answer:
+          "The platform is shared. Your differentiation comes from your service delivery, customer relationships, vertical expertise, and white-label branding. We provide the infrastructure so you can focus on what actually wins deals—not rebuilding Wi-Fi management from scratch.",
+      },
+    ],
   },
   {
-    question: "How do I stay unique if modules are shared?",
-    answer:
-      "The platform is shared. Your differentiation comes from your service delivery, customer relationships, vertical expertise, and white-label branding. We provide the infrastructure so you can focus on what actually wins deals—not rebuilding Wi-Fi management from scratch.",
-  },
-  {
-    question: "Is wibipOS just another SaaS with per-AP or per-site pricing?",
-    answer:
-      "We offer partnership models, not just subscriptions. Pricing depends on your scale, integration needs, and business model. Some partners prefer revenue share, others prefer flat fees. We'll design a structure that aligns our success with yours.",
-  },
-  {
-    question: "Are you an R&D partner or a SaaS vendor?",
-    answer:
-      "Both. Our LiveSDK team works alongside your engineers to integrate new vendors and customize workflows. You get the speed of SaaS with the flexibility of a development partner. That's how we helped 6 Tier 1 telcos and dozens of MSPs go live.",
-  },
-  {
-    question: "How do I get started?",
-    answer:
-      "Start with a 30-day sandbox—full Foundation-tier access, pre-integrated with Ruckus, OpenWiFi, and Actiontec. Point your test APs to our controllers and see if it fits. No credit card, no contracts. Ruckus MSPs typically go live in 15 minutes.",
+    category: "Getting Started",
+    items: [
+      {
+        question: "How long until we're production-ready?",
+        answer:
+          "30 days from trial kit to your first customer invoice. That's not marketing speak—MsTECH Jamaica went from zero managed WiFi experience to 1,000 schools in production.",
+      },
+      {
+        question: "What do we need to get started?",
+        answer:
+          "A conversation. Tell us your current stack, your pain points, and where you want to go. We'll scope a partnership that makes sense—or tell you honestly if we're not the right fit.",
+      },
+      {
+        question: "Who do we talk to?",
+        answer:
+          "You'll speak directly with our partnership team—technical people who understand MSP operations, not salespeople reading scripts. Schedule a call or start the 30-day journey and we'll reach out.",
+      },
+      {
+        question: "Where has wibipOS been deployed?",
+        answer:
+          "10,000+ locations across 6 Tier 1 telcos (AT&T, Verizon, Frontier, Cox, Optimum, Mediacom), national education networks (Jamaica's 1,000-school initiative), and dozens of regional MSPs. We've logged 350,000+ development hours over 10 years.",
+      },
+    ],
   },
 ];
 
-const generalFaqs = [
-  {
-    question: "What is wibipOS, and who is it for?",
-    answer:
-      "wibipOS is a vendor-agnostic, cloud-based platform designed for MSPs and telcos who need to manage multi-vendor Wi-Fi networks from a single dashboard. If you're tired of saying 'we don't support that vendor' and losing RFPs, wibipOS is for you.",
-  },
-  {
-    question: "How does wibipOS handle vendor lock-in issues?",
-    answer:
-      "We sit above vendor-specific controllers, providing a unified API and dashboard. Your hardware runs native firmware or OpenWiFi—either way, you're not dependent on any single vendor's cloud. Add or remove vendors without rebuilding your management stack.",
-  },
-  {
-    question: "Can wibipOS consolidate multi-vendor networks?",
-    answer:
-      "Yes—that's our core capability. We currently support 12+ vendors including Ruckus, Edgecore, Fortinet, Cisco Meraki, Aruba, NetExperience, and more. Our LiveSDK team can integrate new vendors in 2-4 weeks.",
-  },
-  {
-    question: "What customization capabilities does wibipOS offer?",
-    answer:
-      "Full white-label branding, custom workflows, role-based access control, API integrations with your existing tools (PSA, billing, monitoring), and configurable alerting. Growth and Enterprise tiers include dedicated customization hours.",
-  },
-  {
-    question: "What are the primary benefits of using wibipOS?",
-    answer:
-      "Win multi-vendor RFPs you're currently losing. Reduce operational complexity with one dashboard. Deploy faster with pre-built integrations. Scale without hiring specialized engineers for each vendor. Our partners report 40% faster deployments and measurably higher win rates.",
-  },
-  {
-    question: "Does wibipOS support Passpoint and advanced Wi-Fi features?",
-    answer:
-      "Yes. We support Passpoint (Hotspot 2.0), OpenRoaming, captive portals, RADIUS integration, and advanced RF management. Feature availability depends on underlying hardware capabilities.",
-  },
-  {
-    question: "What limitations does wibipOS have?",
-    answer:
-      "We're only as capable as the hardware allows. Some legacy devices have limited API support. We'll tell you upfront during sandbox evaluation what's possible with your specific gear—no surprises after you commit.",
-  },
-  {
-    question: "How does wibipOS improve operational efficiency?",
-    answer:
-      "Single-pane-of-glass management eliminates context switching between vendor portals. Bulk operations, templated configurations, and automated workflows reduce manual tasks. Our partners report 60% reduction in configuration time.",
-  },
-  {
-    question: "Can wibipOS support diverse business models?",
-    answer:
-      "Yes. We support MSP multi-tenant models, enterprise single-tenant deployments, and hybrid approaches. White-label portals let you resell to sub-MSPs. Billing integrations support per-AP, per-site, or custom pricing.",
-  },
-  {
-    question: "What kind of technical support does wibipOS offer?",
-    answer:
-      "All tiers include 24/7 technical support and onboarding assistance. Growth and Enterprise tiers add priority response times, dedicated success managers, and direct access to our engineering team for complex integrations.",
-  },
-  {
-    question: "What are the financial implications of adopting wibipOS?",
-    answer:
-      "The math is simple: one won multi-vendor deal typically covers a full year of partnership fees. Compare that to $500K+ and 18+ months to build in-house. Most partners see positive ROI within their first quarter.",
-  },
-  {
-    question: "Where has wibipOS been deployed?",
-    answer:
-      "10,000+ locations across 6 Tier 1 telcos (AT&T, Verizon, Frontier, Cox, Optimum, Mediacom), national education networks (Jamaica's 1,000-school initiative), and dozens of regional MSPs. We've logged 350,000+ development hours over 10 years.",
-  },
-  {
-    question: "What verticals and applications does wibipOS support?",
-    answer:
-      "MDU (multi-dwelling units), hospitality, education, healthcare, retail, enterprise campuses, and smart city deployments. Our partners use wibipOS for managed Wi-Fi, guest networks, IoT connectivity, and carrier-grade hotspots.",
-  },
-];
+function AccordionItem({
+  question,
+  answer,
+  isOpen,
+  onClick,
+}: {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <div
+      className="rounded-xl overflow-hidden transition-all duration-300"
+      style={{
+        background: isOpen ? 'rgba(240, 165, 89, 0.08)' : 'rgba(30, 27, 38, 0.4)',
+        border: isOpen ? '1px solid rgba(240, 165, 89, 0.2)' : '1px solid rgba(255, 255, 255, 0.06)',
+      }}
+    >
+      <button
+        onClick={onClick}
+        className="w-full text-left px-6 py-5 flex items-center justify-between gap-4"
+      >
+        <span className={`font-medium transition-colors duration-300 ${isOpen ? 'text-white' : 'text-white/80'}`}>
+          {question}
+        </span>
+        <span
+          className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+          style={{
+            background: isOpen
+              ? 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)'
+              : 'rgba(255, 255, 255, 0.1)',
+          }}
+        >
+          <svg
+            className="w-3 h-3 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-6 pb-5">
+          <p className="text-[#8B8B9A] text-sm leading-relaxed">{answer}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function FAQPage() {
+  const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
+
+  const toggleItem = (key: string) => {
+    setOpenItems((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
   return (
     <>
       <Navbar />
-      <main id="main-content" className="pt-16">
+      <main id="main-content">
         {/* Hero */}
-        <section className="relative pt-16 pb-12 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[100px]" />
-
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
-              FAQ
-            </span>
-
+        <section className="relative flex items-center justify-center overflow-hidden pt-32 pb-12">
+          <div className="relative z-10 w-full max-w-[800px] mx-auto px-4 sm:px-6 text-center">
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mt-4 mb-6"
-              style={{ letterSpacing: "-0.02em" }}
+              className="font-display text-[2.5rem] md:text-[3.25rem] lg:text-[4rem] font-bold text-white mb-5 leading-[1.05]"
+              style={{ letterSpacing: '-0.025em' }}
             >
-              Questions? Answered.
+              Common{" "}
+              <span className="relative inline-block">
+                Concerns
+                {/* Curved Underline */}
+                <svg
+                  className="absolute -bottom-2 left-0 w-full h-4"
+                  viewBox="0 0 200 16"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient id="concernsSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f0a559" />
+                      <stop offset="100%" stopColor="#a93295" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M0,14 Q100,2 200,14"
+                    fill="none"
+                    stroke="url(#concernsSwoosh)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
             </h1>
-
-            <p className="text-lg md:text-xl text-dark-400 max-w-2xl mx-auto">
-              Everything you need to know about wibipOS, multi-vendor management,
-              and how we help MSPs win more deals.
+            <p className="text-[#8B8B9A] text-lg md:text-xl max-w-[550px] mx-auto font-light">
+              Straight answers to the questions MSP CEOs ask before partnering.
             </p>
           </div>
         </section>
 
-        {/* Lock-In FAQs */}
-        <section className="py-12 bg-dark-900">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <div className="mb-8">
-              <h2
-                className="text-2xl md:text-3xl font-bold text-dark-50 mb-2"
-                style={{ letterSpacing: "-0.02em" }}
-              >
-                &ldquo;Just Another Lock-In?&rdquo;
-              </h2>
-              <p className="text-dark-400">
-                We get it. Here&apos;s how wibipOS is different.
-              </p>
-            </div>
+        {/* FAQ Sections */}
+        <section className="relative py-8 pb-16 overflow-hidden">
+          <div className="relative z-10 max-w-[800px] mx-auto px-4 sm:px-6">
+            <div className="space-y-12">
+              {concerns.map((category, categoryIndex) => (
+                <div key={categoryIndex}>
+                  {/* Category Header */}
+                  <div className="flex items-center gap-4 mb-5">
+                    <h2
+                      className="text-[#f0a559] font-display font-semibold text-lg whitespace-nowrap"
+                      style={{ letterSpacing: '-0.01em' }}
+                    >
+                      {category.category}
+                    </h2>
+                    <div className="flex-1 h-px bg-gradient-to-r from-[#f0a559]/30 to-transparent" />
+                  </div>
 
-            <Accordion items={lockInFaqs} />
+                  {/* Questions */}
+                  <div className="space-y-3">
+                    {category.items.map((item, itemIndex) => {
+                      const key = `${categoryIndex}-${itemIndex}`;
+                      return (
+                        <AccordionItem
+                          key={key}
+                          question={item.question}
+                          answer={item.answer}
+                          isOpen={openItems[key] || false}
+                          onClick={() => toggleItem(key)}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* General FAQs */}
-        <section className="py-12 bg-dark-950">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <div className="mb-8">
-              <h2
-                className="text-2xl md:text-3xl font-bold text-dark-50 mb-2"
-                style={{ letterSpacing: "-0.02em" }}
-              >
-                General Questions
-              </h2>
-              <p className="text-dark-400">
-                Platform capabilities, support, and getting started.
-              </p>
-            </div>
-
-            <Accordion items={generalFaqs} />
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-12 md:py-16 bg-dark-900">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-            <h2
-              className="text-2xl md:text-3xl font-bold text-dark-50 mb-4"
-              style={{ letterSpacing: "-0.02em" }}
+        {/* CTA Section */}
+        <section className="relative py-16 overflow-hidden">
+          <div className="relative z-10 max-w-[800px] mx-auto px-4 sm:px-6">
+            {/* Glass Card */}
+            <div
+              className="relative rounded-[28px] p-[2px]"
+              style={{
+                background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.5) 0%, rgba(240, 165, 89, 0.15) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.2) 75%, rgba(169, 50, 149, 0.5) 100%)',
+              }}
             >
-              Still Have Questions?
-            </h2>
-            <p className="text-dark-400 mb-8">
-              Our team is ready to walk you through the platform and answer
-              anything specific to your use case.
-            </p>
+              <div
+                className="relative rounded-[26px] overflow-hidden px-8 py-12 md:px-12 md:py-14 text-center"
+                style={{
+                  background: 'rgba(20, 18, 25, 0.6)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                }}
+              >
+                {/* Ambient glow */}
+                <div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px]"
+                  style={{
+                    background: 'radial-gradient(ellipse, rgba(169, 50, 149, 0.15) 0%, transparent 60%)',
+                    filter: 'blur(50px)',
+                  }}
+                />
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/demo"
-                className="inline-flex items-center justify-center py-3 px-8 bg-primary text-dark-950 font-semibold rounded-lg hover:bg-[var(--primary-hover)] transition-colors shadow-lg shadow-primary/20"
-              >
-                Schedule a Call
-              </Link>
-              <Link
-                href="/pricing"
-                className="inline-flex items-center justify-center py-3 px-8 border border-white/[0.1] text-dark-50 rounded-lg hover:bg-white/[0.05] transition-colors"
-              >
-                View Pricing
-              </Link>
+                <div className="relative z-10">
+                  <h3
+                    className="font-display text-[1.75rem] md:text-[2.25rem] font-bold text-white mb-4 leading-[1.1]"
+                    style={{ letterSpacing: '-0.025em' }}
+                  >
+                    Still have questions?
+                  </h3>
+                  <p className="text-[#8B8B9A] text-base md:text-lg max-w-md mx-auto mb-8">
+                    Let&apos;s talk. No pitch deck, no scripts—just a conversation about whether we&apos;re a fit.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    {/* Primary CTA */}
+                    <Link
+                      href="/journey"
+                      className="group relative inline-block rounded-full p-[2px] transition-all duration-300 hover:scale-[1.02]"
+                      style={{
+                        background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
+                        boxShadow: '0 0 25px rgba(240, 165, 89, 0.3), 0 0 50px rgba(169, 50, 149, 0.2)',
+                      }}
+                    >
+                      <span
+                        className="block px-8 py-3.5 rounded-full text-white font-semibold text-base transition-all duration-300"
+                        style={{
+                          background: 'rgba(20, 18, 25, 0.9)',
+                        }}
+                      >
+                        Start the 30-Day Journey
+                      </span>
+                    </Link>
+
+                    {/* Secondary CTA */}
+                    <Link
+                      href="/demo#schedule"
+                      className="px-8 py-3.5 rounded-full text-white/80 font-medium text-base transition-all duration-300 hover:text-white border border-white/20 hover:border-white/40"
+                    >
+                      Schedule a Call
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

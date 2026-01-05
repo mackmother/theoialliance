@@ -1,182 +1,421 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Navbar, Footer } from "@/components/layout";
-import { Button } from "@/components/ui";
-
-export const metadata = {
-  title: "Jamaica Schools Case Study | wibipOS",
-  description:
-    "How MsTECH deployed 3,150 APs across 364 schools in 90 days using wibipOS multi-vendor management—now scaling to 1,000 schools.",
-};
-
-const techStackVendors = [
-  { name: "Ruckus", url: "https://webresources.commscope.com/images/assets/Ruckus_logo_white-orange/Zz1jNDk3NTVlZTNiZDcxMWYwOTU4MjFhZGNhYTkyZTI0ZQ==" },
-  { name: "Edgecore", url: "https://wifi.edge-core.com/wp-content/uploads/LOGO.svg" },
-  { name: "NetExperience", url: "https://www.netexperience.com/wp-content/uploads/2025/08/4060W.png" },
-  { name: "Actiontec", url: "https://vectorseek.com/wp-content/uploads/2023/11/Actiontec-White-Logo-Vector.svg--300x145.png" },
-  { name: "Cybertan", url: "https://www.cybertan.com.tw/images/logo.png" },
-  { name: "Fortinet", url: "https://docs.fortinet.com/img/fortinet-logo-white.png" },
-];
+import { SignupModal } from "@/components/ui";
 
 export default function JamaicaCaseStudyPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <Navbar />
-      <main id="main-content" className="pt-16">
-        {/* Hero */}
-        <section className="relative pt-24 pb-16 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
+      <main id="main-content" className="bg-[#0a0a0f]">
 
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+        {/* Hero - Clean, editorial style */}
+        <section className="relative pt-32 pb-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            {/* Back link */}
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-dark-400 hover:text-dark-200 text-sm mb-8 transition-colors"
+              className="inline-flex items-center gap-2 text-white/40 hover:text-white/60 text-sm mb-8 transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              Back to Case Studies
+              Case Studies
             </Link>
 
-            <div className="flex items-center gap-3 mb-6">
-              <Image
-                src="https://framerusercontent.com/images/ijOOF07fRPzxousVlXywn4qdOU.png?scale-down-to=512"
-                alt="MsTECH Jamaica"
-                width={120}
-                height={40}
-                className="h-8 w-auto"
-                unoptimized
-              />
-              <span className="text-2xl">🇯🇲</span>
-              <span className="text-xs px-2 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary">
-                🏆 Technology Partner of the Year
+            {/* Eyebrow */}
+            <div className="mb-4">
+              <span className="text-[#f0a559] text-sm font-medium tracking-wide">
+                MsTECH • Jamaica • Education
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-6 leading-[1.1]" style={{ letterSpacing: '-0.02em' }}>
-              <span className="text-primary">364 Schools.</span> 6 Vendors.{" "}
-              <br className="hidden md:block" />
-              90 Days.
+            {/* Title */}
+            <h1
+              className="font-display text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] font-bold text-white leading-[1.1] mb-6"
+              style={{ letterSpacing: '-0.025em' }}
+            >
+              How MsTECH Won Jamaica&apos;s Largest Network Contract—With{' '}
+              <span className="relative inline-block">
+                <span className="text-white">
+                  Zero WiFi Engineers
+                </span>
+                <svg
+                  className="absolute -bottom-1 left-0 w-full h-3"
+                  viewBox="0 0 200 12"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient id="heroSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f0a559" />
+                      <stop offset="100%" stopColor="#a93295" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M0,10 Q100,2 200,10"
+                    fill="none"
+                    stroke="url(#heroSwoosh)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-dark-300 max-w-2xl mb-12">
-              How MsTECH deployed Wi-Fi across Jamaica&apos;s education system without getting locked into any single vendor.
+            {/* Subtitle */}
+            <p className="text-white/60 text-xl md:text-2xl leading-relaxed mb-10">
+              A team with no managed WiFi experience now operates 10,000 devices across 1,000 schools.
             </p>
+          </div>
+        </section>
 
-            {/* Article body - continuous with hero */}
-            <article className="max-w-3xl prose-dark">
-              <p className="text-lg text-dark-300 leading-relaxed mb-6">
-                MsTECH Solutions won the contract to modernize Jamaica&apos;s educational network infrastructure. The scope: 1,000 schools across the island, from urban Kingston to rural mountain villages.
-              </p>
-
-              <p className="text-dark-400 leading-relaxed mb-6">
-                The problem wasn&apos;t the contract—it was the hardware. Government procurement meant working with multiple vendors. Ruckus for high-density urban schools. TIP OpenWiFi-compatible devices for rural locations where cost mattered more than throughput. Actiontec, Edgecore, Fortinet hardware arriving from different suppliers.
-              </p>
-
-              <p className="text-dark-400 leading-relaxed mb-6">
-                Each vendor meant a different dashboard. Different training. Different support contracts. Managing six separate platforms across 1,000 schools wasn&apos;t just inefficient—it was impossible.
-              </p>
-
-              <p className="text-dark-200 leading-relaxed mb-10 font-medium">
-                MsTECH needed one platform that could manage any hardware they deployed. They found wibipOS.
-              </p>
-
-              {/* Image break */}
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/[0.06] mb-10">
-                <Image
-                  src="https://landing.wibipos.com/hs-fs/hubfs/MoEyCaseStudyImage-1.jpg?width=1200&height=840&name=MoEyCaseStudyImage-1.jpg"
-                  alt="Jamaica Ministry of Education Wi-Fi deployment coverage map"
-                  fill
-                  className="object-cover"
-                  unoptimized
+        {/* Video */}
+        <section className="pb-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="relative rounded-2xl overflow-hidden" style={{ background: 'rgba(20, 18, 25, 0.8)' }}>
+              <div className="aspect-video">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/aI2m0XV3ACU?rel=0"
+                  title="WiBUZ Minute: MsTECH Jamaica"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               </div>
-
-              <p className="text-dark-400 leading-relaxed mb-6">
-                Phase 1 deployed 364 schools in 90 days. 3,150 access points, all managed from a single wibipOS dashboard. Ruckus hardware in Kingston. Edgecore in Montego Bay. Different vendors, same management experience.
-              </p>
-
-              <p className="text-dark-400 leading-relaxed mb-10">
-                Phase 2 is underway. 700 more schools, with Actiontec and Fortinet devices joining the mix. When a vendor becomes unavailable or pricing changes, MsTECH swaps hardware without retraining staff or rebuilding workflows.
-              </p>
-
-              {/* Pull quote - inline, no card */}
-              <blockquote className="border-l-4 border-primary pl-6 my-12">
-                <p className="text-xl md:text-2xl text-dark-200 leading-relaxed mb-4">
-                  &ldquo;We chose different vendors for different environments—Ruckus for high-density urban schools, Edgecore for rural locations. wibipOS let us manage them all the same way.&rdquo;
-                </p>
-                <footer className="flex items-center gap-3">
-                  <Image
-                    src="https://framerusercontent.com/images/NY7LruTfyfFyY8fJgLfPgfckGgo.png"
-                    alt="Julian Edwards"
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 rounded-full object-cover"
-                    unoptimized
-                  />
-                  <div>
-                    <div className="font-semibold text-dark-50">Julian Edwards</div>
-                    <div className="text-sm text-dark-500">Head of Operations, MsTECH</div>
-                  </div>
-                </footer>
-              </blockquote>
-
-              <p className="text-dark-400 leading-relaxed">
-                The result: Jamaica&apos;s students get reliable Wi-Fi. MsTECH keeps operational control. And when the next phase requires new hardware, they&apos;re ready—without starting over.
-              </p>
-            </article>
+            </div>
           </div>
         </section>
 
-        {/* Tech Stack */}
-        <section className="py-12 bg-dark-900">
+        {/* Results Snapshot + Article */}
+        <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 className="text-xl font-semibold text-dark-200 text-center mb-8">
-              Hardware deployed across Jamaica&apos;s schools
-            </h2>
-            <div className="p-8 bg-dark-800 border border-white/[0.06] rounded-2xl">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-items-center">
-                {techStackVendors.map((vendor) => (
-                  <div key={vendor.name} className="flex items-center justify-center h-12 opacity-70 hover:opacity-100 transition-opacity">
-                    <Image
-                      src={vendor.url}
-                      alt={vendor.name}
-                      width={120}
-                      height={40}
-                      className="max-h-10 w-auto object-contain filter brightness-0 invert"
-                      unoptimized
-                    />
+            <div className="grid lg:grid-cols-[1fr_280px] gap-12">
+
+              {/* Main Article Content */}
+              <article className="prose-invert">
+
+                {/* The Story Begins */}
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  MsTECH is a Jamaican IT consulting company. They design, implement, and manage network infrastructure for government and enterprise clients across the Caribbean. Before this project, they had about 30 people. Today they have 45.
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  The gap was clear: MsTECH had deep expertise in switching, firewalls, and WAN infrastructure. But managed WiFi at national scale? That was new territory—and they were bidding against companies with 15-20 years of experience.
+                </p>
+
+                {/* The Challenge */}
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">The Opportunity That Almost Got Away</h2>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  The Jamaica Ministry of Education needed to connect 1,000 schools with reliable WiFi. It was the largest network infrastructure project in the country&apos;s history. The requirements scared off most bidders:
+                </p>
+
+                <ul className="text-white/70 text-lg leading-relaxed mb-6 space-y-3 list-none pl-0">
+                  <li className="flex gap-3">
+                    <span className="text-[#f0a559]">—</span>
+                    <span><strong className="text-white">Multi-vendor mandatory.</strong> Ruckus gear already deployed in some schools. Fortinet firewalls in place. The Ministry refused to rip-and-replace.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-[#f0a559]">—</span>
+                    <span><strong className="text-white">90-day timeline.</strong> Phase 1 required 364 schools live in 90 days. Four schools per day, including weekends, with Christmas in the middle.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-[#f0a559]">—</span>
+                    <span><strong className="text-white">Three-tier oversight.</strong> Real-time dashboards for the Prime Minister&apos;s Office, management access for central IT, and individual views for school administrators.</span>
+                  </li>
+                </ul>
+
+                {/* Pull Quote */}
+                <blockquote className="border-l-4 border-[#f0a559] pl-6 my-10">
+                  <p className="text-white text-xl md:text-2xl leading-relaxed italic">
+                    &ldquo;We priced out the traditional approach. Meraki licensing for 7,000 APs would have been over a million dollars in year one—and it doesn&apos;t do multi-vendor. The RFP required deployment in 90 days. The math didn&apos;t work.&rdquo;
+                  </p>
+                  <cite className="text-white/50 text-base not-italic mt-4 block">
+                    — Julian Edwards, Head of Operations, MsTECH
+                  </cite>
+                </blockquote>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  The stakes were simple: pass on the contract and watch it go to an off-island competitor. MsTECH&apos;s biggest opportunity would become someone else&apos;s win.
+                </p>
+
+                {/* The Hesitation */}
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">What Almost Stopped Them</h2>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  Julian was skeptical. Three concerns kept him up at night:
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">First, the platform was unknown.</strong> &ldquo;We&apos;d never heard of WiBUZ. You&apos;re asking us to bet our biggest contract on a platform we&apos;d never worked with.&rdquo;
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">Second, OpenWiFi skepticism.</strong> &ldquo;We knew Ruckus. We knew Cisco. OpenWiFi sounded like an experiment—something you&apos;d run in a lab, not in a thousand schools.&rdquo;
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">Third, their team had zero WiFi experience.</strong> &ldquo;WiBUZ doesn&apos;t answer to the Prime Minister&apos;s Office. We do.&rdquo;
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  Two things changed his mind. A reference call with another deployment running wibipOS at similar complexity—&ldquo;They walked us through what was working, what wasn&apos;t, how support worked in practice. That was credible.&rdquo;
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  And the math on LiveSDK: &ldquo;$120,000 a year for access to 25 engineers who&apos;ve already built the integrations we&apos;d need. Versus $240,000 minimum for engineers we&apos;d have to recruit, relocate, and train—who still wouldn&apos;t have the multi-vendor expertise. The risk/reward flipped.&rdquo;
+                </p>
+
+                {/* What Happened */}
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">What Actually Happened</h2>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  Phase 1: 364 schools deployed in 90 days. 3,150 access points live. They finished three days early.
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  Today: 1,000 schools and expanding. 10,000 managed devices—7,000 APs, 2,000 switches, 1,000 firewalls. Six hardware vendors unified. Single dashboard for the entire network.
+                </p>
+
+                {/* Pull Quote */}
+                <blockquote className="border-l-4 border-[#a93295] pl-6 my-10">
+                  <p className="text-white text-xl md:text-2xl leading-relaxed italic">
+                    &ldquo;My network operations center has eight monitors. Seven of them are for other things. wibipOS runs on one screen, and that&apos;s all we need to see the entire national education network.&rdquo;
+                  </p>
+                  <cite className="text-white/50 text-base not-italic mt-4 block">
+                    — Julian Edwards
+                  </cite>
+                </blockquote>
+
+                {/* Business Impact */}
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">The Business Impact</h2>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">Engineers hired for managed WiFi: zero.</strong> &ldquo;We didn&apos;t hire a single network engineer for this project. LiveSDK filled that gap completely. We have our existing operations team—project managers, rollout coordinators, field technicians. The WiFi expertise comes from the partnership.&rdquo;
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">Two people manage 10,000 devices.</strong> &ldquo;5,000 devices per person—that ratio would be impossible with traditional vendor platforms.&rdquo;
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">Revenue more than doubled.</strong> &ldquo;The Ministry of Education contract more than doubled our annual revenue. It transformed MsTECH from a regional IT consultancy into a national infrastructure operator.&rdquo;
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">Pipeline opened.</strong> They&apos;re now in discussions with three other government ministries—Ministry of Health, Ministry of Finance, and national security. &ldquo;None of those conversations would be happening if we hadn&apos;t delivered on Education.&rdquo;
+                </p>
+
+                {/* Objection Handling */}
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">On the Skeptics</h2>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  When asked about the &ldquo;multi-vendor is too complex&rdquo; objection:
+                </p>
+
+                <blockquote className="border-l-4 border-[#f0a559] pl-6 my-10">
+                  <p className="text-white text-xl leading-relaxed italic">
+                    &ldquo;I&apos;d tell them to come to Jamaica and look at 10,000 devices running across six vendors through one dashboard. Multi-vendor sounds complicated because with legacy platforms, it is complicated. But that&apos;s not how wibipOS works. The complexity is in the platform, not in our operations. My team doesn&apos;t need to know how to configure a Ruckus AP differently than an Edgecore AP. The platform handles the translation.&rdquo;
+                  </p>
+                </blockquote>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  And on &ldquo;OpenWiFi isn&apos;t enterprise-ready&rdquo;:
+                </p>
+
+                <blockquote className="border-l-4 border-[#a93295] pl-6 my-10">
+                  <p className="text-white text-xl leading-relaxed italic">
+                    &ldquo;We&apos;re running the largest education network in the Caribbean. If that&apos;s not enterprise-ready, I don&apos;t know what is.&rdquo;
+                  </p>
+                </blockquote>
+
+                {/* Transformation */}
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">The Transformation</h2>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">Before:</strong> Multi-vendor RFPs got passed to someone else. MsTECH didn&apos;t have the capability.
+                </p>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  <strong className="text-white">After:</strong> Multi-vendor RFPs are opportunities. They&apos;re bidding on a 300-property hospitality project they would have walked away from 12 months ago.
+                </p>
+
+                <blockquote className="border-l-4 border-[#f0a559] pl-6 my-10">
+                  <p className="text-white text-xl md:text-2xl leading-relaxed italic">
+                    &ldquo;Confidence. That&apos;s the biggest difference. We&apos;ve proven we can deliver at scale with a lean team. That changes everything.&rdquo;
+                  </p>
+                  <cite className="text-white/50 text-base not-italic mt-4 block">
+                    — Julian Edwards
+                  </cite>
+                </blockquote>
+
+                {/* Advice */}
+                <h2 className="text-white text-2xl font-bold mt-12 mb-6">Julian&apos;s Advice</h2>
+
+                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                  &ldquo;You don&apos;t have to build everything yourself. There&apos;s a smarter path. Find partners who&apos;ve already solved the hard problems, and focus on what you&apos;re good at—understanding the customer, managing the relationship, executing the rollout.&rdquo;
+                </p>
+
+                <p className="text-[#f0a559] text-xl font-semibold mb-6">
+                  &ldquo;The engineering can be borrowed. The customer trust can&apos;t.&rdquo;
+                </p>
+
+                {/* Attribution */}
+                <div className="mt-16 pt-8 border-t border-white/10">
+                  <p className="text-white/40 text-sm italic">
+                    Case study based on interview with Julian Edwards, Head of Operations, MsTECH. Published with permission.
+                  </p>
+                </div>
+
+              </article>
+
+              {/* Sidebar - Results Snapshot */}
+              <aside className="lg:sticky lg:top-32 lg:self-start">
+                <div
+                  className="rounded-2xl p-6"
+                  style={{
+                    background: 'rgba(240, 165, 89, 0.05)',
+                    border: '1px solid rgba(240, 165, 89, 0.15)',
+                  }}
+                >
+                  <h3 className="text-[#f0a559] text-xs font-semibold uppercase tracking-wider mb-6">
+                    Results Snapshot
+                  </h3>
+
+                  <div className="space-y-5">
+                    <div>
+                      <div className="text-white text-3xl font-bold">1,000</div>
+                      <div className="text-white/50 text-sm">schools connected</div>
+                    </div>
+                    <div>
+                      <div className="text-white text-3xl font-bold">10,000</div>
+                      <div className="text-white/50 text-sm">managed devices</div>
+                    </div>
+                    <div>
+                      <div className="text-white text-3xl font-bold">6</div>
+                      <div className="text-white/50 text-sm">hardware vendors unified</div>
+                    </div>
+                    <div>
+                      <div className="text-white text-3xl font-bold">0</div>
+                      <div className="text-white/50 text-sm">WiFi engineers hired</div>
+                    </div>
+                    <div>
+                      <div className="text-white text-3xl font-bold">45</div>
+                      <div className="text-white/50 text-sm">days to first deployment</div>
+                    </div>
+                    <div>
+                      <div className="text-white text-3xl font-bold">2</div>
+                      <div className="text-white/50 text-sm">people managing network</div>
+                    </div>
                   </div>
-                ))}
-              </div>
+
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <div className="text-white/40 text-xs uppercase tracking-wider mb-3">Vendors Unified</div>
+                    <div className="flex flex-wrap gap-2">
+                      {["Ruckus", "Edgecore", "Actiontec", "Cybertan", "Fortinet", "NetExperience"].map((v) => (
+                        <span key={v} className="text-white/60 text-xs px-2 py-1 rounded bg-white/5">{v}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </aside>
+
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-12 pb-24 bg-dark-950">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-dark-50 mb-4">
-              Ready to deploy like MsTECH?
-            </h2>
-            <p className="text-dark-400 mb-8">
-              See how wibipOS can unify your multi-vendor environment.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="primary" size="lg" href="/demo">
-                Start Your 30-Day Sandbox
-              </Button>
-              <Button variant="ghost" href="/case-studies">
-                Read Another Case Study
-                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        {/* CTA - Bold, speaks to CEO */}
+        <section className="relative py-20 md:py-28 overflow-hidden border-t border-white/5">
+          {/* Background glow */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px]"
+              style={{
+                background: 'radial-gradient(ellipse, rgba(240, 165, 89, 0.12) 0%, transparent 60%)',
+                filter: 'blur(60px)',
+              }}
+            />
+          </div>
+
+          <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <h2
+              className="font-display text-[1.75rem] md:text-[2.5rem] lg:text-[3rem] font-bold leading-[1.15] mb-6"
+              style={{ letterSpacing: '-0.025em' }}
+            >
+              <span className="text-white">You&apos;re Looking at an Opportunity</span>
+              <br />
+              <span className="text-white">That Feels Too Big.</span>
+              <br />
+              <span className="relative inline-block mt-2">
+                <span
+                  style={{
+                    background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  It&apos;s Not.
+                </span>
+                <svg
+                  className="absolute -bottom-1 left-0 w-full h-3"
+                  viewBox="0 0 200 12"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient id="ctaSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f0a559" />
+                      <stop offset="100%" stopColor="#a93295" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M0,10 Q100,2 200,10"
+                    fill="none"
+                    stroke="url(#ctaSwoosh)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
                 </svg>
-              </Button>
-            </div>
+              </span>
+            </h2>
+
+            <p className="text-[#8B8B9A] text-lg md:text-xl mb-10 max-w-xl mx-auto">
+              MsTECH had zero WiFi experience. Now they operate the Caribbean&apos;s largest education network.
+              The engineering can be borrowed. The customer trust can&apos;t.
+            </p>
+
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="group relative inline-block rounded-full p-[2px] transition-all duration-300 hover:scale-[1.02]"
+              style={{
+                background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
+                boxShadow: '0 0 30px rgba(240, 165, 89, 0.3), 0 0 60px rgba(169, 50, 149, 0.2)',
+              }}
+            >
+              <span
+                className="block px-10 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300"
+                style={{ background: 'rgba(20, 18, 25, 0.9)' }}
+              >
+                Start Your 30-Day Journey
+              </span>
+            </button>
+
+            <p className="text-[#8B8B9A] text-sm mt-6">
+              Full access • Your CSM on standby • Prove it works before you commit
+            </p>
           </div>
         </section>
+
       </main>
       <Footer />
+
+      <SignupModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

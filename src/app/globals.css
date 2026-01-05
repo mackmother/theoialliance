@@ -3,36 +3,41 @@
 @tailwind utilities;
 
 /* ==============================================
-   WARM GRADIENT DESIGN SYSTEM v1.0
-   Inspired by Mangeo - Premium SaaS aesthetic
+   MANGEO DESIGN SYSTEM v1.1
+   Premium SaaS aesthetic with Gold/Purple palette
 
-   Philosophy: Warm, approachable, enterprise-ready
-   Not pure dark mode - rich with purple/orange undertones
+   Colors:
+   - Black: #141318 (background)
+   - White: #FFFFFF (text)
+   - Gold: #f0a559 (primary accent, CTAs)
+   - Purple: #a93295 (secondary accent)
    ============================================== */
 
 @layer base {
   :root {
-    /* PRIMARY - Warm Orange (CTAs, highlights, energy) */
-    --primary: #FF6B35;
-    --primary-rgb: 255, 107, 53;
-    --primary-hover: #FF7F50;
-    --primary-light: #FF9A6C;
+    /* PRIMARY - Gold/Orange (CTAs, highlights, energy) */
+    --primary: #f0a559;
+    --primary-rgb: 240, 165, 89;
+    --primary-hover: #f5b875;
+    --primary-light: #f9cb99;
+    --primary-dark: #d9923d;
 
-    /* SECONDARY - Deep Purple/Magenta (depth, premium, gradients) */
-    --secondary: #9333EA;
-    --secondary-rgb: 147, 51, 234;
-    --secondary-hover: #A855F7;
-    --secondary-dark: #6B21A8;
+    /* SECONDARY - Purple/Magenta (depth, premium, gradients) */
+    --secondary: #a93295;
+    --secondary-rgb: 169, 50, 149;
+    --secondary-hover: #bf45aa;
+    --secondary-dark: #872578;
+    --secondary-light: #c95cb8;
 
-    /* Background layers - Deep charcoal with warm purple undertones */
-    --bg-base: #0F0B15;
-    --bg-raised: #1A1525;
-    --bg-elevated: #251F35;
-    --bg-overlay: #302845;
+    /* Background layers - Mangeo Black */
+    --bg-base: #141318;
+    --bg-raised: #1C1A21;
+    --bg-elevated: #26232D;
+    --bg-overlay: #322E3A;
 
-    /* Text colors - Warm whites */
-    --text-primary: #FAFAF9;
-    --text-secondary: #D4D4D4;
+    /* Text colors */
+    --text-primary: #FFFFFF;
+    --text-secondary: #E5E5E5;
     --text-muted: #A1A1AA;
     --text-subtle: #71717A;
 
@@ -49,22 +54,22 @@
     --border-subtle: rgba(255, 255, 255, 0.06);
     --border-default: rgba(255, 255, 255, 0.1);
     --border-strong: rgba(255, 255, 255, 0.15);
-    --border-glow: rgba(255, 107, 53, 0.3);
+    --border-glow: rgba(240, 165, 89, 0.3);
 
-    /* Gradient definitions */
-    --gradient-warm: linear-gradient(135deg, #FF6B35 0%, #9333EA 100%);
-    --gradient-hero: radial-gradient(ellipse 100% 80% at 50% -20%, rgba(147, 51, 234, 0.3), transparent 50%),
-                     radial-gradient(ellipse 60% 50% at 80% 20%, rgba(255, 107, 53, 0.15), transparent 40%),
-                     linear-gradient(180deg, #0F0B15 0%, #1A1525 100%);
+    /* Gradient definitions - Gold to Purple */
+    --gradient-warm: linear-gradient(135deg, #f0a559 0%, #a93295 100%);
+    --gradient-hero: radial-gradient(ellipse 100% 80% at 50% -20%, rgba(169, 50, 149, 0.35), transparent 50%),
+                     radial-gradient(ellipse 60% 50% at 80% 20%, rgba(240, 165, 89, 0.2), transparent 40%),
+                     linear-gradient(180deg, #141318 0%, #1C1A21 100%);
     --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
 
     /* Glass effects */
-    --glass-bg: rgba(26, 21, 37, 0.7);
+    --glass-bg: rgba(28, 26, 33, 0.8);
     --glass-border: rgba(255, 255, 255, 0.08);
 
     /* Accent glows */
-    --glow-primary: rgba(255, 107, 53, 0.4);
-    --glow-secondary: rgba(147, 51, 234, 0.4);
+    --glow-primary: rgba(240, 165, 89, 0.5);
+    --glow-secondary: rgba(169, 50, 149, 0.5);
   }
 
   html {
@@ -76,6 +81,27 @@
     color: var(--text-primary);
     background: var(--bg-base);
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    position: relative;
+  }
+
+  /* Fixed Radiant Background - Orange/Purple Aurora */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      /* Main orange glow from left */
+      radial-gradient(ellipse 80% 100% at 0% 50%, rgba(240, 165, 89, 0.5) 0%, rgba(240, 165, 89, 0.25) 30%, transparent 60%),
+      /* Secondary orange sweep */
+      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(240, 165, 89, 0.35) 0%, transparent 50%),
+      /* Purple transition in center-right */
+      radial-gradient(ellipse 70% 90% at 50% 60%, rgba(169, 50, 149, 0.3) 0%, transparent 50%),
+      /* Deep purple/blue fade to right */
+      radial-gradient(ellipse 80% 100% at 100% 50%, rgba(30, 20, 50, 0.9) 0%, transparent 60%),
+      /* Base dark background */
+      linear-gradient(135deg, #141318 0%, #0a0a0d 100%);
+    pointer-events: none;
   }
 
   ::selection {
@@ -108,22 +134,86 @@
      BUTTONS - Warm Gradient System
      ============================================== */
 
-  /* Primary CTA - Warm Orange with glow */
+  /* ==============================================
+     GLASS VOLTAGE BUTTON - Pseudo-element approach
+     Creates truly transparent button with gradient border
+     ============================================== */
+
+  .btn-glass-voltage {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 32px;
+    font-weight: 600;
+    border-radius: 99px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    box-shadow: 0 0 20px rgba(169, 50, 149, 0.3);
+    z-index: 1;
+  }
+
+  /* Gradient border via pseudo-element */
+  .btn-glass-voltage::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 99px;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(135deg, #f0a559 0%, #a93295 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  .btn-glass-voltage:hover {
+    box-shadow: 0 0 30px rgba(240, 165, 89, 0.6);
+    transform: translateY(-2px);
+  }
+
+  /* Primary CTA - Glass Voltage style with gold glow */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-bold
-           rounded-xl transition-all duration-300
+    @apply inline-flex items-center justify-center px-8 py-3 text-base font-semibold
+           transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-offset-2
            disabled:opacity-50 disabled:cursor-not-allowed;
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 0 20px var(--glow-primary),
-                0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    border-radius: 99px;
+    box-shadow:
+      0 0 20px rgba(240, 165, 89, 0.4),
+      0 0 40px rgba(169, 50, 149, 0.2);
+    z-index: 1;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 99px;
+    padding: 2px;
+    background: linear-gradient(135deg, #f0a559 0%, #bf45aa 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
   }
 
   .btn-primary:hover {
-    background: var(--primary-hover);
-    box-shadow: 0 0 30px var(--glow-primary),
-                0 8px 25px rgba(0, 0, 0, 0.4);
+    box-shadow:
+      0 0 30px rgba(240, 165, 89, 0.6),
+      0 0 50px rgba(169, 50, 149, 0.35);
     transform: translateY(-2px);
   }
 
@@ -132,32 +222,73 @@
     --tw-ring-offset-color: var(--bg-base);
   }
 
-  /* Secondary - Glass with purple tint */
+  /* Gradient border button - Alias with gold glow */
+  .btn-gradient-border {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: 99px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    background: transparent;
+    border: none;
+    box-shadow:
+      0 0 20px rgba(240, 165, 89, 0.4),
+      0 0 40px rgba(169, 50, 149, 0.2);
+    z-index: 1;
+  }
+
+  .btn-gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 99px;
+    padding: 2px;
+    background: linear-gradient(135deg, #f0a559 0%, #bf45aa 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  .btn-gradient-border:hover {
+    box-shadow:
+      0 0 30px rgba(240, 165, 89, 0.6),
+      0 0 50px rgba(169, 50, 149, 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* Secondary - Glass/transparent with subtle white border (Mangeo style) */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium
-           rounded-xl transition-all duration-300
+    @apply inline-flex items-center justify-center px-8 py-3.5 text-base font-medium
+           rounded-full transition-all duration-200
            focus:outline-none focus:ring-2 focus:ring-offset-2;
-    background: rgba(147, 51, 234, 0.1);
+    background: rgba(255, 255, 255, 0.03);
     color: var(--text-primary);
-    border: 1px solid rgba(147, 51, 234, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(8px);
   }
 
   .btn-secondary:hover {
-    background: rgba(147, 51, 234, 0.2);
-    border-color: rgba(147, 51, 234, 0.5);
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
   .btn-secondary:focus {
-    --tw-ring-color: var(--secondary);
+    --tw-ring-color: rgba(255, 255, 255, 0.5);
     --tw-ring-offset-color: var(--bg-base);
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium
-           rounded-xl transition-all duration-200;
-    color: var(--text-secondary);
+           rounded-full transition-all duration-200;
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .btn-ghost:hover {
@@ -184,14 +315,14 @@
   .card-hover:hover {
     border-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-                0 0 30px rgba(147, 51, 234, 0.1);
+                0 0 30px rgba(169, 50, 149, 0.15);
     transform: translateY(-4px);
   }
 
   /* Glass card - More pronounced glass effect */
   .glass-card {
     @apply rounded-2xl;
-    background: rgba(26, 21, 37, 0.6);
+    background: rgba(28, 26, 33, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -577,3 +708,153 @@
 .text-primary-500 { color: var(--primary); }
 .bg-primary { background-color: var(--primary); }
 .border-primary { border-color: var(--primary); }
+
+/* ==============================================
+   MANGEO DESIGN SYSTEM - Component Styles
+   ============================================== */
+
+/* VOLTAGE UNDERLINE - Gradient underline with glow */
+.voltage-highlight {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+}
+
+.voltage-highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(135deg, #f0a559 0%, #a93295 100%);
+  box-shadow: 0 0 15px #a93295;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* SECTION HEADLINE - Display font, uppercase */
+.section-headline {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .section-headline {
+    font-size: 3rem;
+  }
+}
+
+/* VIDEO CARD - Cinema frame style */
+.video-card {
+  padding: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+}
+
+.video-card-inner {
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* GLASS CARD HEAVY - Mangeo style */
+.glass-card-heavy {
+  background: rgba(31, 30, 36, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* GOLD CARD - Highlighted stat card */
+.card-gold {
+  background: linear-gradient(135deg, rgba(240, 165, 89, 0.15) 0%, rgba(20, 19, 24, 0.9) 100%);
+  border: 1px solid var(--primary);
+}
+
+/* STAT NUMBER - Large gold numbers */
+.stat-number-gold {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* BENTO GRID - Case study layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 250px 250px;
+  gap: 24px;
+}
+
+.bento-item-main {
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .bento-item-main {
+    grid-row: span 1;
+    min-height: 300px;
+  }
+}
+
+/* AMBIENT GLOW - Background purple glow */
+.ambient-glow {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(169,50,149,0.2) 0%, rgba(0,0,0,0) 70%);
+  z-index: 0;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* CTA SECTION - Purple radial background */
+.cta-bg-glow {
+  background: radial-gradient(circle at center, rgba(169, 50, 149, 0.15) 0%, rgba(20, 19, 24, 0) 60%);
+}
+
+/* VOLTAGE BUTTON - Primary CTA with glass gradient border */
+.btn-voltage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  border-radius: 99px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  /* Glass Gradient Border Trick */
+  background: linear-gradient(#141318, #141318) padding-box,
+              linear-gradient(135deg, #f0a559 0%, #a93295 100%) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 0 20px rgba(169, 50, 149, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-voltage:hover {
+  box-shadow: 0 0 40px rgba(240, 165, 89, 0.6);
+  transform: translateY(-2px);
+  background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)) padding-box,
+              linear-gradient(135deg, #f0a559 0%, #a93295 100%) border-box;
+}

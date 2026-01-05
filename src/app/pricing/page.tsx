@@ -1,53 +1,32 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar, Footer } from "@/components/layout";
-import { Button } from "@/components/ui";
-
-export const metadata = {
-  title: "Partnership | Open Infrastructure Alliance — We Built It, So You Don't Have To",
-  description:
-    "8 years of R&D. 100+ telco integrations. Elite engineering on retainer. The OIA gives you the ability to say YES to every deal.",
-};
-
-const weBuiltIt = [
-  {
-    stat: "8 Years",
-    label: "of R&D",
-    description: "Battle-tested across 10+ US telcos",
-  },
-  {
-    stat: "100+",
-    label: "Integrations",
-    description: "Hardware, billing, SSO, and more",
-  },
-  {
-    stat: "90 Days",
-    label: "Not 2 Years",
-    description: "To multi-vendor production",
-  },
-];
+import { SignupModal } from "@/components/ui";
 
 const differentiators = [
   {
     title: "LIVE SDK Engineers",
     subtitle: "Elite engineering on retainer—not headcount",
     description:
-      "What if you had the same engineering team that powered Ruckus's telco entry—without the $150K+ salaries, benefits, and 6-month ramp time? Our engineers integrate your tech stack for you. Day one expertise on problems we've solved 100 times before.",
-    icon: "engineers",
+      "10 years R&D. Day one expertise on problems we've solved 100 times before.",
+    image: "/images/screenshots/LiveSDK.png",
   },
   {
-    title: "BYOTS",
-    subtitle: "Bring Your Own Tech Stack",
+    title: "Bring Your Own Tech Stack",
+    subtitle: "We orchestrate—we don't replace",
     description:
-      "What if the platform adapted to you, not the other way around? Your billing system. Your SSO. Your existing tools. We orchestrate—we don't replace. No rip-and-replace. No starting over.",
-    icon: "stack",
+      "Your billing, your SSO, your tools. No rip-and-replace. No starting over.",
+    image: "/images/screenshots/BYOTSIcon.png",
   },
   {
-    title: "Dynamic Roadmap",
-    subtitle: "Your needs drive our development",
+    title: "Partner-Driven Development",
+    subtitle: "Your needs drive our roadmap",
     description:
-      "What if your unique requirements became platform capabilities—and you were first to use them? The flywheel effect: every partner integration strengthens the ecosystem. Your edge cases become everyone's solved problems.",
-    icon: "roadmap",
+      "Every integration strengthens the ecosystem. Your edge cases become solved problems.",
+    image: "/images/screenshots/DynamicRoadmap.png",
   },
 ];
 
@@ -85,216 +64,153 @@ const outcomes = [
   },
 ];
 
-const costOfBuilding = [
-  { label: "18-24 months before you can even demo", cost: "Time you don't have" },
-  { label: "$500K-$2M in engineering salaries", cost: "Capital at risk" },
-  { label: "2-3 engineers who could be billing clients", cost: "Opportunity cost" },
-  { label: "Still single-vendor when you finally ship", cost: "All that work for nothing" },
-  { label: "Every RFP lost while you're building", cost: "Competitors eating your lunch" },
-];
-
-const faqs = [
-  {
-    question: "Why don't you publish prices?",
-    answer:
-      "Because we price partnerships, not licenses. Your investment depends on your scale, integration complexity, and growth trajectory. We'll scope your specific needs and provide a clear proposal—typically within 48 hours of our first conversation.",
-  },
-  {
-    question: "What does 'LIVE SDK Engineers' actually mean?",
-    answer:
-      "Our engineers become an extension of your team. They integrate your specific tech stack, build custom workflows, and solve the edge cases that generic platforms can't handle. Think of it as having a senior dev team on retainer—without the hiring, management, or overhead.",
-  },
-  {
-    question: "How is this different from just hiring developers?",
-    answer:
-      "A senior network engineer costs $150K+/year plus benefits and takes 6 months to ramp. Our team has 8 years of production experience across 100+ integrations. You get day-one expertise on complex problems we've solved before—at a fraction of the cost.",
-  },
-  {
-    question: "What if you don't support our hardware vendor?",
-    answer:
-      "We've integrated 12+ vendors already. If yours isn't on the list, our LIVE SDK team can add support in 2-4 weeks. We'll scope the integration before you commit—no surprises.",
-  },
-  {
-    question: "We already have vendor portals. Why add another tool?",
-    answer:
-      "You have portals. But are you winning multi-vendor RFPs? Most MSPs lose 2-3 deals per quarter because they can't support mixed hardware. One won deal typically covers your entire partnership investment.",
-  },
-  {
-    question: "How does the ROI math work?",
-    answer:
-      "A 500-location deal generates $250K+ in annual revenue. If your partnership fee delivers access to deals like that, the math is simple. We structure partnerships so we only win when you win—our incentives are aligned.",
-  },
-  {
-    question: "What's the 30-day Trial-to-Profit?",
-    answer:
-      "Full platform access. Real hardware integration. Production-ready deployment. You'll know within 30 days whether the OIA helps you win. No credit card. No contracts. Ruckus MSPs: 15-minute setup.",
-  },
-];
-
 export default function PricingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <Navbar />
-      <main id="main-content" className="pt-16">
-        {/* Hero: We Built It */}
-        <section className="relative pt-16 pb-12 bg-dark-950">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[100px]" />
+      <main id="main-content">
+        {/* Hero: Partnership. Not Licensing. */}
+        <section className="relative flex items-center justify-center overflow-hidden pt-32 pb-12">
+          <div className="relative z-10 w-full max-w-[1000px] mx-auto px-4 sm:px-6">
 
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            {/* Dog whistle: Call out their exact frustration */}
-            <p className="text-dark-400 text-sm mb-6 max-w-lg mx-auto">
-              Tired of walking away from multi-vendor RFPs? Done watching
-              competitors win deals you could have had?
-            </p>
-
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
-              Partnership, Not Licensing
-            </span>
-
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mt-4 mb-6"
-              style={{ letterSpacing: "-0.02em" }}
+            {/* Glass Card with Gradient Border */}
+            <div
+              className="relative rounded-[28px] p-[2px]"
+              style={{
+                background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.6) 0%, rgba(240, 165, 89, 0.2) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.3) 75%, rgba(169, 50, 149, 0.5) 100%)',
+              }}
             >
-              <span className="tech-swoosh-orange">We Built It.</span>
-              <br />
-              <span className="gradient-text">
-                So You Don&apos;t Have To.
-              </span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-dark-400 max-w-2xl mx-auto mb-8">
-              8 years of R&D. 100+ telco integrations. The ability to say{" "}
-              <span className="text-dark-100 font-medium">YES</span> to every
-              hardware stack, every RFP, every opportunity—starting this quarter.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" href="/journey">
-                Start Trial-to-Profit
-              </Button>
-              <Button variant="secondary" href="/demo#schedule">
-                Talk to the Alliance
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats: What 8 Years Means - Orange divider line */}
-        <div className="h-1 bg-gradient-to-r from-transparent via-accent-500 to-transparent" />
-        <section className="py-10 bg-dark-900 border-y border-white/[0.06]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              {weBuiltIt.map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-primary mb-1">
-                    {item.stat}
-                  </div>
-                  <div className="text-dark-100 font-medium mb-2">
-                    {item.label}
-                  </div>
-                  <div className="text-dark-400 text-sm">{item.description}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* The Real Cost: Build vs. Partner */}
-        <section className="py-12 md:py-16 bg-dark-950">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10">
-              <h2
-                className="text-2xl md:text-3xl font-bold text-dark-50 mb-3"
-                style={{ letterSpacing: "-0.02em" }}
+              <div
+                className="relative rounded-[26px] overflow-hidden"
+                style={{
+                  background: 'rgba(20, 18, 25, 0.6)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                }}
               >
-                The Real Cost of &ldquo;Building It Yourself&rdquo;
-              </h2>
-              <p className="text-dark-400 max-w-2xl mx-auto">
-                Every month you spend building is a month your competitors are
-                winning deals you could have had.
+                {/* Handshake Image - Right side */}
+                <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden md:flex items-center justify-end pointer-events-none">
+                  {/* Glow behind handshake */}
+                  <div
+                    className="absolute right-[20px] w-[300px] h-[300px]"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(240, 165, 89, 0.4) 0%, rgba(169, 50, 149, 0.2) 40%, transparent 70%)',
+                      filter: 'blur(40px)',
+                    }}
+                  />
+                  <Image
+                    src="/images/screenshots/golden handshake.png"
+                    alt="Partnership"
+                    width={400}
+                    height={400}
+                    className="relative z-10 h-[90%] w-auto object-contain mr-4"
+                  />
+                </div>
+
+                {/* Content - Left side */}
+                <div className="relative z-10 px-8 py-10 md:px-12 md:py-14 md:max-w-[55%]">
+                  <h1
+                    className="font-display text-[2rem] md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white mb-5 leading-[1.05]"
+                    style={{
+                      letterSpacing: '-0.025em',
+                    }}
+                  >
+                    We Built It.
+                    <br />
+                    <span className="relative inline-block">
+                      So You Don&apos;t Have To.
+                      {/* Curved Underline - curves downward */}
+                      <svg
+                        className="absolute -bottom-1 left-0 w-full h-3"
+                        viewBox="0 0 200 12"
+                        preserveAspectRatio="none"
+                      >
+                        <defs>
+                          <linearGradient id="pricingHeroSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#f0a559" />
+                            <stop offset="100%" stopColor="#a93295" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          d="M0,10 Q100,2 200,10"
+                          fill="none"
+                          stroke="url(#pricingHeroSwoosh)"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                  </h1>
+
+                  <p className="text-[#8B8B9A] text-base md:text-lg max-w-[380px] mb-8 font-light leading-relaxed">
+                    Now say YES to every hardware stack, every RFP—starting this quarter.
+                  </p>
+
+                  {/* CTA Button with gradient border */}
+                  <Link
+                    href="/journey"
+                    className="group relative inline-block rounded-full p-[2px] transition-all duration-300 hover:scale-[1.02]"
+                    style={{
+                      background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
+                    }}
+                  >
+                    <span
+                      className="block px-8 py-3 rounded-full text-white font-semibold transition-all duration-300"
+                      style={{
+                        background: 'rgba(20, 18, 25, 0.9)',
+                      }}
+                    >
+                      See the Profit Model
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* ============================================
+                FLOATING PROOF BAR - 50/50 overlap on card bottom
+                ============================================ */}
+            <div className="relative -mt-10 mx-auto max-w-[750px]">
+              {/* Label above the pill */}
+              <p className="text-center text-[10px] font-medium tracking-[0.2em] text-white/40 uppercase mb-2">
+                Why Partner With Us
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Build It Yourself */}
-              <div className="p-8 bg-dark-900 border border-white/[0.06] rounded-2xl">
-                <div className="text-dark-400 text-sm uppercase tracking-wider mb-6">
-                  The Build Path
-                </div>
-                <ul className="space-y-4">
-                  {costOfBuilding.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <span className="text-red-500/80 mt-1 text-sm">✕</span>
-                      <div>
-                        <span className="text-dark-300">{item.label}</span>
-                        <span className="text-dark-400 text-sm ml-2">
-                          — {item.cost}
-                        </span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 pt-6 border-t border-white/[0.06]">
-                  <div className="text-dark-400 text-sm mb-1">
-                    Total 3-year cost
-                  </div>
-                  <div className="text-2xl font-bold text-dark-200">$2M+</div>
-                  <div className="text-dark-400 text-xs mt-1">
-                    Plus every deal lost while building
-                  </div>
-                </div>
-              </div>
-
-              {/* Partnership */}
-              <div className="p-8 bg-dark-800 border border-primary/30 rounded-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-
-                <div className="relative z-10">
-                  <div className="text-primary text-sm uppercase tracking-wider mb-6">
-                    The Partnership Path
-                  </div>
-                  <ul className="space-y-4 text-dark-200">
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>
-                        Production-ready in <strong>30 days</strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>
-                        LIVE SDK Engineers handle your integrations
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>
-                        8 years of battle-tested infrastructure
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>
-                        True multi-vendor from day one
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>
-                        Win the next RFP <strong>this quarter</strong>
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="mt-8 pt-6 border-t border-primary/20">
-                    <div className="text-dark-400 text-sm mb-1">The math</div>
-                    <div className="text-lg text-dark-50">
-                      One 500-site deal ={" "}
-                      <span className="text-primary font-bold">
-                        $250K+ revenue
-                      </span>
+              {/* Gradient Border Wrapper */}
+              <div
+                className="rounded-2xl p-[2px]"
+                style={{
+                  background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.6) 0%, rgba(240, 165, 89, 0.2) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.3) 75%, rgba(169, 50, 149, 0.5) 100%)',
+                  boxShadow: '0 0 30px rgba(169, 50, 149, 0.3), 0 8px 32px rgba(0, 0, 0, 0.4)',
+                }}
+              >
+                <div
+                  className="rounded-2xl px-6 py-4"
+                  style={{
+                    background: 'rgba(13, 12, 16, 0.85)',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
+                  }}
+                >
+                  <div className="grid grid-cols-3 gap-4 md:gap-6">
+                    {/* 10 Years */}
+                    <div className="text-center">
+                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">10 Years</div>
+                      <div className="text-white/80 text-xs font-medium">of R&D</div>
+                      <div className="text-white/40 text-[10px] hidden md:block">Battle-tested across 10+ US telcos</div>
                     </div>
-                    <div className="text-dark-400 text-xs mt-1">
-                      Partnership should deliver 3-5X ROI
+                    {/* 100+ Integrations */}
+                    <div className="text-center">
+                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">100+</div>
+                      <div className="text-white/80 text-xs font-medium">Integrations</div>
+                      <div className="text-white/40 text-[10px] hidden md:block">Hardware, billing, SSO, and more</div>
+                    </div>
+                    {/* 30 Days */}
+                    <div className="text-center">
+                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">30 Days</div>
+                      <div className="text-white/80 text-xs font-medium">Not 2 Years</div>
+                      <div className="text-white/40 text-[10px] hidden md:block">To multi-vendor production</div>
                     </div>
                   </div>
                 </div>
@@ -303,276 +219,350 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* Differentiators: LIVE SDK, BYOTS, Dynamic Roadmap */}
-        <section className="py-12 md:py-16 bg-dark-900 border-y border-white/[0.06]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10">
+        {/* The Real Cost: Build vs. Partner - Bento Layout */}
+        <section className="relative py-12 overflow-hidden">
+          <div className="relative z-10 max-w-[1000px] mx-auto px-4 sm:px-6">
+
+            {/* Section Header */}
+            <div className="text-center mb-12">
               <h2
-                className="text-2xl md:text-3xl font-bold text-dark-50 mb-3"
-                style={{ letterSpacing: "-0.02em" }}
+                className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold text-white leading-[1.1] inline-block"
+                style={{
+                  letterSpacing: '-0.025em',
+                }}
               >
-                What You Actually Get
+                The Real Cost of{" "}
+                <span className="relative inline-block italic">
+                  &ldquo;Building It Yourself&rdquo;
+                  {/* Gold-to-Purple Arched Underline */}
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full h-4"
+                    viewBox="0 0 300 16"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <linearGradient id="buildSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#f0a559" />
+                        <stop offset="100%" stopColor="#a93295" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M0,14 Q150,2 300,14"
+                      fill="none"
+                      stroke="url(#buildSwoosh)"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
               </h2>
-              <p className="text-dark-400 max-w-2xl mx-auto">
+            </div>
+
+            {/* Bento Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-5">
+
+              {/* LEFT - Build Trap Image Card */}
+              <div
+                className="relative rounded-3xl overflow-hidden min-h-[400px] md:row-span-2"
+                style={{
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                }}
+              >
+                {/* Background Image */}
+                <Image
+                  src="/images/screenshots/BuildTrap.png"
+                  alt="The Build Trap vs Partnership Path"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
+              {/* TOP RIGHT - Speed Card (Warm Sunset Gradient) */}
+              <div
+                className="relative rounded-3xl overflow-hidden p-8 flex flex-col justify-center min-h-[190px]"
+                style={{
+                  background: 'linear-gradient(135deg, #1a1425 0%, #2d1a35 20%, #5c2a45 40%, #a84a55 60%, #d4734a 80%, #e8a040 100%)',
+                }}
+              >
+                <div
+                  className="font-display text-2xl md:text-3xl font-bold text-white mb-2"
+                  style={{ letterSpacing: '-0.02em' }}
+                >
+                  Production-ready in 30 days
+                </div>
+                <div className="text-white/80 text-lg">
+                  Win the next RFP this quarter
+                </div>
+              </div>
+
+              {/* BOTTOM RIGHT - Math Card (Dark Glass) */}
+              <div
+                className="relative rounded-3xl overflow-hidden p-8 flex flex-col justify-center min-h-[190px]"
+                style={{
+                  background: 'rgba(20, 18, 25, 0.6)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(12px)',
+                }}
+              >
+                <div className="text-[#8B8B9A] text-sm uppercase tracking-wider mb-2">
+                  The Math
+                </div>
+                <div
+                  className="font-display text-xl md:text-2xl font-bold text-white mb-2"
+                  style={{ letterSpacing: '-0.02em' }}
+                >
+                  One 500-site deal = <span className="text-[#f0a559]">$250K+ revenue</span>
+                </div>
+                <div className="text-white/60 text-base">
+                  Partnership delivers 3-5X ROI
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* What You Actually Get - Mangeo Glass Cards */}
+        <section className="relative py-16 overflow-hidden">
+          <div className="relative z-10 max-w-[1000px] mx-auto px-4 sm:px-6">
+
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2
+                className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold text-white leading-[1.1] inline-block"
+                style={{ letterSpacing: '-0.025em' }}
+              >
+                What You{" "}
+                <span className="relative inline-block italic">
+                  Actually Get
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full h-4"
+                    viewBox="0 0 200 16"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <linearGradient id="getGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#f0a559" />
+                        <stop offset="100%" stopColor="#a93295" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M0,14 Q100,2 200,14"
+                      fill="none"
+                      stroke="url(#getGradient)"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </h2>
+              <p className="text-[#8B8B9A] text-lg mt-4">
                 Not software licenses. Strategic capability.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            {/* 3 Glass Cards with Images */}
+            <div className="grid md:grid-cols-3 gap-5">
               {differentiators.map((diff, index) => (
                 <div
                   key={index}
-                  className="p-6 bg-dark-950 border border-white/[0.06] rounded-xl"
+                  className="relative rounded-2xl p-[1px]"
+                  style={{
+                    background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.2) 100%)',
+                  }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    {diff.icon === "engineers" && (
-                      <svg
-                        className="w-6 h-6 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      </svg>
-                    )}
-                    {diff.icon === "stack" && (
-                      <svg
-                        className="w-6 h-6 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                        />
-                      </svg>
-                    )}
-                    {diff.icon === "roadmap" && (
-                      <svg
-                        className="w-6 h-6 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
-                      </svg>
-                    )}
+                  <div
+                    className="rounded-2xl overflow-hidden h-full flex flex-col"
+                    style={{
+                      background: 'rgba(20, 18, 25, 0.8)',
+                      backdropFilter: 'blur(12px)',
+                    }}
+                  >
+                    {/* Image */}
+                    <div className="relative w-full aspect-square">
+                      <Image
+                        src={diff.image}
+                        alt={diff.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    {/* Text Content */}
+                    <div className="p-6">
+                      <h3 className="font-display text-xl font-bold text-white mb-1" style={{ letterSpacing: '-0.02em' }}>
+                        {diff.title}
+                      </h3>
+                      <p className="text-[#f0a559] text-sm mb-3">{diff.subtitle}</p>
+                      <p className="text-[#8B8B9A] text-sm leading-relaxed">{diff.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-dark-50 mb-1">
-                    {diff.title}
-                  </h3>
-                  <p className="text-primary text-sm mb-3">{diff.subtitle}</p>
-                  <p className="text-dark-400 text-sm">{diff.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Outcomes: What You Can Achieve */}
-        <section className="py-12 md:py-16 bg-dark-950">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10">
+        {/* What Becomes Possible - Mangeo Glass Cards */}
+        <section className="relative py-16 overflow-hidden">
+          <div className="relative z-10 max-w-[1000px] mx-auto px-4 sm:px-6">
+
+            {/* Section Header */}
+            <div className="text-center mb-12">
               <h2
-                className="text-2xl md:text-3xl font-bold text-dark-50 mb-3"
-                style={{ letterSpacing: "-0.02em" }}
+                className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold text-white leading-[1.1] inline-block"
+                style={{ letterSpacing: '-0.025em' }}
               >
-                What Becomes Possible
+                What Becomes{" "}
+                <span className="relative inline-block italic">
+                  Possible
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full h-4"
+                    viewBox="0 0 150 16"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <linearGradient id="possibleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#f0a559" />
+                        <stop offset="100%" stopColor="#a93295" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M0,14 Q75,2 150,14"
+                      fill="none"
+                      stroke="url(#possibleGradient)"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
               </h2>
-              <p className="text-dark-400 max-w-2xl mx-auto">
-                Imagine being the MSP that never has to say no. The one
-                competitors lose sleep over. That&apos;s what partnership unlocks.
+              <p className="text-[#8B8B9A] text-lg mt-4 max-w-xl mx-auto">
+                You&apos;re the MSP CEO competitors lose sleep over.
+                <br />
+                <span className="text-white/80 font-medium">The one who never walks away.</span>
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            {/* 3 Outcome Cards */}
+            <div className="grid md:grid-cols-3 gap-5">
               {outcomes.map((outcome, index) => (
                 <div
                   key={index}
-                  className={`p-8 rounded-2xl relative ${
-                    outcome.highlighted
-                      ? "bg-dark-800 border-2 border-primary/50"
-                      : "bg-dark-900 border border-white/[0.06]"
-                  }`}
+                  className="relative rounded-2xl p-[2px]"
+                  style={{
+                    background: outcome.highlighted
+                      ? 'linear-gradient(145deg, rgba(240, 165, 89, 0.6) 0%, rgba(240, 165, 89, 0.2) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.3) 75%, rgba(169, 50, 149, 0.5) 100%)'
+                      : 'linear-gradient(145deg, rgba(240, 165, 89, 0.2) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.15) 100%)',
+                  }}
                 >
-                  {outcome.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-dark-950 text-xs font-bold uppercase rounded-full">
-                      Most Common
-                    </div>
-                  )}
-
-                  <h3 className="text-xl font-bold text-dark-50 mb-2">
-                    {outcome.title}
-                  </h3>
-                  <p className="text-dark-400 text-sm mb-6">
-                    {outcome.description}
-                  </p>
-
-                  <ul className="space-y-3 mb-8">
-                    {outcome.unlocks.map((unlock, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2 text-dark-300 text-sm"
-                      >
-                        <span className="text-primary">✓</span>
-                        {unlock}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <p className="text-dark-400 text-xs mb-4">{outcome.cta}</p>
-
-                  <Link
-                    href="/demo#schedule"
-                    className={`block w-full text-center py-3 px-6 rounded-lg transition-colors ${
-                      outcome.highlighted
-                        ? "bg-primary text-dark-950 font-semibold hover:bg-[var(--primary-hover)] shadow-lg shadow-primary/20"
-                        : "border border-white/[0.1] text-dark-50 hover:bg-white/[0.05]"
-                    }`}
+                  <div
+                    className="rounded-2xl p-6 h-full flex flex-col"
+                    style={{
+                      background: 'rgba(20, 18, 25, 0.85)',
+                      backdropFilter: 'blur(12px)',
+                    }}
                   >
-                    Talk to the Alliance
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+                    {outcome.highlighted && (
+                      <div
+                        className="self-start px-3 py-1 rounded-full text-xs font-semibold mb-4"
+                        style={{
+                          background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
+                          color: 'white',
+                        }}
+                      >
+                        Most Common
+                      </div>
+                    )}
 
-        {/* Social Proof */}
-        <section className="py-10 bg-dark-900 border-y border-white/[0.06]">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <div className="p-8 bg-dark-950 border border-white/[0.06] rounded-2xl">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-dark-400 mb-4">
-                <span>&ldquo;Not production ready.&rdquo;</span>
-                <span className="text-dark-500">•</span>
-                <span>&ldquo;Too resource-intensive.&rdquo;</span>
-                <span className="text-dark-500">•</span>
-                <span>&ldquo;Needs a big team.&rdquo;</span>
-              </div>
-              <p className="text-primary font-medium mb-6">Think again.</p>
+                    <h3 className="font-display text-xl font-bold text-white mb-2" style={{ letterSpacing: '-0.02em' }}>
+                      {outcome.title}
+                    </h3>
+                    <p className="text-[#8B8B9A] text-sm mb-5">
+                      {outcome.description}
+                    </p>
 
-              <blockquote className="text-lg md:text-xl text-dark-200 mb-6">
-                5-person team. Zero managed WiFi experience. Now managing{" "}
-                <span className="text-primary font-semibold">
-                  1,000 schools
-                </span>{" "}
-                and{" "}
-                <span className="text-primary font-semibold">
-                  10,000 network elements
-                </span>{" "}
-                nationwide.
-              </blockquote>
+                    <ul className="space-y-2 mb-6 flex-grow">
+                      {outcome.unlocks.map((unlock, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-white/80 text-sm">
+                          <span className="text-[#f0a559] mt-0.5">✓</span>
+                          {unlock}
+                        </li>
+                      ))}
+                    </ul>
 
-              <div className="flex items-center gap-4">
-                <Image
-                  src="https://framerusercontent.com/images/NY7LruTfyfFyY8fJgLfPgfckGgo.png"
-                  alt="Julian Edwards"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 rounded-full object-cover"
-                  unoptimized
-                />
-                <div>
-                  <div className="text-dark-50 font-medium">MsTECH</div>
-                  <div className="text-dark-400 text-sm">
-                    Jamaica National Education Contract
+                    <p className="text-[#8B8B9A] text-xs italic">{outcome.cta}</p>
                   </div>
                 </div>
-              </div>
-
-              <Link
-                href="/case-studies/jamaica"
-                className="inline-flex items-center gap-2 text-primary text-sm mt-6 hover:underline"
-              >
-                Read the full case study
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA: Start the Conversation */}
-        <section className="py-12 md:py-16 bg-dark-950">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-            <p className="text-dark-400 text-sm mb-3">
-              How many deals did you walk away from last quarter?
-            </p>
-            <h2
-              className="text-2xl md:text-3xl font-bold text-dark-50 mb-3"
-              style={{ letterSpacing: "-0.02em" }}
-            >
-              Let&apos;s Make Sure That Number is Zero
-            </h2>
-            <p className="text-dark-400 mb-6 max-w-xl mx-auto">
-              We&apos;ll scope your specific needs, understand your growth
-              goals, and show you exactly how the OIA helps you win every deal
-              you deserve.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg" href="/journey">
-                Start Trial-to-Profit
-              </Button>
-              <Button variant="secondary" href="/demo#schedule">
-                Talk to the Alliance
-              </Button>
-            </div>
-
-            <p className="text-dark-400 text-sm mt-6">
-              30-day full access. No credit card. No contracts.
-            </p>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-12 pb-16 bg-dark-900">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 className="text-2xl font-bold text-dark-50 mb-8 text-center">
-              Common Questions
-            </h2>
-
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-dark-950 border border-white/[0.06] rounded-xl"
-                >
-                  <h3 className="text-dark-50 font-medium mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-dark-400 text-sm">{faq.answer}</p>
-                </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* CTA: The Single Question Close */}
+        <section className="relative py-20 overflow-hidden">
+          <div className="relative z-10 max-w-[800px] mx-auto px-4 sm:px-6 text-center">
+
+            <h2
+              className="font-display text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] font-bold text-white leading-[1.15] mb-8"
+              style={{ letterSpacing: '-0.025em' }}
+            >
+              How many deals will you{" "}
+              <span className="relative inline-block italic">
+                walk away from
+                <svg
+                  className="absolute -bottom-1 left-0 w-full h-3"
+                  viewBox="0 0 250 12"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient id="ctaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f0a559" />
+                      <stop offset="100%" stopColor="#a93295" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M0,10 Q125,2 250,10"
+                    fill="none"
+                    stroke="url(#ctaGradient)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>{" "}
+              this quarter?
+            </h2>
+
+            {/* CTA Button with gradient border */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="group relative inline-block rounded-full p-[2px] transition-all duration-300 hover:scale-[1.02]"
+              style={{
+                background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
+                boxShadow: '0 0 30px rgba(240, 165, 89, 0.3), 0 0 60px rgba(169, 50, 149, 0.2)',
+              }}
+            >
+              <span
+                className="block px-10 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300"
+                style={{
+                  background: 'rgba(20, 18, 25, 0.9)',
+                }}
+              >
+                Start Your 30-Day Trial
+              </span>
+            </button>
+
+            <p className="text-[#8B8B9A] text-sm mt-6">
+              No credit card. No contracts. Full access.
+            </p>
+
           </div>
         </section>
       </main>
       <Footer />
+
+      <SignupModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

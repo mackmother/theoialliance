@@ -1,314 +1,488 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { Navbar, Footer } from "@/components/layout";
-import { Button, Container } from "@/components/ui";
-
-export const metadata = {
-  title: "Why OIA | Enterprise-Ready OpenLAN with Universal Business Layer",
-  description:
-    "Edgecore and NetExperience bring enterprise-ready OpenLAN. wibipOS brings the universal single pane of glass—manage OpenLAN alongside legacy gear, with the business layer to bill it all.",
-};
+import { Button } from "@/components/ui";
 
 export default function WhyWiBUZPage() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <Navbar />
-      <main id="main-content" className="pt-16">
-        {/*
-          HERO - One clear message
-          Framework: Homepage Positioning Blueprint
-          "Clear is better than clever. Answer: Who is this for? What problem? How do you solve it?"
-        */}
-        <section className="relative py-16 md:py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-hero-gradient" />
-          <div className="absolute inset-0 bg-grid opacity-20" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/8 rounded-full blur-[120px]" />
+      <main id="main-content">
+        {/* ============================================
+            HERO SECTION - The MSP CEO's Dilemma (Survey Data)
+            Lead with data to build credibility
+            ============================================ */}
+        <section className="relative flex items-center justify-center overflow-hidden pt-32 pb-12">
+          <div className="relative z-10 w-full max-w-[1000px] mx-auto px-4 sm:px-6">
 
-          <Container className="relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              {/* The Problem - in their words */}
-              <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-8 leading-[1.08]"
-                style={{ letterSpacing: "-0.03em" }}
+            {/* Glass Card with Gradient Border */}
+            <div
+              className="relative rounded-[28px] p-[2px]"
+              style={{
+                background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.6) 0%, rgba(240, 165, 89, 0.2) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.3) 75%, rgba(169, 50, 149, 0.5) 100%)',
+              }}
+            >
+              <div
+                className="relative rounded-[26px] overflow-hidden"
+                style={{
+                  background: 'rgba(20, 18, 25, 0.6)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                }}
               >
-                Stuck Between Pilot
-                <br />
-                <span className="gradient-text">and Profit?</span>
-              </h1>
-
-              {/* Alliance Partners - The Solution */}
-              <div className="mb-8">
-                <p className="text-dark-500 text-xs uppercase tracking-wider mb-4">The Open Infrastructure Alliance</p>
-                <div className="flex items-center justify-center gap-4 md:gap-8">
-                  {/* Edgecore */}
-                  <div className="flex flex-col items-center gap-1.5">
-                    <Image
-                      src="https://be-net.com/wp-content/uploads/2024/06/Edgecore-logo.png"
-                      alt="Edgecore"
-                      width={100}
-                      height={30}
-                      className="h-5 md:h-7 w-auto object-contain"
-                      unoptimized
-                    />
-                    <span className="text-[10px] md:text-xs text-dark-400">Hardware</span>
-                  </div>
-
-                  <span className="text-dark-500 text-lg">+</span>
-
-                  {/* NetExperience */}
-                  <div className="flex flex-col items-center gap-1.5">
-                    <Image
-                      src="https://www.netexperience.com/wp-content/uploads/2025/08/4060W.png"
-                      alt="NetExperience"
-                      width={120}
-                      height={30}
-                      className="h-5 md:h-7 w-auto object-contain"
-                      unoptimized
-                    />
-                    <span className="text-[10px] md:text-xs text-dark-400">Controller</span>
-                  </div>
-
-                  <span className="text-dark-500 text-lg">+</span>
-
-                  {/* wibipOS */}
-                  <div className="flex flex-col items-center gap-1.5">
-                    <Image
-                      src="/images/logos/wibipOS - White.svg"
-                      alt="wibipOS"
-                      width={80}
-                      height={30}
-                      className="h-5 md:h-7 w-auto object-contain"
-                    />
-                    <span className="text-[10px] md:text-xs text-dark-400">Orchestration</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* One-sentence answer */}
-              <p className="text-lg md:text-xl text-dark-300 max-w-2xl mx-auto mb-8">
-                Edgecore and NetExperience bring enterprise-ready OpenLAN. wibipOS brings the universal single pane of glass—
-                <span className="text-dark-100 font-medium">manage OpenLAN alongside Ruckus, Aruba, and Cisco, with the business intelligence to monetize and bill it all.</span>
-              </p>
-
-              {/* Single CTA - "Sell the vacation, not the flight" */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="primary" size="lg" href="/journey">
-                  Get Your First Invoice in 30 Days
-                </Button>
-                <Button variant="secondary" href="/case-studies/jamaica">
-                  See 400 Schools Go Live
-                </Button>
-              </div>
-
-              {/* Credibility Bar - Integrated into hero per "front-load credibility above the fold" */}
-              <div className="mt-10 pt-8 border-t border-white/[0.06]">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
-                  <span className="text-dark-500 text-xs uppercase tracking-wider">Maravedis MSP Pain Point Survey</span>
-                  <div className="flex items-center gap-6">
-                    <span><span className="text-dark-100 font-semibold">56%</span> <span className="text-dark-400">want multi-vendor</span></span>
-                    <span className="text-dark-700">·</span>
-                    <span><span className="text-dark-100 font-semibold">44%</span> <span className="text-dark-400">unsatisfied with current vendor</span></span>
-                    <span className="text-dark-700">·</span>
-                    <span><span className="text-dark-100 font-semibold">37%</span> <span className="text-dark-400">blocked by talent gap</span></span>
-                  </div>
-                  <a href="/research" className="text-primary hover:text-primary-400 transition-colors text-sm font-medium">
-                    Get the Report →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/*
-          FRUSTRATION → SOLUTION SECTION
-          Framework: Avatar Hot Buttons - Pair each frustration with its solution (Before → After)
-          "If you can describe their problem better than they can, you win their trust"
-        */}
-        <section className="relative pt-8 pb-12 md:pt-10 md:pb-16 overflow-hidden">
-          <div className="absolute inset-0 bg-dark-900/50" />
-
-          <Container className="relative z-10">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold text-dark-50 text-center mb-10">
-                Sound Familiar?
-              </h2>
-
-              {/* Frustration → Solution pairs */}
-              <div className="space-y-4">
-                {[
-                  {
-                    frustration: "I can't stitch together APs, controllers, and my billing system.",
-                    solution: "OSS/BSS integration. Billing events trigger provisioning automatically.",
-                    proof: "Optimum runs 50K SMBs with zero manual touch.",
-                  },
-                  {
-                    frustration: "Where's the multi-tenant portal? The customer-facing branding?",
-                    solution: "Unlimited hierarchy: MSP → Reseller → Property → Site. White-label portals per tenant.",
-                    proof: "Jamaica: 6 vendors, 400 schools, one dashboard.",
-                  },
-                  {
-                    frustration: "I don't have engineers who can customize open-source controllers.",
-                    solution: "LiveSDK: 25 R&D engineers build your integrations on demand.",
-                    proof: "NetExperience integration: 3 weeks, now standard.",
-                  },
-                  {
-                    frustration: "Why trade Cisco lock-in for controller lock-in?",
-                    solution: "Controller-agnostic. Ingest legacy Ruckus/Cisco via API. Add Edgecore. Same UI.",
-                    proof: "Turns $200K rip-and-replace into $20K expansion.",
-                  },
-                ].map((item, i) => (
+                {/* Lock Image with Sunburst - Right justified, full height within frame */}
+                <div className="absolute right-6 top-0 bottom-0 w-[40%] hidden md:flex items-center justify-end pointer-events-none">
+                  {/* CSS Sunburst Effect - breaks outside frame */}
                   <div
-                    key={i}
-                    className="grid md:grid-cols-2 gap-4 items-stretch"
-                  >
-                    {/* Frustration - Left */}
-                    <div className="p-5 rounded-xl bg-dark-800/30 border border-white/[0.04] flex items-center">
-                      <div>
-                        <span className="text-red-400/60 text-xs font-medium uppercase tracking-wider">Stuck</span>
-                        <p className="text-dark-300 italic mt-1">&ldquo;{item.frustration}&rdquo;</p>
-                      </div>
-                    </div>
-
-                    {/* Solution - Right */}
-                    <div className="p-5 rounded-xl bg-primary/5 border border-primary/10 flex items-center">
-                      <div>
-                        <span className="text-primary text-xs font-medium uppercase tracking-wider">Unlocked</span>
-                        <p className="text-dark-100 mt-1">{item.solution}</p>
-                        <p className="text-dark-500 text-xs mt-2">→ {item.proof}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Wrap-up line — explains WHY these solutions exist */}
-              <p className="text-dark-400 text-center mt-10 max-w-xl mx-auto">
-                wibipOS is the business layer that breaks the lock-in between your controllers and your customers—so you can unlock your full revenue potential.
-              </p>
-            </div>
-          </Container>
-        </section>
-
-        {/*
-          PROOF SECTION - Why Believe Us
-          Framework: Design Authority - "Construct Credibility" with third-party logos and real numbers
-          Short. Punchy. Numbers.
-        */}
-        <section className="relative py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-dark-900/30" />
-
-          <Container className="relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-dark-50 mb-8">
-                Telco Battle-Tested. <span className="gradient-text">Now Open to MSPs.</span>
-              </h2>
-
-              <div className="grid grid-cols-3 gap-6 mb-10">
-                {[
-                  { stat: "10+", label: "Telcos Enabled" },
-                  { stat: "100+", label: "Use Cases Developed" },
-                  { stat: "10,000+", label: "Locations Served" },
-                ].map((item, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">
-                      {item.stat}
-                    </div>
-                    <div className="text-dark-500 text-xs">{item.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap items-center justify-center gap-8 opacity-50">
-                {[
-                  { name: "AT&T", url: "https://framerusercontent.com/images/vypGMHttHsFpjWtzjxaRzwnTkMg.png" },
-                  { name: "Verizon", url: "https://framerusercontent.com/images/PdMqdEOAhM8eNJGnVODgyMX1zwE.png" },
-                  { name: "Frontier", url: "https://framerusercontent.com/images/J6EQ6l0mfj8KgZOTvBadrIH2R08.png" },
-                  { name: "Cox", url: "https://framerusercontent.com/images/osgjsQhWnA2VfHePWYujw3qCKE.png" },
-                ].map((logo) => (
-                  <Image
-                    key={logo.name}
-                    src={logo.url}
-                    alt={logo.name}
-                    width={70}
-                    height={20}
-                    className="h-5 w-auto object-contain grayscale brightness-200"
-                    unoptimized
+                    className="absolute right-[-80px] w-[500px] h-[500px]"
+                    style={{
+                      background: `
+                        repeating-conic-gradient(
+                          from 0deg,
+                          rgba(240, 165, 89, 0.35) 0deg 5deg,
+                          transparent 5deg 10deg
+                        )
+                      `,
+                      mask: 'radial-gradient(circle, black 0%, black 15%, transparent 65%)',
+                      WebkitMask: 'radial-gradient(circle, black 0%, black 15%, transparent 65%)',
+                    }}
                   />
-                ))}
+                  {/* Glow center */}
+                  <div
+                    className="absolute right-[60px] w-[180px] h-[180px]"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(240, 165, 89, 0.4) 30%, rgba(169, 50, 149, 0.2) 60%, transparent 80%)',
+                      filter: 'blur(25px)',
+                    }}
+                  />
+                  <Image
+                    src="/images/screenshots/lockIcon.png"
+                    alt="Security"
+                    width={400}
+                    height={400}
+                    className="relative z-10 h-[95%] w-auto object-contain"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 px-8 py-10 md:px-12 md:py-14 md:max-w-[55%]">
+                  <h1
+                    className="font-display text-[2rem] md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white mb-5 leading-[1.05]"
+                    style={{
+                      letterSpacing: '-0.025em',
+                    }}
+                  >
+                    Your Dilemma
+                    <br />
+                    <span className="relative inline-block">
+                      as MSP CEO.
+                      {/* Curved Underline */}
+                      <svg
+                        className="absolute -bottom-1 left-0 w-full h-3"
+                        viewBox="0 0 200 12"
+                        preserveAspectRatio="none"
+                      >
+                        <defs>
+                          <linearGradient id="dilemmaSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#f0a559" />
+                            <stop offset="100%" stopColor="#a93295" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          d="M0,10 Q100,2 200,10"
+                          fill="none"
+                          stroke="url(#dilemmaSwoosh)"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                  </h1>
+
+                  <p className="text-[#8B8B9A] text-base md:text-lg max-w-[380px] mb-8 font-light leading-relaxed">
+                    Maravedis research confirms vendor lock-in is blocking growth—multi-vendor support is the top need.
+                  </p>
+
+                  {/* Download Buttons */}
+                  <div className="flex flex-wrap gap-3">
+                    <Button
+                      variant="primary"
+                      size="md"
+                      onClick={() => setShowModal(true)}
+                    >
+                      Download Report
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      size="md"
+                      href="/docs/msp-ceo-challenges-infographic.png"
+                      download="MSP-CEO-Challenges-Infographic.png"
+                    >
+                      Free Infographic
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* What's in the Report - Two Column Layout */}
+            <div className="mt-10">
+              <div className="text-center mb-8">
+                <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">What&apos;s in the Report</h3>
+                <p className="text-[#8B8B9A] text-base md:text-lg">Data-backed insights for your next board meeting</p>
               </div>
 
-              <p className="text-dark-400 text-sm mt-6">
-                A decade of telco-grade infrastructure—now available to you.
-              </p>
+              {/* Two Column Grid */}
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Left Column - The Market Pain */}
+                <div
+                  className="rounded-xl p-5"
+                  style={{
+                    background: 'rgba(30, 27, 38, 0.6)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                  }}
+                >
+                  <div className="mb-4">
+                    <div className="text-white/90 text-sm font-semibold mb-0.5">Maravedis Survey Results</div>
+                    <div className="text-white/40 text-xs">The Market Pain</div>
+                  </div>
 
-              {/* Legal disclaimer for Ruckus */}
-              <p className="text-dark-600 text-[10px] mt-8 max-w-xl mx-auto leading-relaxed">
-                From 2016 to 2024, CommScope acted as a reseller of WiBIP® solutions. This arrangement has ended, and WiBUZ and CommScope/Ruckus currently have no ongoing co-development or co-branding relationship. Our only affiliation is that WiBUZ remains a registered Ruckus reseller exclusively in the CALA region. All references to past collaborations are factual and do not imply any new joint venture or expanded partnership.
-              </p>
+                  <div className="space-y-3">
+                    {[
+                      { stat: '56%', text: 'want multi-vendor capability' },
+                      { stat: '44%', text: 'unsatisfied with vendor management' },
+                      { stat: '37%', text: 'can\'t grow—can\'t find talent' },
+                      { stat: '34%', text: 'say it\'s too expensive' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-baseline gap-3">
+                        <span
+                          className="text-xl font-bold min-w-[60px]"
+                          style={{
+                            background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                          }}
+                        >
+                          {item.stat}
+                        </span>
+                        <span className="text-white/70 text-sm">{item.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Column - The Alliance Answer */}
+                <div
+                  className="rounded-xl p-5"
+                  style={{
+                    background: 'rgba(240, 165, 89, 0.08)',
+                    border: '1px solid rgba(240, 165, 89, 0.15)',
+                  }}
+                >
+                  <div className="mb-4">
+                    <div className="text-[#f0a559] text-sm font-semibold mb-0.5">OIA Value Proposition</div>
+                    <div className="text-white/40 text-xs">The Solution</div>
+                  </div>
+
+                  <div className="space-y-3">
+                    {[
+                      'Why single-vendor is a supply chain risk',
+                      'The multi-vendor math',
+                      'Ruckus + OpenLAN in one dashboard',
+                      'The LiveSDK model',
+                      '5-year TCO breakdown',
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <span className="text-[#f0a559] mt-0.5">✓</span>
+                        <span className="text-white/90 text-sm font-medium">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-          </Container>
+          </div>
         </section>
 
-        {/*
-          ECONOMICS - Address the Fear
-          Framework: Avatar Hot Buttons - "Fears" quadrant
-          One section. One fear. One answer.
-        */}
-        <section className="relative py-16 overflow-hidden section-divider">
-          <div className="absolute inset-0 bg-dark-950" />
+        {/* ============================================
+            SOUND FAMILIAR SECTION
+            Frustration → Solution pairs
+            ============================================ */}
+        <section className="relative py-12 overflow-hidden">
+          <div className="relative z-10 w-full max-w-[1000px] mx-auto px-4 sm:px-6">
+            <h2
+              className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold text-white text-center mb-10 leading-[1.05]"
+              style={{ letterSpacing: '-0.025em' }}
+            >
+              Sound{' '}
+              <span className="relative inline-block">
+                Familiar?
+                {/* Curved Underline */}
+                <svg
+                  className="absolute -bottom-1 left-0 w-full h-3"
+                  viewBox="0 0 200 12"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <linearGradient id="familiarSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f0a559" />
+                      <stop offset="100%" stopColor="#a93295" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M0,10 Q100,2 200,10"
+                    fill="none"
+                    stroke="url(#familiarSwoosh)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+            </h2>
 
-          <Container className="relative z-10">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-xl md:text-2xl font-bold text-dark-50 mb-4">
-                You Keep 100% of Hardware + License Revenue
-              </h2>
-              <p className="text-dark-400 text-sm">
-                WiBUZ charges a flat platform fee. We don&apos;t clip your Edgecore sales or NetExperience licenses.
-                <br />
-                <span className="text-dark-300">Same model as Android: Google provides the OS, Samsung keeps 100% of phone revenue.</span>
-              </p>
+            <div className="space-y-4">
+              {[
+                {
+                  frustration: "I can't stitch together APs, controllers, and my billing system.",
+                  solution: "OSS/BSS integration. Billing events trigger provisioning automatically.",
+                  proof: "Optimum runs 50K SMBs with zero manual touch.",
+                },
+                {
+                  frustration: "Where's the multi-tenant portal? The customer-facing branding?",
+                  solution: "Unlimited hierarchy: MSP → Reseller → Property → Site. White-label portals per tenant.",
+                  proof: "Jamaica: 6 vendors, 400 schools, one dashboard.",
+                },
+                {
+                  frustration: "I don't have engineers who can customize open-source controllers.",
+                  solution: "LiveSDK: 25 R&D engineers build your integrations on demand.",
+                  proof: "NetExperience integration: 3 weeks, now standard.",
+                },
+                {
+                  frustration: "Why trade Cisco lock-in for controller lock-in?",
+                  solution: "Controller-agnostic. Ingest legacy Ruckus/Cisco via API. Add Edgecore. Same UI.",
+                  proof: "Turns $200K rip-and-replace into $20K expansion.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="grid md:grid-cols-2 gap-4 items-stretch"
+                >
+                  {/* Frustration - Left */}
+                  <div
+                    className="p-5 rounded-xl flex items-center"
+                    style={{
+                      background: 'rgba(30, 27, 38, 0.4)',
+                      border: '1px solid rgba(255, 255, 255, 0.06)',
+                    }}
+                  >
+                    <div>
+                      <span className="text-red-400/70 text-xs font-medium uppercase tracking-wider">Stuck</span>
+                      <p className="text-white/70 italic mt-1">&ldquo;{item.frustration}&rdquo;</p>
+                    </div>
+                  </div>
+
+                  {/* Solution - Right */}
+                  <div
+                    className="p-5 rounded-xl flex items-center"
+                    style={{
+                      background: 'rgba(240, 165, 89, 0.08)',
+                      border: '1px solid rgba(240, 165, 89, 0.15)',
+                    }}
+                  >
+                    <div>
+                      <span className="text-[#f0a559] text-xs font-medium uppercase tracking-wider">Unlocked</span>
+                      <p className="text-white/90 mt-1">{item.solution}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </Container>
+
+          </div>
         </section>
 
-        {/*
-          CTA - Aspiration
-          Framework: Avatar Hot Buttons - "Aspirations" quadrant
-          "Sell the vacation, not the flight"
-        */}
-        <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-hero-gradient" />
-          <div className="absolute inset-0 bg-grid opacity-10" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
+        {/* ============================================
+            CTA SECTION - "Stuck Between Pilot and Profit?"
+            Emotional closer with strong CTA
+            ============================================ */}
+        <section className="relative py-16 overflow-hidden">
+          <div className="relative z-10 w-full max-w-[1000px] mx-auto px-4 sm:px-6">
 
-          <Container className="relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2
-                className="text-3xl md:text-4xl font-bold text-dark-50 mb-6"
-                style={{ letterSpacing: "-0.02em" }}
+            {/* Glass Card with Gradient Border */}
+            <div
+              className="relative rounded-[28px] p-[2px]"
+              style={{
+                background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.6) 0%, rgba(240, 165, 89, 0.2) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.3) 75%, rgba(169, 50, 149, 0.5) 100%)',
+              }}
+            >
+              <div
+                className="relative rounded-[26px] overflow-hidden px-8 py-14 md:px-14 md:py-16 text-center"
+                style={{
+                  background: 'rgba(20, 18, 25, 0.6)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                }}
               >
-                Stop Running Pilots.
-                <br />
-                <span className="gradient-text">Start Collecting Revenue.</span>
-              </h2>
+                {/* Ambient glow */}
+                <div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px]"
+                  style={{
+                    background: 'radial-gradient(ellipse, rgba(169, 50, 149, 0.2) 0%, transparent 60%)',
+                    filter: 'blur(60px)',
+                  }}
+                />
 
-              <p className="text-dark-300 mb-8">
-                30 days from trial kit to your first customer invoice.
-              </p>
+                <div className="relative z-10">
+                  <h2
+                    className="font-display text-[2rem] md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white mb-5 leading-[1.05]"
+                    style={{
+                      letterSpacing: '-0.025em',
+                    }}
+                  >
+                    Stuck Between Pilot
+                    <br />
+                    <span className="relative inline-block">
+                      and Profit?
+                      {/* Curved Underline */}
+                      <svg
+                        className="absolute -bottom-1 left-0 w-full h-3"
+                        viewBox="0 0 200 12"
+                        preserveAspectRatio="none"
+                      >
+                        <defs>
+                          <linearGradient id="profitSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#f0a559" />
+                            <stop offset="100%" stopColor="#a93295" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          d="M0,10 Q100,2 200,10"
+                          fill="none"
+                          stroke="url(#profitSwoosh)"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                  </h2>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button variant="primary" size="lg" href="/journey">
-                  Start the 30-Day Journey
-                </Button>
-                <Button variant="secondary" href="/demo#schedule">
-                  Talk to the Alliance
-                </Button>
+                  <p className="text-[#9CA3AF] text-base md:text-lg max-w-xl mx-auto mb-8">
+                    30 days from trial kit to your first customer invoice.
+                    <br />
+                    <span className="text-white/80 font-medium">Stop running pilots. Start collecting revenue.</span>
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      href="/journey"
+                      className="min-w-[220px]"
+                    >
+                      Start the 30-Day Journey
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      size="lg"
+                      href="/demo#schedule"
+                      className="min-w-[180px]"
+                    >
+                      Talk to the Alliance
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
       </main>
       <Footer />
+
+      {/* ============================================
+          DOWNLOAD MODAL
+          ============================================ */}
+      {showModal && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          onClick={() => setShowModal(false)}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+
+          {/* Modal */}
+          <div
+            className="relative w-full max-w-md rounded-2xl p-[2px]"
+            style={{
+              background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.6) 0%, rgba(240, 165, 89, 0.2) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.3) 75%, rgba(169, 50, 149, 0.5) 100%)',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className="rounded-2xl p-8"
+              style={{
+                background: 'rgba(20, 18, 25, 0.95)',
+                backdropFilter: 'blur(20px)',
+              }}
+            >
+              {/* Close button */}
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              <h3 className="text-xl font-bold text-white mb-2">Get the Full Report</h3>
+              <p className="text-white/50 text-sm mb-6">Enter your details to download the MSP CEO&apos;s Dilemma report.</p>
+
+              <form className="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#f0a559]/50 transition-colors"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Work Email"
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#f0a559]/50 transition-colors"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Company"
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#f0a559]/50 transition-colors"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{
+                    background: 'linear-gradient(135deg, #f0a559 0%, #d4874a 100%)',
+                    color: '#1a1425',
+                  }}
+                >
+                  Download Report
+                </button>
+              </form>
+
+              <p className="text-white/30 text-xs text-center mt-4">
+                We respect your privacy. No spam, ever.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

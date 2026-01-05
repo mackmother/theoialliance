@@ -10,39 +10,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // PRIMARY - Warm Orange (CTAs, highlights, energy)
+        // PRIMARY - Gold/Orange (CTAs, highlights, energy) - Mangeo Brand
         primary: {
           DEFAULT: "var(--primary)",
           50: "rgba(var(--primary-rgb), 0.05)",
           100: "rgba(var(--primary-rgb), 0.1)",
           200: "rgba(var(--primary-rgb), 0.2)",
           300: "rgba(var(--primary-rgb), 0.3)",
-          400: "#FF7F50",
-          500: "#FF6B35",
-          600: "#E65A2E",
-          700: "#CC4F28",
-          800: "#B34422",
-          900: "#99391C",
+          400: "#FFBA75",
+          500: "#FDA656",
+          600: "#E8923D",
+          700: "#D4802E",
+          800: "#BF6E1F",
+          900: "#A85C10",
         },
-        // SECONDARY - Deep Purple (depth, premium, gradients)
+        // SECONDARY - Purple/Magenta (depth, premium, gradients) - Mangeo Brand
         secondary: {
           DEFAULT: "var(--secondary)",
           50: "rgba(var(--secondary-rgb), 0.05)",
           100: "rgba(var(--secondary-rgb), 0.1)",
           200: "rgba(var(--secondary-rgb), 0.2)",
           300: "rgba(var(--secondary-rgb), 0.3)",
-          400: "#A855F7",
-          500: "#9333EA",
-          600: "#7C22CB",
-          700: "#6B21A8",
-          800: "#581C87",
-          900: "#4C1D6E",
+          400: "#C62DB5",
+          500: "#AF1DA0",
+          600: "#8A1780",
+          700: "#6B1263",
+          800: "#4D0D47",
+          900: "#2F082B",
         },
         // Accent alias (for backwards compatibility)
         accent: {
           DEFAULT: "var(--primary)",
-          500: "#FF6B35",
-          600: "#E65A2E",
+          500: "#FDA656",
+          600: "#E8923D",
         },
         // Brand colors - kept for backwards compatibility
         brand: {
@@ -74,19 +74,20 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Space Grotesk", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-warm": "linear-gradient(135deg, #FF6B35 0%, #9333EA 100%)",
+        "gradient-warm": "linear-gradient(135deg, #FDA656 0%, #AF1DA0 100%)",
         "hero-gradient": "var(--gradient-hero)",
         "section-gradient": "linear-gradient(180deg, var(--bg-base) 0%, var(--bg-raised) 50%, var(--bg-base) 100%)",
       },
       boxShadow: {
-        "glow-primary": "0 0 40px rgba(255, 107, 53, 0.4)",
-        "glow-secondary": "0 0 40px rgba(147, 51, 234, 0.4)",
-        "glow-combined": "0 0 60px rgba(255, 107, 53, 0.3), 0 0 100px rgba(147, 51, 234, 0.3)",
+        "glow-primary": "0 0 40px rgba(253, 166, 86, 0.4)",
+        "glow-secondary": "0 0 40px rgba(175, 29, 160, 0.4)",
+        "glow-combined": "0 0 60px rgba(253, 166, 86, 0.3), 0 0 100px rgba(175, 29, 160, 0.3)",
         "glass": "0 8px 32px rgba(0, 0, 0, 0.3)",
       },
       backdropBlur: {
