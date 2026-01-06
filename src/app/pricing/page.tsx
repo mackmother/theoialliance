@@ -121,7 +121,7 @@ export default function PricingPage() {
                     }}
                   >
                     <span className="relative inline-block">
-                      We Built It.
+                      25 Engineers.
                       {/* Curved Underline - curves downward */}
                       <svg
                         className="absolute -bottom-1 left-0 w-full h-3"
@@ -144,11 +144,11 @@ export default function PricingPage() {
                       </svg>
                     </span>
                     <br />
-                    So You Don&apos;t Have To.
+                    Zero Hires.
                   </h1>
 
                   <p className="text-[#8B8B9A] text-base md:text-lg max-w-[380px] mb-8 font-light leading-relaxed">
-                    Now say YES to every hardware stack, every RFP—starting this quarter.
+                    Access the team that&apos;s already built it—say YES to every hardware stack, every RFP.
                   </p>
 
                   {/* CTA Button with gradient border */}
@@ -336,6 +336,176 @@ export default function PricingPage() {
               </div>
 
             </div>
+
+          </div>
+        </section>
+
+        {/* Partnership Investment - The Real Comparison */}
+        <section className="relative py-16 overflow-hidden">
+          <div className="relative z-10 max-w-[1000px] mx-auto px-4 sm:px-6">
+
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2
+                className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold text-white leading-[1.1] inline-block"
+                style={{ letterSpacing: '-0.025em' }}
+              >
+                The{" "}
+                <span className="relative inline-block italic">
+                  Real Math
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full h-4"
+                    viewBox="0 0 180 16"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <linearGradient id="mathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#f0a559" />
+                        <stop offset="100%" stopColor="#a93295" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M0,14 Q90,2 180,14"
+                      fill="none"
+                      stroke="url(#mathGradient)"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </h2>
+              <p className="text-[#8B8B9A] text-lg mt-4 max-w-2xl mx-auto">
+                The average MSP has 2-6 engineers on staff. Replace or augment even one—and unlock deals you&apos;d otherwise walk away from.
+              </p>
+            </div>
+
+            {/* Comparison Grid */}
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+
+              {/* Build It Yourself Column */}
+              <div
+                className="relative rounded-2xl p-[1px]"
+                style={{
+                  background: 'linear-gradient(145deg, rgba(255, 100, 100, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 100, 100, 0.2) 100%)',
+                }}
+              >
+                <div
+                  className="rounded-2xl p-8 h-full"
+                  style={{
+                    background: 'rgba(20, 18, 25, 0.9)',
+                  }}
+                >
+                  <div className="text-red-400/80 text-xs font-bold uppercase tracking-wider mb-4">
+                    The Alternative
+                  </div>
+                  <div className="text-white text-3xl md:text-4xl font-bold mb-2">
+                    $240,000<span className="text-white/50 text-lg font-normal">+/year</span>
+                  </div>
+                  <div className="text-white/60 text-sm mb-6">
+                    For 2 SDK engineers (if you can find them)
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3 text-white/50 text-sm">
+                      <span className="text-red-400/60 mt-0.5">✗</span>
+                      2+ years to build what we&apos;ve already built
+                    </li>
+                    <li className="flex items-start gap-3 text-white/50 text-sm">
+                      <span className="text-red-400/60 mt-0.5">✗</span>
+                      Recruiting, relocating, training burden
+                    </li>
+                    <li className="flex items-start gap-3 text-white/50 text-sm">
+                      <span className="text-red-400/60 mt-0.5">✗</span>
+                      Still no multi-vendor expertise
+                    </li>
+                    <li className="flex items-start gap-3 text-white/50 text-sm">
+                      <span className="text-red-400/60 mt-0.5">✗</span>
+                      You carry all the risk
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Partnership Column */}
+              <div
+                className="relative rounded-2xl p-[2px]"
+                style={{
+                  background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.6) 0%, rgba(240, 165, 89, 0.2) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.3) 75%, rgba(169, 50, 149, 0.5) 100%)',
+                  boxShadow: '0 0 40px rgba(240, 165, 89, 0.15), 0 0 80px rgba(169, 50, 149, 0.1)',
+                }}
+              >
+                <div
+                  className="rounded-2xl p-8 h-full"
+                  style={{
+                    background: 'rgba(20, 18, 25, 0.9)',
+                  }}
+                >
+                  <div className="text-[#f0a559] text-xs font-bold uppercase tracking-wider mb-4">
+                    The Partnership
+                  </div>
+                  <div className="text-white text-3xl md:text-4xl font-bold mb-2">
+                    $10K–$20K<span className="text-white/50 text-lg font-normal">/month</span>
+                  </div>
+                  <div className="text-white/60 text-sm mb-6">
+                    Access to 25 engineers who&apos;ve already built it
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3 text-white/80 text-sm">
+                      <span className="text-[#f0a559] mt-0.5">✓</span>
+                      30 days to first revenue
+                    </li>
+                    <li className="flex items-start gap-3 text-white/80 text-sm">
+                      <span className="text-[#f0a559] mt-0.5">✓</span>
+                      100+ integrations ready to deploy
+                    </li>
+                    <li className="flex items-start gap-3 text-white/80 text-sm">
+                      <span className="text-[#f0a559] mt-0.5">✓</span>
+                      Multi-vendor expertise included
+                    </li>
+                    <li className="flex items-start gap-3 text-white/80 text-sm">
+                      <span className="text-[#f0a559] mt-0.5">✓</span>
+                      We carry the complexity
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Julian Quote - Social Proof */}
+            <div
+              className="relative rounded-2xl p-8 md:p-10"
+              style={{
+                background: 'rgba(240, 165, 89, 0.03)',
+                border: '1px solid rgba(240, 165, 89, 0.15)',
+              }}
+            >
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-shrink-0 text-[#f0a559] text-5xl leading-none">&ldquo;</div>
+                <div>
+                  <p className="text-white text-lg md:text-xl leading-relaxed mb-4">
+                    $120,000 a year for access to 25 engineers who&apos;ve already built the integrations we&apos;d need. Versus $240,000 minimum for engineers we&apos;d have to recruit, relocate, and train—who still wouldn&apos;t have the multi-vendor expertise.{" "}
+                    <span className="text-[#f0a559] font-semibold">The risk/reward flipped.</span>
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <div className="text-white font-semibold">Julian Edwards</div>
+                      <div className="text-white/50 text-sm">Head of Operations, MsTECH</div>
+                    </div>
+                    <Link
+                      href="/case-studies/jamaica"
+                      className="text-[#f0a559] text-sm hover:underline ml-auto"
+                    >
+                      Read the full story →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Subtle note */}
+            <p className="text-center text-white/40 text-sm mt-8">
+              Partnership investment scales with deployment scope. Most MSPs start at $10K–$15K/month.
+            </p>
 
           </div>
         </section>
