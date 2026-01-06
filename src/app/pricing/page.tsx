@@ -411,7 +411,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-3 text-white/50 text-sm">
                       <span className="text-red-400/60 mt-0.5">✗</span>
-                      Recruiting, relocating, training burden
+                      37% of MSPs can&apos;t find the talent to grow
                     </li>
                     <li className="flex items-start gap-3 text-white/50 text-sm">
                       <span className="text-red-400/60 mt-0.5">✗</span>
@@ -455,7 +455,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-3 text-white/80 text-sm">
                       <span className="text-[#f0a559] mt-0.5">✓</span>
-                      100+ integrations ready to deploy
+                      No hiring, no recruiting, no ramp-up
                     </li>
                     <li className="flex items-start gap-3 text-white/80 text-sm">
                       <span className="text-[#f0a559] mt-0.5">✓</span>

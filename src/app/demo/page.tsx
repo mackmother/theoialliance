@@ -63,7 +63,7 @@ export default function DemoPage() {
                           color: '#f0a559',
                         }}
                       >
-                        30-Minute Growth Session
+                        30-Minute Strategy Call
                       </span>
                     </div>
 
@@ -73,9 +73,9 @@ export default function DemoPage() {
                         letterSpacing: '-0.025em',
                       }}
                     >
-                      Talk to the{' '}
+                      Get Your{' '}
                       <span className="relative inline-block">
-                        Alliance
+                        Multi-Vendor Roadmap
                         {/* Curved Underline */}
                         <svg
                           className="absolute -bottom-1 left-0 w-full h-3"
@@ -108,7 +108,7 @@ export default function DemoPage() {
                     </p>
 
                     {/* What You'll Leave With */}
-                    <div className="mb-8">
+                    <div className="mb-6">
                       <h3 className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-4">
                         What You&apos;ll Leave With
                       </h3>
@@ -129,6 +129,21 @@ export default function DemoPage() {
                           </li>
                         ))}
                       </ul>
+                    </div>
+
+                    {/* Risk Reversal */}
+                    <div
+                      className="mb-8 px-4 py-3 rounded-xl"
+                      style={{
+                        background: 'rgba(240, 165, 89, 0.08)',
+                        border: '1px solid rgba(240, 165, 89, 0.2)',
+                      }}
+                    >
+                      <p className="text-white/70 text-sm leading-relaxed">
+                        <span className="text-white/90 font-medium">Worst case?</span> You walk away with clarity on what&apos;s possible.
+                        <br />
+                        <span className="text-[#f0a559] font-medium">Best case?</span> You never walk away from a multi-vendor deal again.
+                      </p>
                     </div>
 
                     {/* Red Carpet Line */}

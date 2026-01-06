@@ -18,6 +18,11 @@ const soundFamiliarItems = [
     proof: "Jamaica: 6 vendors, 400 schools, one dashboard.",
   },
   {
+    frustration: "I can't find or afford the SDK engineers I need to grow.",
+    solution: "25 engineers on retainer. Zero recruiting, zero relocation, zero ramp-up time.",
+    proof: "MsTECH: $120K/year for 25 engineers vs $240K for 2 hires they couldn't find.",
+  },
+  {
     frustration: "I don't have engineers who can customize open-source controllers.",
     solution: "LiveSDK: 25 R&D engineers build your integrations on demand.",
     proof: "NetExperience integration: 3 weeks, now standard.",
@@ -255,8 +260,8 @@ export default function WhyWiBUZPage() {
                     {[
                       'Why single-vendor is a supply chain risk',
                       'The multi-vendor math',
-                      'Ruckus + OpenLAN in one dashboard',
-                      'The LiveSDK model',
+                      'How to scale without hiring SDK engineers',
+                      'The LiveSDK model: 25 engineers on retainer',
                       '5-year TCO breakdown',
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-2">

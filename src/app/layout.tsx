@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { PasswordGate } from "@/components/auth";
+// Password gate disabled for unrestricted access
+// import { PasswordGate } from "@/components/auth";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -64,7 +65,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
-        <PasswordGate>{children}</PasswordGate>
+        {/* Password gate disabled - uncomment to re-enable */}
+        {/* <PasswordGate>{children}</PasswordGate> */}
+        {children}
       </body>
     </html>
   );
