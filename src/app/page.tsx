@@ -64,6 +64,66 @@ export default function Home() {
   const [showComparisonModal, setShowComparisonModal] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Report download form state
+  const [reportForm, setReportForm] = useState({
+    full_name: '',
+    email: '',
+    company_url: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState('');
+
+  const handleReportSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormError('');
+
+    // Validation
+    if (!reportForm.full_name.trim() || !reportForm.email.trim() || !reportForm.company_url.trim()) {
+      setFormError('All fields are required');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(reportForm.email)) {
+      setFormError('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://pxskxxyhtwxdfnecqdop.supabase.co/functions/v1/demo-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          full_name: reportForm.full_name,
+          email: reportForm.email,
+          company_url: reportForm.company_url,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit');
+      }
+
+      // Trigger PDF download
+      const link = document.createElement('a');
+      link.href = '/docs/OIA_Report.pdf';
+      link.download = 'OIA_Report.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Close modal and reset form
+      setShowModal(false);
+      setReportForm({ full_name: '', email: '', company_url: '' });
+    } catch {
+      setFormError('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   // Swipe gesture handling for mobile Sound Familiar carousel
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
@@ -904,13 +964,16 @@ export default function Home() {
               </button>
 
               <h3 className="text-xl font-bold text-white mb-2">Get the Full Report</h3>
-              <p className="text-white/50 text-sm mb-6">Enter your details to download the MSP CEO&apos;s Dilemma report.</p>
+              <p className="text-white/50 text-sm mb-6">Enter your details to download the Maravedis MSP CEO research report.</p>
 
-              <form className="space-y-4">
+              <form onSubmit={handleReportSubmit} className="space-y-4">
                 <div>
                   <input
                     type="text"
                     placeholder="Full Name"
+                    required
+                    value={reportForm.full_name}
+                    onChange={(e) => setReportForm({ ...reportForm, full_name: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#f0a559]/50 transition-colors"
                   />
                 </div>
@@ -918,25 +981,37 @@ export default function Home() {
                   <input
                     type="email"
                     placeholder="Work Email"
+                    required
+                    value={reportForm.email}
+                    onChange={(e) => setReportForm({ ...reportForm, email: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#f0a559]/50 transition-colors"
                   />
                 </div>
                 <div>
                   <input
                     type="text"
-                    placeholder="Company"
+                    placeholder="Company Website (e.g. acme.com)"
+                    required
+                    value={reportForm.company_url}
+                    onChange={(e) => setReportForm({ ...reportForm, company_url: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#f0a559]/50 transition-colors"
                   />
                 </div>
+
+                {formError && (
+                  <p className="text-red-400 text-sm">{formError}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  disabled={isSubmitting}
+                  className="w-full py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
                     background: 'linear-gradient(135deg, #f0a559 0%, #d4874a 100%)',
                     color: '#1a1425',
                   }}
                 >
-                  Download Report
+                  {isSubmitting ? 'Submitting...' : 'Download Report'}
                 </button>
               </form>
 
