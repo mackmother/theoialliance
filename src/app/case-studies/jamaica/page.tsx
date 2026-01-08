@@ -102,7 +102,7 @@ export default function JamaicaCaseStudyPage() {
 
                 {/* The Story Begins */}
                 <p className="text-white/80 text-lg leading-relaxed mb-6">
-                  MsTECH is a Jamaican IT consulting company. They design, implement, and manage network infrastructure for government and enterprise clients across the Caribbean. Before this project, they had about 30 people. Today they have 45.
+                  MsTECH is a Jamaican IT consulting company. They design, implement, and manage network infrastructure for government and enterprise clients in Jamaica. Before this project, they had about 5 people. Today they are still only 5 people.
                 </p>
 
                 <p className="text-white/80 text-lg leading-relaxed mb-6">
@@ -306,8 +306,8 @@ export default function JamaicaCaseStudyPage() {
                       <div className="text-white/50 text-sm">WiFi engineers hired</div>
                     </div>
                     <div>
-                      <div className="text-white text-3xl font-bold">45</div>
-                      <div className="text-white/50 text-sm">days to first deployment</div>
+                      <div className="text-white text-3xl font-bold">90</div>
+                      <div className="text-white/50 text-sm">days to complete phase 1</div>
                     </div>
                     <div>
                       <div className="text-white text-3xl font-bold">2</div>
