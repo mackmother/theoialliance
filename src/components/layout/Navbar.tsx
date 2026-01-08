@@ -5,9 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Why OIA", href: "/why-wibuz" },
-  { label: "Journey", href: "/journey" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Why OIA", href: "/" },
   { label: "Case Study", href: "/case-studies/jamaica" },
 ];
 
@@ -39,43 +37,47 @@ export function Navbar() {
         }}
       >
         <div className="flex items-center justify-between h-12 md:h-14">
-          {/* Logo - OIA Logo Image (Long version with full name) */}
-          <Link href="/" className="flex items-center pl-2">
-            <Image
-              src="/images/logos/OIALOGOnew.png"
-              alt="OIA"
-              width={220}
-              height={32}
-              className="h-8 md:h-10 w-auto"
-            />
-          </Link>
+          {/* Left side: Logo + Nav Links */}
+          <div className="flex items-center gap-6 lg:gap-8">
+            <Link href="/" className="flex items-center pl-2">
+              <Image
+                src="/images/logos/OIALOGOnew.png"
+                alt="OIA"
+                width={220}
+                height={32}
+                className="h-8 md:h-10 w-auto"
+              />
+            </Link>
 
-          {/* Desktop nav - Centered */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-sm text-white/70 hover:text-white transition-colors duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {/* Desktop nav - next to logo */}
+            <div className="hidden md:flex items-center gap-4 lg:gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* Desktop CTAs */}
+          {/* Right side: Login + CTA */}
           <div className="hidden md:flex items-center gap-2 pr-1">
-            <Link
-              href="/login"
+            <a
+              href="https://portal.wibip.com/portal/generic/login"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm text-white/70 hover:text-white transition-colors px-3 py-1.5"
             >
               Log in
-            </Link>
+            </a>
             <Link
               href="/demo"
               className="btn-gradient-border text-sm font-semibold text-white px-5 py-2 rounded-full"
             >
-              Talk to the Alliance
+              Book Your Strategy Session
             </Link>
           </div>
 
@@ -150,14 +152,16 @@ export function Navbar() {
                 href="/demo"
                 className="btn-gradient-border text-center text-sm font-semibold text-white px-5 py-3 rounded-full"
               >
-                Talk to the Alliance
+                Book Your Strategy Session
               </Link>
-              <Link
-                href="/login"
+              <a
+                href="https://portal.wibip.com/portal/generic/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-center text-sm text-white/70 hover:text-white py-2"
               >
                 Log in
-              </Link>
+              </a>
             </div>
           </div>
         </div>

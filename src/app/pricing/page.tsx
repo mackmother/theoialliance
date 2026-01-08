@@ -1,34 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar, Footer } from "@/components/layout";
-import { SignupModal } from "@/components/ui";
-
-const differentiators = [
-  {
-    title: "LIVE SDK Engineers",
-    subtitle: "Elite engineering on retainer—not headcount",
-    description:
-      "10 years R&D. Day one expertise on problems we've solved 100 times before.",
-    image: "/images/screenshots/LiveSDK.png",
-  },
-  {
-    title: "Bring Your Own Tech Stack",
-    subtitle: "We orchestrate—we don't replace",
-    description:
-      "Your billing, your SSO, your tools. No rip-and-replace. No starting over.",
-    image: "/images/screenshots/BYOTSIcon.png",
-  },
-  {
-    title: "Partner-Driven Development",
-    subtitle: "Your needs drive our roadmap",
-    description:
-      "Every integration strengthens the ecosystem. Your edge cases become solved problems.",
-    image: "/images/screenshots/DynamicRoadmap.png",
-  },
-];
 
 const outcomes = [
   {
@@ -68,8 +40,6 @@ const outcomes = [
 ];
 
 export default function PricingPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <>
       <Navbar />
@@ -120,8 +90,10 @@ export default function PricingPage() {
                       letterSpacing: '-0.025em',
                     }}
                   >
+                    What You Thought
+                    <br />
                     <span className="relative inline-block">
-                      25 Engineers.
+                      Would Cost Millions.
                       {/* Curved Underline - curves downward */}
                       <svg
                         className="absolute -bottom-1 left-0 w-full h-3"
@@ -143,17 +115,18 @@ export default function PricingPage() {
                         />
                       </svg>
                     </span>
-                    <br />
-                    Zero Hires.
                   </h1>
 
-                  <p className="text-[#8B8B9A] text-base md:text-lg max-w-[380px] mb-8 font-light leading-relaxed">
-                    Access the team that&apos;s already built it—say YES to every hardware stack, every RFP.
+                  <p className="text-[#8B8B9A] text-base md:text-lg max-w-[380px] mb-4 font-light leading-relaxed">
+                    The WiBUZ CEO orchestrates. Your CSM coordinates. The Alliance executes.
+                  </p>
+                  <p className="text-white/70 text-sm max-w-[380px] mb-8">
+                    Nothing left to chance.
                   </p>
 
                   {/* CTA Button with gradient border */}
                   <Link
-                    href="/journey"
+                    href="/#journey"
                     className="group relative inline-block rounded-full p-[2px] transition-all duration-300 hover:scale-[1.02]"
                     style={{
                       background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
@@ -165,7 +138,7 @@ export default function PricingPage() {
                         background: 'rgba(20, 18, 25, 0.9)',
                       }}
                     >
-                      See the Profit Model
+                      See the 30-Day Journey
                     </span>
                   </Link>
                 </div>
@@ -189,7 +162,7 @@ export default function PricingPage() {
             <div className="relative -mt-8 md:-mt-10 mx-auto max-w-[750px]">
               {/* Label above the pill */}
               <p className="text-center text-[10px] font-medium tracking-[0.2em] text-white/40 uppercase mb-2">
-                Why Partner With Us
+                Your Alliance
               </p>
               {/* Gradient Border Wrapper */}
               <div
@@ -208,135 +181,28 @@ export default function PricingPage() {
                   }}
                 >
                   <div className="grid grid-cols-3 gap-4 md:gap-6">
-                    {/* 10 Years */}
+                    {/* 3 CEOs */}
                     <div className="text-center">
-                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">10 Years</div>
-                      <div className="text-white/80 text-xs font-medium">of R&D</div>
-                      <div className="text-white/40 text-[10px] hidden md:block">Battle-tested across 10+ US telcos</div>
+                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">3 CEOs</div>
+                      <div className="text-white/80 text-xs font-medium">Aligned</div>
+                      <div className="text-white/40 text-[10px] hidden md:block">Magnus, Jack, Tse—your backstop</div>
                     </div>
-                    {/* 100+ Integrations */}
+                    {/* 25 Engineers */}
                     <div className="text-center">
-                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">100+</div>
-                      <div className="text-white/80 text-xs font-medium">Integrations</div>
-                      <div className="text-white/40 text-[10px] hidden md:block">Hardware, billing, SSO, and more</div>
+                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">25</div>
+                      <div className="text-white/80 text-xs font-medium">Engineers</div>
+                      <div className="text-white/40 text-[10px] hidden md:block">Multi-vendor expertise on call</div>
                     </div>
-                    {/* 30 Days */}
+                    {/* 1 CSM */}
                     <div className="text-center">
-                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">30 Days</div>
-                      <div className="text-white/80 text-xs font-medium">Not 2 Years</div>
-                      <div className="text-white/40 text-[10px] hidden md:block">To multi-vendor production</div>
+                      <div className="text-xl md:text-2xl font-bold text-[#f0a559] mb-0.5">1 CSM</div>
+                      <div className="text-white/80 text-xs font-medium">Dedicated</div>
+                      <div className="text-white/40 text-[10px] hidden md:block">Your single point of contact</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* The Real Cost: Build vs. Partner - Bento Layout */}
-        <section className="relative py-12 overflow-hidden">
-          <div className="relative z-10 max-w-[1000px] mx-auto px-4 sm:px-6">
-
-            {/* Section Header */}
-            <div className="text-center mb-12">
-              <h2
-                className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold text-white leading-[1.1] inline-block"
-                style={{
-                  letterSpacing: '-0.025em',
-                }}
-              >
-                The Real Cost of{" "}
-                <span className="relative inline-block italic">
-                  &ldquo;Building It Yourself&rdquo;
-                  {/* Gold-to-Purple Arched Underline */}
-                  <svg
-                    className="absolute -bottom-2 left-0 w-full h-4"
-                    viewBox="0 0 300 16"
-                    preserveAspectRatio="none"
-                  >
-                    <defs>
-                      <linearGradient id="buildSwoosh" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#f0a559" />
-                        <stop offset="100%" stopColor="#a93295" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M0,14 Q150,2 300,14"
-                      fill="none"
-                      stroke="url(#buildSwoosh)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </h2>
-            </div>
-
-            {/* Bento Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-5">
-
-              {/* LEFT - Build Trap Image Card */}
-              <div
-                className="relative rounded-3xl overflow-hidden md:row-span-2"
-                style={{
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  background: 'rgba(20, 18, 25, 0.6)',
-                }}
-              >
-                {/* Background Image */}
-                <Image
-                  src="/images/screenshots/BuildTrap.png"
-                  alt="The Build Trap vs Partnership Path"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-
-              {/* TOP RIGHT - Speed Card (Warm Sunset Gradient) */}
-              <div
-                className="relative rounded-3xl overflow-hidden p-8 flex flex-col justify-center min-h-[190px]"
-                style={{
-                  background: 'linear-gradient(135deg, #1a1425 0%, #2d1a35 20%, #5c2a45 40%, #a84a55 60%, #d4734a 80%, #e8a040 100%)',
-                }}
-              >
-                <div
-                  className="font-display text-2xl md:text-3xl font-bold text-white mb-2"
-                  style={{ letterSpacing: '-0.02em' }}
-                >
-                  Production-ready in 30 days
-                </div>
-                <div className="text-white/80 text-lg">
-                  Win the next RFP this quarter
-                </div>
-              </div>
-
-              {/* BOTTOM RIGHT - Math Card (Dark Glass) */}
-              <div
-                className="relative rounded-3xl overflow-hidden p-8 flex flex-col justify-center min-h-[190px]"
-                style={{
-                  background: 'rgba(20, 18, 25, 0.6)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  backdropFilter: 'blur(12px)',
-                }}
-              >
-                <div className="text-[#8B8B9A] text-sm uppercase tracking-wider mb-2">
-                  The Math
-                </div>
-                <div
-                  className="font-display text-xl md:text-2xl font-bold text-white mb-2"
-                  style={{ letterSpacing: '-0.02em' }}
-                >
-                  One 500-site deal = <span className="text-[#f0a559]">$250K+ revenue</span>
-                </div>
-                <div className="text-white/60 text-base">
-                  Partnership delivers 3-5X ROI
-                </div>
-              </div>
-
-            </div>
-
           </div>
         </section>
 
@@ -510,86 +376,6 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* What You Actually Get - Mangeo Glass Cards */}
-        <section className="relative py-16 overflow-hidden">
-          <div className="relative z-10 max-w-[1000px] mx-auto px-4 sm:px-6">
-
-            {/* Section Header */}
-            <div className="text-center mb-12">
-              <h2
-                className="font-display text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold text-white leading-[1.1] inline-block"
-                style={{ letterSpacing: '-0.025em' }}
-              >
-                What You{" "}
-                <span className="relative inline-block italic">
-                  Actually Get
-                  <svg
-                    className="absolute -bottom-2 left-0 w-full h-4"
-                    viewBox="0 0 200 16"
-                    preserveAspectRatio="none"
-                  >
-                    <defs>
-                      <linearGradient id="getGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#f0a559" />
-                        <stop offset="100%" stopColor="#a93295" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M0,14 Q100,2 200,14"
-                      fill="none"
-                      stroke="url(#getGradient)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </h2>
-              <p className="text-[#8B8B9A] text-lg mt-4">
-                Not software licenses. Strategic capability.
-              </p>
-            </div>
-
-            {/* 3 Glass Cards with Images */}
-            <div className="grid md:grid-cols-3 gap-5">
-              {differentiators.map((diff, index) => (
-                <div
-                  key={index}
-                  className="relative rounded-2xl p-[1px]"
-                  style={{
-                    background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(169, 50, 149, 0.2) 100%)',
-                  }}
-                >
-                  <div
-                    className="rounded-2xl overflow-hidden h-full flex flex-col"
-                    style={{
-                      background: 'rgba(20, 18, 25, 0.8)',
-                      backdropFilter: 'blur(12px)',
-                    }}
-                  >
-                    {/* Image */}
-                    <div className="relative w-full aspect-square">
-                      <Image
-                        src={diff.image}
-                        alt={diff.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    {/* Text Content */}
-                    <div className="p-6">
-                      <h3 className="font-display text-xl font-bold text-white mb-1" style={{ letterSpacing: '-0.02em' }}>
-                        {diff.title}
-                      </h3>
-                      <p className="text-[#f0a559] text-sm mb-3">{diff.subtitle}</p>
-                      <p className="text-[#8B8B9A] text-sm leading-relaxed">{diff.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* What Becomes Possible - Mangeo Glass Cards */}
         <section className="relative py-16 overflow-hidden">
           <div className="relative z-10 max-w-[1000px] mx-auto px-4 sm:px-6">
@@ -693,12 +479,12 @@ export default function PricingPage() {
           <div className="relative z-10 max-w-[800px] mx-auto px-4 sm:px-6 text-center">
 
             <h2
-              className="font-display text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] font-bold text-white leading-[1.15] mb-8"
+              className="font-display text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] font-bold text-white leading-[1.15] mb-4"
               style={{ letterSpacing: '-0.025em' }}
             >
-              How many deals will you{" "}
+              Stop walking away from{" "}
               <span className="relative inline-block italic">
-                walk away from
+                winnable deals.
                 <svg
                   className="absolute -bottom-1 left-0 w-full h-3"
                   viewBox="0 0 250 12"
@@ -718,13 +504,15 @@ export default function PricingPage() {
                     strokeLinecap="round"
                   />
                 </svg>
-              </span>{" "}
-              this quarter?
+              </span>
             </h2>
+            <p className="text-[#8B8B9A] text-lg mb-8 max-w-xl mx-auto">
+              Once you commit. We guide you to revenue.
+            </p>
 
             {/* CTA Button with gradient border */}
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <Link
+              href="/#journey"
               className="group relative inline-block rounded-full p-[2px] transition-all duration-300 hover:scale-[1.02]"
               style={{
                 background: 'linear-gradient(135deg, #f0a559 0%, #a93295 100%)',
@@ -737,20 +525,18 @@ export default function PricingPage() {
                   background: 'rgba(20, 18, 25, 0.9)',
                 }}
               >
-                Start Your 30-Day Trial
+                Claim Your Trial Kit
               </span>
-            </button>
+            </Link>
 
             <p className="text-[#8B8B9A] text-sm mt-6">
-              No credit card. No contracts. Full access.
+              Your Alliance CSM on standby.
             </p>
 
           </div>
         </section>
       </main>
       <Footer />
-
-      <SignupModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

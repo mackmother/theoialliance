@@ -531,7 +531,7 @@ export default function WhyWiBUZPage() {
                       href="/demo#schedule"
                       className="min-w-[180px]"
                     >
-                      Talk to the Alliance
+                      Book Your Strategy Session
                     </Button>
                   </div>
                 </div>

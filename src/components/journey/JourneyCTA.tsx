@@ -40,9 +40,8 @@ export function JourneyCTA() {
                 letterSpacing: '-0.025em',
               }}
             >
-              <span className="block text-white">Order Today. Trial Next Week.</span>
+              <span className="block text-white">You Came Here Skeptical.</span>
               <span className="block">
-                <span className="text-white">Deploy This Month. </span>
                 {/* The Money Line - Gradient + Underline */}
                 <span className="relative inline-block">
                 <span
@@ -54,10 +53,10 @@ export function JourneyCTA() {
                     backgroundClip: 'text',
                   }}
                 >
-                  Profit This Quarter.
+                  You'll Leave in Control.
                 </span>
 
-                {/* Curved underline under "Profit This Quarter" */}
+                {/* Curved underline under "You'll Leave Billing" */}
                 <svg
                   className="absolute -bottom-1 left-0 w-full h-4"
                   viewBox="0 0 200 16"
@@ -88,6 +87,9 @@ export function JourneyCTA() {
                 </span>
               </span>
             </h2>
+            <p className="text-[#8B8B9A] text-base md:text-lg mt-4">
+              Once you commit. We guide you to revenue.
+            </p>
           </div>
 
           {/* CTA Button - Bold and Glowing */}
@@ -98,13 +100,13 @@ export function JourneyCTA() {
               onClick={() => setIsModalOpen(true)}
               className="min-w-[260px] text-base md:text-lg py-4 px-8 shadow-[0_0_30px_rgba(240,165,89,0.4)]"
             >
-              Start Your 30-Day Journey
+              Claim Your Trial Kit
             </Button>
           </div>
 
           {/* Trust Line */}
           <p className="text-[#8B8B9A] text-sm md:text-base">
-            Your Alliance-assigned CSM on standby
+            Your Alliance CSM on standby
           </p>
         </div>
       </section>

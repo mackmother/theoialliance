@@ -4,16 +4,14 @@ import { Container } from "@/components/ui";
 
 const footerLinks = {
   product: [
-    { label: "The Journey", href: "/journey" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Why OIA", href: "/why-wibuz" },
+    { label: "Why OIA", href: "/" },
+    { label: "Case Study", href: "/case-studies/jamaica" },
   ],
   resources: [
-    { label: "Case Study", href: "/case-studies/jamaica" },
     { label: "FAQ", href: "/faq" },
   ],
   connect: [
-    { label: "Talk to the Alliance", href: "/demo" },
+    { label: "Book Strategy Session", href: "/demo" },
     { label: "YouTube", href: "https://youtube.com/@wibuz", external: true },
     { label: "LinkedIn", href: "https://linkedin.com/company/wibuz", external: true },
   ],

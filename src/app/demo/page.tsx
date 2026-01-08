@@ -1,28 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import { Navbar, Footer } from "@/components/layout";
-
-const allianceLeaders = [
-  {
-    name: "Magnus Johansson",
-    title: "CEO, WiBUZ",
-    image: "/images/screenshots/CEO-WiBUZ.jpeg",
-    quote: "We don't hand you off. You get me.",
-  },
-  {
-    name: "Jack Raynor",
-    title: "President, NetExperience",
-    image: "/images/screenshots/Presidnet NetExperience.jpeg",
-    quote: "If we can't solve it, we'll tell you.",
-  },
-  {
-    name: "Teng Tai Hsu",
-    title: "VP of Product, Edgecore Wi-Fi",
-    image: "/images/screenshots/VPofWiFIEdgecore.jpeg",
-    quote: "Your first deployment is my priority.",
-  },
-];
 
 export default function DemoPage() {
   return (
@@ -225,46 +203,6 @@ export default function DemoPage() {
               <p className="text-white/40 text-sm mt-4">
                 — You, after 30 minutes with the Alliance
               </p>
-            </div>
-
-            {/* Alliance Leaders Section */}
-            <div className="mt-16">
-              <div className="grid md:grid-cols-3 gap-6">
-                {allianceLeaders.map((leader, index) => (
-                  <div
-                    key={index}
-                    className="text-center"
-                  >
-                    {/* Headshot */}
-                    <div
-                      className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden p-[2px]"
-                      style={{
-                        background: 'linear-gradient(145deg, rgba(240, 165, 89, 0.5) 0%, rgba(169, 50, 149, 0.5) 100%)',
-                      }}
-                    >
-                      <div className="relative w-full h-full rounded-full overflow-hidden">
-                        <Image
-                          src={leader.image}
-                          alt={leader.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                    {/* Name & Title */}
-                    <h4 className="text-white font-semibold text-sm mb-0.5">
-                      {leader.name}
-                    </h4>
-                    <p className="text-white/50 text-xs mb-3">
-                      {leader.title}
-                    </p>
-                    {/* Quote */}
-                    <p className="text-[#f0a559] text-sm italic">
-                      &ldquo;{leader.quote}&rdquo;
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
 
           </div>
