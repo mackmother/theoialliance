@@ -198,13 +198,13 @@ export default function Home() {
                     Maravedis research confirms vendor lock-in is blocking your growth—multi-vendor support is what you want.
                   </p>
 
-                  {/* CTA Button - scrolls to journey section */}
+                  {/* CTA Button - links to demo/booking */}
                   <Button
                     variant="primary"
                     size="lg"
-                    href="#journey"
+                    href="/demo"
                   >
-                    See the 30-Day Journey
+                    Claim Your Trial Kit
                   </Button>
                 </div>
               </div>
