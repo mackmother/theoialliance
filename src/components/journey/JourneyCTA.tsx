@@ -53,7 +53,7 @@ export function JourneyCTA() {
                     backgroundClip: 'text',
                   }}
                 >
-                  You'll Leave in Control.
+                  You&apos;ll Leave in Control.
                 </span>
 
                 {/* Curved underline under "You'll Leave Billing" */}
