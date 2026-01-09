@@ -289,12 +289,13 @@ function CardContent({
 
             {/* Right - Image */}
             <div
-              className="relative rounded-xl overflow-hidden group h-full min-h-[400px] md:min-h-[500px]"
+              className="relative rounded-xl overflow-hidden group"
               onClick={isCenter ? (e) => { e.stopPropagation(); onLightbox(); } : undefined}
               style={{
                 background: 'rgba(30, 27, 38, 0.5)',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
                 cursor: isCenter ? 'pointer' : 'default',
+                aspectRatio: '1.05 / 1',
               }}
             >
               {/* Phase indicator on image */}
